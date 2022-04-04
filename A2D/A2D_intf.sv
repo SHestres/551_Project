@@ -16,14 +16,14 @@ module A2D_intf(
   SPI_mnrch(.clk(clk), .rst_n(rst_n), .snd(snd), .MISO(MISO), .cmd(cmd),
 			.done(done), .SS_n(SS_n), .SCLK(SCLK), .MOSI(MOSI), .resp(resp));
   
-  always_ff @(posedge clk, negedge rst_n) begin									// 14 bit counter, when full start transfer
+  always_ff @(posedge clk, negedge rst_n) begin			// 14 bit counter, when full start transfer
     if (!rst_n)
 	  cnt_14 <= 14'h00000;
 	else
 	  cnt_14 <= cnt_14 + 1'b1;
   end  
   
-  always_ff @(posedge clk, negedge rst_n) begin									// cycle through channel reads when previous read is done
+  always_ff @(posedge clk, negedge rst_n) begin			// cycle through channel reads when previous read is done
     if (!rst_n)
 	  cnt_2 <= 2'b00;
 	else if (cnv_cmplt)
@@ -37,9 +37,9 @@ module A2D_intf(
   
   always @(posedge clk, negedge rst_n) begin
     if (!rst_n)
-	  state <= IDLE;
-	else 
-	  state <= nxt_state;
+      state <= IDLE;
+    else 
+      state <= nxt_state;
   end
   
   always_comb begin
@@ -48,25 +48,25 @@ module A2D_intf(
 	cnv_cmplt = 1'b0;
 	case (state)
 	  FIRST            	: if (done) begin
-						    nxt_state = WAIT;
-						  end
-	  WAIT			  	: nxt_state = SEC;
+				    nxt_state = WAIT;
+				  end
+	  WAIT			: nxt_state = SEC;
 	  
 	  SEC		    	: if (done) begin
-							nxt_state = IDLE;
-							cnv_cmplt = 1'b1;
-						  end
-	  default			: if (&cnt_14) begin
-							snd = 1'b1;
-							nxt_state = FIRST;
-						  end
+				    nxt_state = IDLE;
+				    cnv_cmplt = 1'b1;
+				  end
+	  default		: if (&cnt_14) begin
+				    snd = 1'b1;
+				    nxt_state = FIRST;
+				  end
 	endcase
   end
   
-  assign en_ba = (cnt_2 == 2'b00 & cnv_cmplt) ? 1'b1 : 1'b0;					//
-  assign en_c = (cnt_2 == 2'b01 & cnv_cmplt) ? 1'b1 : 1'b0;						// enable when transaction is complete
-  assign en_br = (cnt_2 == 2'b10 & cnv_cmplt) ? 1'b1 : 1'b0;					// and when cnt_2 is on there channel
-  assign en_t = (cnt_2 == 2'b11 & cnv_cmplt) ? 1'b1 : 1'b0;						//
+  assign en_ba = (cnt_2 == 2'b00 & cnv_cmplt) ? 1'b1 : 1'b0;				//
+  assign en_c = (cnt_2 == 2'b01 & cnv_cmplt) ? 1'b1 : 1'b0;				// enable when transaction is complete
+  assign en_br = (cnt_2 == 2'b10 & cnv_cmplt) ? 1'b1 : 1'b0;				// and when cnt_2 is on there channel
+  assign en_t = (cnt_2 == 2'b11 & cnv_cmplt) ? 1'b1 : 1'b0;				//
   
   always_ff@(posedge clk, negedge rst_n) begin
 	if (!rst_n)
