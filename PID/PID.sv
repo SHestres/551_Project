@@ -1,0 +1,53 @@
+module PID(clk, rst_n, error, not_pedaling, drv_mag);
+
+input clk, rst_n, not_pedaling;
+input [12:0] error;
+output [11:0] drv_mag;
+
+logic [13:0] I_term, D_term, P_term;
+logic [19:0] clk_48;
+logic is_48th;
+
+//Clock detecting each 48th of a second, assuming 50MHz clk
+always_ff @(posedge clk, negedge rst_n) begin 
+if(!rst_n)
+	clk_48 <= 0;
+else
+	clk_48 <= clk_48 + 1;
+end
+
+assign is_48th = &clk_48;
+
+
+//P_term
+assign P_term = {error[12], error};
+
+//I_Term
+logic [17:0] integrator;
+logic [17:0] added;
+
+assign added = integrator + {{5{error[12]}}, error};
+assign pos_ov = added[17] && (!added[16]);
+
+always_ff @(posedge clk, negedge rst_n) begin
+if(!rst_n) 
+	integrator <= 0;
+else if(not_pedaling)
+	integrator <= 18'h00000;
+else if(!is_48th)
+	integrator <= integrator;
+else if(pos_ov)
+	integrator <= 18'h1FFFF;
+else if(added[17])
+	integrator <= 18'h00000;
+else
+	integrator <= added;
+end
+
+assign I_term = {{2{integrator[16]}}, integrator[16:5]};
+
+//D_term
+
+
+
+endmodule
