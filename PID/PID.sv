@@ -4,6 +4,8 @@ module PID(
     output [11:0] drv_mag
 );
 
+parameter FAST_SIM = 0;
+
 logic [13:0] I_term, P_term;
 logic [19:0] clk_48;
 logic is_48th;
