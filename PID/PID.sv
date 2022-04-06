@@ -75,14 +75,14 @@ always_ff @(posedge clk, negedge rst_n) begin
     end
 end
 
-signed logic [12:0] D_diff;
-signed logic [8:0] D_diff_sat;
+logic signed [12:0] D_diff;
+logic signed [8:0] D_diff_sat;
 
 assign D_diff = error - prev_err;
 assign D_diff_sat = (D_diff > 9'h0FF) ? 9'h0FF :
                     (D_diff < 9'h100) ? 9'h100 : D_diff;
 
-signed logic [9:0] D_term;
+logic signed [9:0] D_term;
 assign D_term = D_diff << 2;
 
 ///////////////////////////////////////////////////////////
