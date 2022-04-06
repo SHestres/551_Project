@@ -20,6 +20,8 @@ iDUT.FAST_SIM = 1;
 while(!test_over) @(posedge clk);
 
 $stop();
+
+
 end
 
 endmodule

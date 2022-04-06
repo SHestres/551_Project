@@ -1,1 +1,21 @@
+{I:/ECE 551/Ex18/PID.sv} {1 {vlog -work work -vopt -sv -stats=none {I:/ECE 551/Ex18/PID.sv}
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module PID
 
+Top level modules:
+	PID
+
+} {} {}} {I:/ECE 551/551_Project/551_Project/PID/plant_PID.sv} {2 {vlog -work work -vopt -sv -stats=none {I:/ECE 551/551_Project/551_Project/PID/plant_PID.sv}
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module plant_PID
+** Warning: I:/ECE 551/551_Project/551_Project/PID/plant_PID.sv(55): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+** Warning: I:/ECE 551/551_Project/551_Project/PID/plant_PID.sv(70): (vlog-2283) Extra semicolon in $unit (global) scope.
+
+** Warning: I:/ECE 551/551_Project/551_Project/PID/plant_PID.sv(71): (vlog-2284) Empty $unit scope found.
+
+
+Top level modules:
+	plant_PID
+
+} {} {}}
