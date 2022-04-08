@@ -7,18 +7,26 @@ module PID(
 parameter FAST_SIM = 0;
 
 logic [13:0] I_term, P_term;
-logic [19:0] clk_48;
-logic is_48th;
+logic [19:0] decimator;
+logic decimator_full;
+
+generate if (FAST_SIM) begin
+            assign decimator_full = &decimator[14:0];
+        end else begin
+            assign decimator_full = &decimator;
+        end
+endgenerate
+
 
 //Clock detecting each 48th of a second, assuming 50MHz clk
 always_ff @(posedge clk, negedge rst_n) begin 
-if(!rst_n)
-	clk_48 <= 0;
-else
-	clk_48 <= clk_48 + 1;
+    if(!rst_n)
+        decimator <= 0;
+    else
+        decimator <= decimator + 1;
 end
 
-assign is_48th = &clk_48;
+assign decimator_full = &decimator;
 
 
 // /////////////////////////////
@@ -40,7 +48,7 @@ if(!rst_n)
 	integrator <= 0;
 else if(not_pedaling)
 	integrator <= 18'h00000;
-else if(!is_48th)
+else if(!decimator_full)
 	integrator <= integrator;
 else if(pos_ov)
 	integrator <= 18'h1FFFF;
@@ -60,9 +68,9 @@ logic [12:0] first_synch_val, second_synch_val, prev_err;
 // Input signals for the flops
 logic [12:0] first_synch_val_inp, second_synch_val_inp, prev_err_inp;
 
-assign first_synch_val_inp = is_48th ? error : first_synch_val;
-assign second_synch_val_inp = is_48th ? first_synch_val : second_synch_val;
-assign prev_err_inp = is_48th ? second_synch_val : prev_err;
+assign first_synch_val_inp = decimator_full ? error : first_synch_val;
+assign second_synch_val_inp = decimator_full ? first_synch_val : second_synch_val;
+assign prev_err_inp = decimator_full ? second_synch_val : prev_err;
 
 always_ff @(posedge clk, negedge rst_n) begin
     if (~rst_n) begin
