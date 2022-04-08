@@ -17,7 +17,6 @@ generate if (FAST_SIM) begin
         end
 endgenerate
 
-
 //Clock detecting each 48th of a second, assuming 50MHz clk
 always_ff @(posedge clk, negedge rst_n) begin 
     if(!rst_n)
@@ -25,9 +24,6 @@ always_ff @(posedge clk, negedge rst_n) begin
     else
         decimator <= decimator + 1;
 end
-
-assign decimator_full = &decimator;
-
 
 // /////////////////////////////
 // // Calculate the P-Term /////
