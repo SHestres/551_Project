@@ -17,13 +17,13 @@ module A2D_intf_tb();
 	A2D_data = 15'h7FFF;
 	@(negedge clk);
 	rst_n = 1;
-	#1000000;
+	repeat (100000) @(posedge clk);
 	@(negedge clk);
 	rst_n = 0;
 	A2D_data = 15'h0001;
 	@(negedge clk);
 	rst_n = 1;
-	#1000000;
+	repeat (100000) @(posedge clk);
 	$stop;
   end
   
