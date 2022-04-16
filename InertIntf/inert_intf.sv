@@ -1,15 +1,16 @@
 module inert_intf(
   input clk, rst_n, MISO, INT,
-  output logic SS_n, SCLK, MOSI, vld, LED,
-  output logic [12:0] incline
+  output logic SS_n, SCLK, MOSI, vld,
+  output logic [12:0] incline,
+  output logic [7:0] LED
 );
   
   logic C_R_H, C_R_L, C_Y_H, C_Y_L, C_AY_H, C_AY_L, C_AZ_H, C_AZ_L, snd, done, INT_ff1, INT_ff2;
-  logic [7:0] roll_rt_H, roll_rt_L, yaw_rt_H, yaw_rt_L, AY_H, AY_L, AZ_H, AZ_L;
+  logic [7:0] roll_rt_H, roll_rt_L, yaw_rt_H, yaw_rt_L, AY_H, AY_L, AZ_H, AZ_L, nothing;
   logic [15:0] cnt_16, resp, cmd;
   
   SPI_mnrch SPI(.clk(clk), .rst_n(rst_n), .snd(snd), .MISO(MISO), .cmd(cmd), .done(done), .SS_n(SS_n), .SCLK(SCLK), .MOSI(MOSI), .resp(resp));
-  inertial_integrator INRTL(.clk(clk), .rst_n(rst_n), .vld(vld), .roll_rt({roll_rt_H,roll_rt_L}), .yaw_rt({yaw_rt_H,yaw_rt_L}), .AY({AY_H,AY_L}), .AZ({AZ_H,AZ_L}), .incline(incline), .LED(LED));
+  inertial_integrator INRTL(.clk(clk), .rst_n(rst_n), .vld(vld), .roll_rt({roll_rt_H,roll_rt_L}), .yaw_rt({yaw_rt_H,yaw_rt_L}), .AY({AY_H,AY_L}), .AZ({AZ_H,AZ_L}), .incline(incline), .LED(nothing));
   
   typedef enum logic [3:0] {INIT1, INIT2, INIT3, INIT4, WAIT, rollL, rollH, yawL, yawH, AYL, AYH, AZL, AZH, DONE} state_t;
   state_t state, nxt_state;
@@ -37,14 +38,14 @@ module inert_intf(
   // flop for each of the holding regs
   always_ff @(posedge clk, negedge rst_n) begin
     if (!rst_n) begin
-	  roll_rt_H <= 1'b0;
-	  roll_rt_L <= 1'b0;
-	  yaw_rt_H <= 1'b0;
-	  yaw_rt_L <= 1'b0;
-	  AY_H <= 1'b0;
-	  AY_L <= 1'b0;
-	  AZ_H <= 1'b0;
-	  AZ_L <= 1'b0;
+	  roll_rt_H <= 8'h00;
+	  roll_rt_L <= 8'h00;
+	  yaw_rt_H <= 8'h00;
+	  yaw_rt_L <= 8'h00;
+	  AY_H <= 8'h00;
+	  AY_L <= 8'h00;
+	  AZ_H <= 8'h00;
+	  AZ_L <= 8'h00;
 	end
 	else if (C_R_H)
 	  roll_rt_H <= resp[7:0];
@@ -105,7 +106,7 @@ module inert_intf(
 						    cmd = 16'h1460;
 						    if (done) begin
 							  snd = 1'b1;
-						      nxt_state = INIT4;
+						      nxt_state = WAIT;
 						    end
 						  end
 	  WAIT				: begin
@@ -119,63 +120,63 @@ module inert_intf(
 						  end
 	  rollH				: begin
 						    cmd = 16'hA5xx;
+							C_R_L = 1'b1;
 						    if (done) begin
-						      C_R_L = 1'b1;
 						      snd = 1'b1;
 						      nxt_state = yawL;
 						    end
 						  end
 	  yawL            	: begin
 						    cmd = 16'hA6xx;
+							C_R_H = 1'b1;
 						    if (done) begin
-						      C_R_H = 1'b1;
 						      snd = 1'b1;
 						      nxt_state = yawH;
 						    end
 						  end
 	  yawH			  	: begin
 						    cmd = 16'hA7xx;
+							C_Y_L = 1'b1;
 						    if (done) begin
-						      C_Y_L = 1'b1;
 						      snd = 1'b1;
 						      nxt_state = AYL;
 						    end
 						  end
 	  AYL            	: begin
 						    cmd = 16'hAAxx;
+							C_Y_H = 1'b1;
 						    if (done) begin
-						      C_Y_H = 1'b1;
 						      snd = 1'b1;
 						      nxt_state = AYH;
 						    end
 						  end
 	  AYH			  	: begin
 						    cmd = 16'hABxx;
+							C_AY_L = 1'b1;
 						    if (done) begin
-						      C_AY_L = 1'b1;
 						      snd = 1'b1;
 						      nxt_state = AZL;
 						    end
 						  end
 	  AZL            	: begin
 						    cmd = 16'hACxx;
+							C_AY_H = 1'b1;
 						    if (done) begin
-						      C_AY_H = 1'b1;
 						      snd = 1'b1;
 						      nxt_state = AZH;
 						    end
 						  end
 	  AZH			  	: begin
 						    cmd = 16'hADxx;
+							C_AZ_L = 1'b1;
 						    if (done) begin
-						      C_AZ_L = 1'b1;
 						      snd = 1'b1;
 						      nxt_state = DONE;
 						    end
 						  end
 	  DONE				: begin
+							C_AZ_H = 1'b1;
 						    if (done) begin
-						      C_AZ_H = 1'b1;
 						      vld = 1'b1;
 							  nxt_state = WAIT;
 						      end
