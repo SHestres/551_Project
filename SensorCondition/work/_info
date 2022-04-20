@@ -56,7 +56,7 @@ R10
 R11
 vcadence_LU
 R0
-!s110 1650303879
+!s110 1650423317
 !i10b 1
 !s100 `9zdfR8ob91U:9jOjzCFf0
 IG4JM1ZzFhciC666bW=ejX0
@@ -72,7 +72,7 @@ R7
 r1
 !s85 0
 31
-!s108 1650303879.439000
+!s108 1650423317.141000
 !s107 I:/ECE 551/551_Project/551_Project/SensorCondition/cadence_LU.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE 551/551_Project/551_Project/SensorCondition/cadence_LU.sv|
 !i113 0
@@ -101,27 +101,99 @@ r1
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE 551/551_Project/551_Project/SensorCondition/cadence_meas.sv|
 !i113 0
 R11
-vsensorCondition
+vdesiredDrive
 R0
-!s110 1650303877
+Z12 !s110 1650423018
 !i10b 1
-!s100 9OCjlS3ZVQUG@dghiICBJ0
-IUbBmYVfF5`RE@FQnRB0]_3
+!s100 La;@c><>9<VJ;:`VUQG<F1
+Ik_TPTQYzIiCOf`i5M^N6f0
 R2
-!s105 sensorCondition_sv_unit
+!s105 desiredDrive_sv_unit
 S1
 R3
-w1650303874
-8I:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition.sv
-FI:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition.sv
+Z13 w1644992906
+Z14 8I:/ECE 551/551_Project/551_Project/SensorCondition/desiredDrive.sv
+Z15 FI:/ECE 551/551_Project/551_Project/SensorCondition/desiredDrive.sv
 L0 1
 R7
 r1
 !s85 0
 31
-!s108 1650303876.925000
+Z16 !s108 1650423018.079000
+Z17 !s107 I:/ECE 551/551_Project/551_Project/SensorCondition/desiredDrive.sv|
+Z18 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE 551/551_Project/551_Project/SensorCondition/desiredDrive.sv|
+!i113 0
+R11
+ndesired@drive
+XdesiredDrive_sv_unit
+R0
+R12
+!i10b 1
+!s100 NCdLFEfD7z93bOSS^IDR00
+IVGW>RQFS=;;?2P92EF:R92
+VVGW>RQFS=;;?2P92EF:R92
+!i103 1
+S1
+R3
+R13
+R14
+R15
+L0 38
+R7
+r1
+!s85 0
+31
+R16
+R17
+R18
+!i113 0
+R11
+ndesired@drive_sv_unit
+vexpAccum
+R0
+!s110 1650420928
+!i10b 1
+!s100 hK_Il@?h1=<GZK=5Xa@2W2
+I_GoUAC_2[OW4_NhH>ZBhD0
+R2
+Z19 !s105 sensorCondition_sv_unit
+S1
+R3
+w1650420924
+Z20 8I:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition.sv
+Z21 FI:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition.sv
+L0 55
+R7
+r1
+!s85 0
+31
+!s108 1650420928.000000
 !s107 I:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition.sv|
-!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition.sv|
+Z22 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition.sv|
+!i113 0
+R11
+nexp@accum
+vsensorCondition
+R0
+!s110 1650423349
+!i10b 1
+!s100 8W0Y7GhJBgPE?Y6_2dL6[0
+ISH?Nmh0ao`a<F0MEGUFmm0
+R2
+R19
+S1
+R3
+w1650423347
+R20
+R21
+L0 1
+R7
+r1
+!s85 0
+31
+!s108 1650423349.684000
+!s107 I:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition.sv|
+R22
 !i113 0
 R11
 nsensor@condition

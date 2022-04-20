@@ -16,4 +16,15 @@ Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
 Top level modules:
 	cadence_filt
 
+} {} {}} {I:/ECE 551/551_Project/551_Project/SensorCondition/desiredDrive.sv} {2 {vlog -work work -vopt -sv -stats=none {I:/ECE 551/551_Project/551_Project/SensorCondition/desiredDrive.sv}
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module desiredDrive
+** Warning: I:/ECE 551/551_Project/551_Project/SensorCondition/desiredDrive.sv(38): (vlog-2283) Extra semicolon in $unit (global) scope.
+
+** Warning: I:/ECE 551/551_Project/551_Project/SensorCondition/desiredDrive.sv(39): (vlog-2284) Empty $unit scope found.
+
+
+Top level modules:
+	desiredDrive
+
 } {} {}}
