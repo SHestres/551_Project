@@ -30,12 +30,12 @@ if(!rst_n) begin
 	end
 else begin
 	prev <= cadence_filt;	
-	cadence_rise <= cadence_filt && (cadence_filt ^ prev);
+	cadence_rise <= cadence_filt & (cadence_filt ^ prev);
 	end
 end: riseDetect
 
 
-assign countEqThird = count == THIRD_SEC;
+assign countEqThird = (count == THIRD_SEC);
 
 always_ff@(posedge clk, negedge rst_n) begin
 if(!rst_n)
@@ -58,6 +58,6 @@ end
 
 assign capture_per = cadence_rise | countEqThird;
 
-assign not_pedaling = THIRD_SEC_UPPER == cadence_per;
+assign not_pedaling = (THIRD_SEC_UPPER == cadence_per);
 
 endmodule

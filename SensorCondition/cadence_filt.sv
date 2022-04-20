@@ -1,47 +1,55 @@
 module cadence_filt(
-    input clk, rst_n, cadence,
-    output cadence_filt, cadence_rise
+  input clk,
+  input rst_n,
+  input cadence,
+  output reg cadence_filt,
+  output cadence_rise
 );
 
-// Setup flops that detect the metastability
-logic cd_flop1, cd_flop2, cd_flop3;
-// Detect changes in the signal
-logic chngd_n;
-logic cd_fit_tmp, stbl_cnt_check, tmp, cdrise_tmp, cd_fit_tmp2;
-logic [15:0] stbl_cnt, stb_cnt_p1, stbp1_and_stable;
+  logic cad1, cad2, cad3, not_cad3, chngd_n, cadence_filt_d;
+  logic [15:0] stbl_cnt_q, stbl_cnt_d;
+  
+  always @(posedge clk, negedge rst_n) begin
+    if (!rst_n)
+	  cad1 <= 1'b0;
+	else
+	  cad1 <= cadence;
+  end
+  
+   always @(posedge clk, negedge rst_n) begin				// 2nd ff for stability
+    if (!rst_n)
+	  cad2 <= 1'b0;
+	else
+	  cad2 <= cad1;
+  end
+  
+   always @(posedge clk, negedge rst_n) begin    			// 3rd ff to use to check for change in cadence
+    if (!rst_n)
+	  cad3 <= 1'b0;
+	else
+	  cad3 <= cad2;
+  end
+  
+  assign chngd_n = (cad2 ~^ cad3);															// checks if cadence changed
+  assign not_cad3 = ~cad3;
+  assign cadence_rise = (cad2 & not_cad3);													// checks for rising edge of cadence
 
-parameter FAST_SIM = 1;
-
-generate if (FAST_SIM) begin
-            assign stbl_cnt_check = &stbl_cnt[8:0];
-        end else begin
-            assign stbl_cnt_check = &stbl_cnt;
-        end
-endgenerate
-
-always_ff @(posedge clk) begin
-    cd_flop1 <= cadence;
-    cd_flop2 <= cd_flop1;
-    cd_flop3 <= cd_flop2;
-    cadence_filt <= cd_fit_tmp;
-    stbl_cnt <= stbp1_and_stable;
-end
-
-always_ff @(posedge clk) begin
-    // Counter that counts about 1ms
-    stb_cnt_p1 = stbl_cnt + 1'b1;
-end
-
-// Kick off 1ms counting if stable signal detected
-assign stbp1_and_stable = {16{chngd_n}} & stb_cnt_p1;
-
-// Detects if it passes roughly 1ms and outputs cadence_filt
-assign cd_fit_tmp = stbl_cnt_check ? cd_flop3 : cadence_filt;
-
-// Detect if the signal changed
-assign chngd_n = ~(cd_flop3 ^ cd_flop2);
-
-// Detect change in signal and if it rises
-assign cadence_rise = cd_flop2 & ~cd_flop3;
+  assign stbl_cnt_d[15:0] = (chngd_n == 0) ? 16'h0000 : (stbl_cnt_q[15:0] + 1'b1);
+  
+  always @(posedge clk) begin
+    if (!rst_n)
+	  stbl_cnt_q[15:0] <= 16'h0000;
+	else
+	  stbl_cnt_q[15:0] <= stbl_cnt_d;
+  end
+  
+  assign cadence_filt_d = (&stbl_cnt_q[15:0]) ? cad3 : cadence_filt;						//is counter full?
+  
+  always @(posedge clk, negedge rst_n) begin
+    if (!rst_n)
+	  cadence_filt <= 1'b0;
+	else
+	  cadence_filt <= cadence_filt_d;
+  end
 
 endmodule

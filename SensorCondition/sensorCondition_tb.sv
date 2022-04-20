@@ -29,15 +29,12 @@ end
 always
 #5 clk = ~clk;
 
-always begin
+initial begin
+repeat(100000) @(posedge clk);
+while(1) begin
 repeat(4096) @(posedge clk);
 cadence_raw = ~cadence_raw;
 end
-
-
-always @(posedge iDUT.cadence_filt) begin
-iDUT.cadence_rise = 1;
-@(posedge clk) #1 iDUT.cadence_rise = 0;
 end
 
 endmodule

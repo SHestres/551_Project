@@ -39,4 +39,5 @@ always @(posedge iDUT.cadence_filt) begin
 iDUT.cadence_rise = 1;
 @(posedge clk) #1 iDUT.cadence_rise = 0;
 end
+
 endmodule
