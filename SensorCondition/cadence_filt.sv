@@ -1,62 +1,47 @@
-module cadence_filt(clk, rst_n, cadence, cadence_filt, cadence_rise);
+module cadence_filt(
+    input clk, rst_n, cadence,
+    output cadence_filt, cadence_rise
+);
 
-input logic clk, rst_n, cadence;
-output logic cadence_filt, cadence_rise;
-
-logic q1, q2, q3; //Metastability flop outputs and delay input flop
+// Setup flops that detect the metastability
+logic cd_flop1, cd_flop2, cd_flop3;
+// Detect changes in the signal
 logic chngd_n;
-logic [15:0] count, count_in; //Internal signals to count stability
-logic [15:0] stbl_cnt;
+logic cd_fit_tmp, stbl_cnt_check, tmp, cdrise_tmp, cd_fit_tmp2;
+logic [15:0] stbl_cnt, stb_cnt_p1, stbp1_and_stable;
 
-parameter FAST_SIM;
+parameter FAST_SIM = 1;
 
-generate
-always @(posedge(clk), negedge(rst_n)) begin: flop
-
-if(!rst_n) begin
-q1 <= 1'b0;
-q2 <= 1'b0;
-cadence_filt <= 01'b0;
-end
-else begin: elseFunc
-q1 <= cadence;
-q2 <= q1;
-q3 <= q2;
-
-stbl_cnt <= count;
-
-
-if(FAST_SIM)
-	if(&(stbl_cnt[8:0]))
-		cadence_filt <= q3;
-	else
-		cadence_filt <= cadence_filt;
-else
-	if(&stbl_cnt)
-		cadence_filt <= q3;
-	else
-		cadence_filt <= cadence_filt;
-end: elseFunc
-end: flop
+generate if (FAST_SIM) begin
+            assign stbl_cnt_check = &stbl_cnt[8:0];
+        end else begin
+            assign stbl_cnt_check = &stbl_cnt;
+        end
 endgenerate
 
-always @(posedge clk, negedge rst_n) begin
-
-
+always_ff @(posedge clk) begin
+    cd_flop1 <= cadence;
+    cd_flop2 <= cd_flop1;
+    cd_flop3 <= cd_flop2;
+    cadence_filt <= cd_fit_tmp;
+    stbl_cnt <= stbp1_and_stable;
 end
 
-/*
-logic prev;
-always_ff @(posedge clk, negedge rst_n) begin
-if(!rst_n) begin 
-prev <= 0;
-cadence_rise <= 0;
+always_ff @(posedge clk) begin
+    // Counter that counts about 1ms
+    stb_cnt_p1 = stbl_cnt + 1'b1;
 end
-else begin
-prev <= cadence_filt;
-cadence_rise <= cadence_filt & (cadence_filt ^ prev);
-end
-end
-*/
 
-endmodule;
+// Kick off 1ms counting if stable signal detected
+assign stbp1_and_stable = {16{chngd_n}} & stb_cnt_p1;
+
+// Detects if it passes roughly 1ms and outputs cadence_filt
+assign cd_fit_tmp = stbl_cnt_check ? cd_flop3 : cadence_filt;
+
+// Detect if the signal changed
+assign chngd_n = ~(cd_flop3 ^ cd_flop2);
+
+// Detect change in signal and if it rises
+assign cadence_rise = cd_flop2 & ~cd_flop3;
+
+endmodule
