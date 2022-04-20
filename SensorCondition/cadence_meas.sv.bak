@@ -12,7 +12,7 @@ parameter FAST_SIM;
 
 logic [23:0]THIRD_SEC;
 logic cadence_rise, capture_per;
-logic count;
+logic [23:0]count;
 logic countEqThird;
 
 generate if(FAST_SIM)
@@ -48,15 +48,16 @@ else
 	count <= count + 1;
 end
 
-generate
 always_ff @(posedge clk) begin
 if(!rst_n) cadence_per <= THIRD_SEC_UPPER;
 else if(!capture_per) cadence_per <= cadence_per;
 else if(FAST_SIM) cadence_per <= count[14:7];
 else cadence_per <= count[23:16];
 end
-endgenerate
+
 
 assign capture_per = cadence_rise | countEqThird;
+
+assign not_pedalingn = THIRD_SEC_UPPER == cadence_per;
 
 endmodule

@@ -13,7 +13,7 @@ parameter FAST_SIM;
 logic cadence_rise, cadence_filt;
 logic not_pedaling;
 logic[7:0] cadence_per;
-logic[5:0] cadence;
+logic[4:0] cadence;
 logic pedaling_resumes;
 
 logic [11:0] avg_curr;
@@ -31,8 +31,8 @@ generate
 		assign include_smpl = &count[15:0];
 endgenerate
 
-cadence_filt iCadFilt(.clk(clk), .rst_n(rst_n), .cadence(cadence_raw), .cadence_filt(cadence_filt), .cadence_rise(cadence_rise));
-cadence_meas iCadMeas(.clk(clk), .rst_n(rst_n), .cadence_filt(cadence_filt), .cadence_per(cadence_per), .not_pedaling(not_pedaling));
+cadence_filt #(.FAST_SIM(FAST_SIM)) iCadFilt(.clk(clk), .rst_n(rst_n), .cadence(cadence_raw), .cadence_filt(cadence_filt), .cadence_rise(cadence_rise));
+cadence_meas #(.FAST_SIM(FAST_SIM)) iCadMeas(.clk(clk), .rst_n(rst_n), .cadence_filt(cadence_filt), .cadence_per(cadence_per), .not_pedaling(not_pedaling));
 cadence_LU iCadLU(.cadence_per(cadence_per), .cadence(cadence));
 
 //Pedaling Resumes
@@ -81,7 +81,7 @@ end
 
 
 //Error
-logic target_curr;
+logic[11:0] target_curr;
 desiredDrive iDesDrive(.avg_torque(avg_torque), .cadence(cadence), .incline(incline), .scale(scale), .not_pedaling(not_pedaling), .target_curr(target_curr));
 
 always_comb begin
@@ -94,7 +94,7 @@ else
 end
 
 //Telemetry
-
+telemetry iTele(.clk(clk), .rst_n(rst_n), .batt_v(batt), .avg_curr(avg_curr), .avg_torque(avg_torque), .TX(TX));
 
 endmodule
 

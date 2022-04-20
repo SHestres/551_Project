@@ -5,16 +5,30 @@ Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
 Top level modules:
 	cadence_meas
 
-} {} {}} {I:/ECE 551/551_Project/551_Project/SensorCondition/cadence_filt.sv} {2 {vlog -work work -vopt -sv -stats=none {I:/ECE 551/551_Project/551_Project/SensorCondition/cadence_filt.sv}
+} {} {}} {I:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition.sv} {1 {vlog -work work -vopt -sv -stats=none {I:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition.sv}
 Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
--- Compiling module cadence_filt
-** Warning: I:/ECE 551/551_Project/551_Project/SensorCondition/cadence_filt.sv(56): (vlog-2283) Extra semicolon in $unit (global) scope.
+-- Compiling module sensorCondition
 
-** Warning: I:/ECE 551/551_Project/551_Project/SensorCondition/cadence_filt.sv(57): (vlog-2284) Empty $unit scope found.
+Top level modules:
+	sensorCondition
+
+} {} {}} {I:/ECE 551/551_Project/551_Project/SensorCondition/incline_sat.sv} {2 {vlog -work work -vopt -sv -stats=none {I:/ECE 551/551_Project/551_Project/SensorCondition/incline_sat.sv}
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module incline_sat
+** Warning: I:/ECE 551/551_Project/551_Project/SensorCondition/incline_sat.sv(14): (vlog-2283) Extra semicolon in $unit (global) scope.
+
+** Warning: I:/ECE 551/551_Project/551_Project/SensorCondition/incline_sat.sv(15): (vlog-2284) Empty $unit scope found.
 
 
 Top level modules:
-	cadence_filt
+	incline_sat
+
+} {} {}} {I:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition_tb.sv} {1 {vlog -work work -vopt -sv -stats=none {I:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition_tb.sv}
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module sensorCondition_tb
+
+Top level modules:
+	sensorCondition_tb
 
 } {} {}} {I:/ECE 551/551_Project/551_Project/SensorCondition/desiredDrive.sv} {2 {vlog -work work -vopt -sv -stats=none {I:/ECE 551/551_Project/551_Project/SensorCondition/desiredDrive.sv}
 Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
@@ -26,5 +40,26 @@ Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
 
 Top level modules:
 	desiredDrive
+
+} {} {}} {I:/ECE 551/551_Project/551_Project/SensorCondition/UART_tx.sv} {1 {vlog -work work -vopt -sv -stats=none {I:/ECE 551/551_Project/551_Project/SensorCondition/UART_tx.sv}
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module UART_tx
+
+Top level modules:
+	UART_tx
+
+} {} {}} {I:/ECE 551/551_Project/551_Project/SensorCondition/cadence_LU.sv} {1 {vlog -work work -vopt -sv -stats=none {I:/ECE 551/551_Project/551_Project/SensorCondition/cadence_LU.sv}
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module cadence_LU
+
+Top level modules:
+	cadence_LU
+
+} {} {}} {I:/ECE 551/551_Project/551_Project/SensorCondition/telemetry.sv} {1 {vlog -work work -vopt -sv -stats=none {I:/ECE 551/551_Project/551_Project/SensorCondition/telemetry.sv}
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module telemetry
+
+Top level modules:
+	telemetry
 
 } {} {}}

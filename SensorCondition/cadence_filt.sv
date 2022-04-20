@@ -8,7 +8,7 @@ logic chngd_n;
 logic [15:0] count, count_in; //Internal signals to count stability
 logic [15:0] stbl_cnt;
 
-parameter FAST_SIM = 1'b1;
+parameter FAST_SIM;
 
 generate
 always @(posedge(clk), negedge(rst_n)) begin: flop
@@ -40,17 +40,23 @@ end: elseFunc
 end: flop
 endgenerate
 
-
-always_comb begin
-cadence_rise = q2 & q3;
-chngd_n = !(q2^q3);
-
-count_in = stbl_cnt + 1;
-count = {16{chngd_n}} & count_in;
+always @(posedge clk, negedge rst_n) begin
 
 
 end
 
-
+/*
+logic prev;
+always_ff @(posedge clk, negedge rst_n) begin
+if(!rst_n) begin 
+prev <= 0;
+cadence_rise <= 0;
+end
+else begin
+prev <= cadence_filt;
+cadence_rise <= cadence_filt & (cadence_filt ^ prev);
+end
+end
+*/
 
 endmodule;

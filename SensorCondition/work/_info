@@ -10,144 +10,140 @@ cModel Technology
 dC:/ProgramData/App-V/2191B702-5279-4048-91BA-BCF8F2A20B49/3C5B5D32-C303-48A2-8738-F357EDE80167/Root/examples
 vcadence_filt
 Z0 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
-Z1 !s110 1650301104
-!i10b 1
-!s100 fc4>0kgJ:iEA@SS?Fel4<0
-IGllRUFB97G`mhkG[Nm@zF3
-Z2 V`JN@9S9cnhjKRR_L]QIcM3
-!s105 cadence_filt_sv_unit
-S1
-Z3 dI:/ECE 551/551_Project/551_Project/SensorCondition
-Z4 w1650301100
-Z5 8I:/ECE 551/551_Project/551_Project/SensorCondition/cadence_filt.sv
-Z6 FI:/ECE 551/551_Project/551_Project/SensorCondition/cadence_filt.sv
-L0 1
-Z7 OE;L;10.3c;59
+Z1 V`JN@9S9cnhjKRR_L]QIcM3
 r1
 !s85 0
 31
-Z8 !s108 1650301103.798000
-Z9 !s107 I:/ECE 551/551_Project/551_Project/SensorCondition/cadence_filt.sv|
-Z10 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE 551/551_Project/551_Project/SensorCondition/cadence_filt.sv|
+!i10b 1
+!s100 Db>U9JGO7:PXHcFOhk[Ea0
+IoKVd3<lHBcNM5S3l:LT9f2
+!s105 cadence_filt_sv_unit
+S1
+Z2 dI:/ECE 551/551_Project/551_Project/SensorCondition
+Z3 w1650474929
+Z4 8I:/ECE 551/551_Project/551_Project/SensorCondition/cadence_filt.sv
+Z5 FI:/ECE 551/551_Project/551_Project/SensorCondition/cadence_filt.sv
+L0 1
+Z6 OE;L;10.3c;59
+Z7 !s108 1650474933.619000
+Z8 !s107 I:/ECE 551/551_Project/551_Project/SensorCondition/cadence_filt.sv|
+Z9 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE 551/551_Project/551_Project/SensorCondition/cadence_filt.sv|
 !i113 0
-Z11 o-work work -sv -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z10 o-work work -sv -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 Xcadence_filt_sv_unit
 R0
-R1
+!s110 1650474933
 !i10b 1
-!s100 Q7=blTl>9XHf_z4NYJeM>1
-IcT;j[=dSS@ZacA;m6ZU0d2
-VcT;j[=dSS@ZacA;m6ZU0d2
+!s100 cn<F60OgQ_aLEzF<Z1`3b3
+I2e9bM7ZGPPHaOz5SL2GED3
+V2e9bM7ZGPPHaOz5SL2GED3
 !i103 1
 S1
+R2
 R3
 R4
 R5
+L0 58
 R6
-L0 56
-R7
 r1
 !s85 0
 31
+R7
 R8
 R9
-R10
 !i113 0
-R11
+R10
 vcadence_LU
 R0
-!s110 1650423317
+R1
+r1
+!s85 0
+31
 !i10b 1
 !s100 `9zdfR8ob91U:9jOjzCFf0
 IG4JM1ZzFhciC666bW=ejX0
-R2
 !s105 cadence_LU_sv_unit
 S1
-R3
+R2
 w1650299762
 8I:/ECE 551/551_Project/551_Project/SensorCondition/cadence_LU.sv
 FI:/ECE 551/551_Project/551_Project/SensorCondition/cadence_LU.sv
 L0 1
-R7
-r1
-!s85 0
-31
-!s108 1650423317.141000
+R6
+!s108 1650474863.350000
 !s107 I:/ECE 551/551_Project/551_Project/SensorCondition/cadence_LU.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE 551/551_Project/551_Project/SensorCondition/cadence_LU.sv|
 !i113 0
-R11
+R10
 ncadence_@l@u
 vcadence_meas
 R0
-!s110 1650303436
+R1
+r1
+!s85 0
+31
 !i10b 1
-!s100 TkA:;HK]JlXjz_lB_@N7h3
-IB0]=l:g3j37<FB3jHFfBY1
-R2
+!s100 4i[[YY7^eU?<1LYme9gG^3
+IY7;ei[IdiJhFOME0Y:7BM0
 !s105 cadence_meas_sv_unit
 S1
-R3
-w1650303433
+R2
+w1650473944
 8I:/ECE 551/551_Project/551_Project/SensorCondition/cadence_meas.sv
 FI:/ECE 551/551_Project/551_Project/SensorCondition/cadence_meas.sv
 L0 1
-R7
-r1
-!s85 0
-31
-!s108 1650303436.630000
+R6
+!s108 1650474864.444000
 !s107 I:/ECE 551/551_Project/551_Project/SensorCondition/cadence_meas.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE 551/551_Project/551_Project/SensorCondition/cadence_meas.sv|
 !i113 0
-R11
+R10
 vdesiredDrive
 R0
-Z12 !s110 1650423018
-!i10b 1
-!s100 La;@c><>9<VJ;:`VUQG<F1
-Ik_TPTQYzIiCOf`i5M^N6f0
-R2
-!s105 desiredDrive_sv_unit
-S1
-R3
-Z13 w1644992906
-Z14 8I:/ECE 551/551_Project/551_Project/SensorCondition/desiredDrive.sv
-Z15 FI:/ECE 551/551_Project/551_Project/SensorCondition/desiredDrive.sv
-L0 1
-R7
+R1
 r1
 !s85 0
 31
-Z16 !s108 1650423018.079000
-Z17 !s107 I:/ECE 551/551_Project/551_Project/SensorCondition/desiredDrive.sv|
-Z18 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE 551/551_Project/551_Project/SensorCondition/desiredDrive.sv|
+!i10b 1
+!s100 La;@c><>9<VJ;:`VUQG<F1
+Ik_TPTQYzIiCOf`i5M^N6f0
+!s105 desiredDrive_sv_unit
+S1
+R2
+Z11 w1644992906
+Z12 8I:/ECE 551/551_Project/551_Project/SensorCondition/desiredDrive.sv
+Z13 FI:/ECE 551/551_Project/551_Project/SensorCondition/desiredDrive.sv
+L0 1
+R6
+Z14 !s108 1650474864.822000
+Z15 !s107 I:/ECE 551/551_Project/551_Project/SensorCondition/desiredDrive.sv|
+Z16 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE 551/551_Project/551_Project/SensorCondition/desiredDrive.sv|
 !i113 0
-R11
+R10
 ndesired@drive
 XdesiredDrive_sv_unit
 R0
-R12
+!s110 1650474865
 !i10b 1
 !s100 NCdLFEfD7z93bOSS^IDR00
 IVGW>RQFS=;;?2P92EF:R92
 VVGW>RQFS=;;?2P92EF:R92
 !i103 1
 S1
-R3
+R2
+R11
+R12
 R13
-R14
-R15
 L0 38
-R7
+R6
 r1
 !s85 0
 31
+R14
+R15
 R16
-R17
-R18
 !i113 0
-R11
+R10
 ndesired@drive_sv_unit
 vexpAccum
 R0
@@ -155,45 +151,157 @@ R0
 !i10b 1
 !s100 hK_Il@?h1=<GZK=5Xa@2W2
 I_GoUAC_2[OW4_NhH>ZBhD0
-R2
-Z19 !s105 sensorCondition_sv_unit
+R1
+Z17 !s105 sensorCondition_sv_unit
 S1
-R3
+R2
 w1650420924
-Z20 8I:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition.sv
-Z21 FI:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition.sv
+Z18 8I:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition.sv
+Z19 FI:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition.sv
 L0 55
-R7
+R6
 r1
 !s85 0
 31
 !s108 1650420928.000000
-!s107 I:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition.sv|
-Z22 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition.sv|
+Z20 !s107 I:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition.sv|
+Z21 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition.sv|
 !i113 0
-R11
+R10
 nexp@accum
-vsensorCondition
+vincline_sat
 R0
-!s110 1650423349
-!i10b 1
-!s100 8W0Y7GhJBgPE?Y6_2dL6[0
-ISH?Nmh0ao`a<F0MEGUFmm0
-R2
-R19
-S1
-R3
-w1650423347
-R20
-R21
-L0 1
-R7
+R1
 r1
 !s85 0
 31
-!s108 1650423349.684000
-!s107 I:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition.sv|
-R22
+!i10b 1
+!s100 Yoj`JiWG:=gVHFZRi]j3@3
+IG`JmJlohJnB;6DCnXGDP<2
+!s105 incline_sat_sv_unit
+S1
+R2
+Z22 w1644604835
+Z23 8I:/ECE 551/551_Project/551_Project/SensorCondition/incline_sat.sv
+Z24 FI:/ECE 551/551_Project/551_Project/SensorCondition/incline_sat.sv
+L0 1
+R6
+Z25 !s108 1650474866.364000
+Z26 !s107 I:/ECE 551/551_Project/551_Project/SensorCondition/incline_sat.sv|
+Z27 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE 551/551_Project/551_Project/SensorCondition/incline_sat.sv|
 !i113 0
-R11
+R10
+Xincline_sat_sv_unit
+R0
+!s110 1650474866
+!i10b 1
+!s100 gBJT=Gc2UHi2O3Z]=L[KG2
+IE=jiJg9fI<LY[FQe5c:A13
+VE=jiJg9fI<LY[FQe5c:A13
+!i103 1
+S1
+R2
+R22
+R23
+R24
+L0 14
+R6
+r1
+!s85 0
+31
+R25
+R26
+R27
+!i113 0
+R10
+vsensorCondition
+R0
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 CiVb<kW;2lkIhhXjVCW2<2
+I163=PQTTR;jffLfmM:N2G2
+R17
+S1
+R2
+w1650474653
+R18
+R19
+L0 1
+R6
+!s108 1650474863.688000
+R20
+R21
+!i113 0
+R10
 nsensor@condition
+vsensorCondition_tb
+R0
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 Q<i[gV0MN4hbb9`=:R4L12
+IKmz^a0nT^]fDjGJMMzlC;3
+!s105 sensorCondition_tb_sv_unit
+S1
+R2
+w1650474955
+8I:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition_tb.sv
+FI:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition_tb.sv
+L0 1
+R6
+!s108 1650474960.160000
+!s107 I:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition_tb.sv|
+!i113 0
+R10
+nsensor@condition_tb
+vtelemetry
+R0
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 K[cU^_8BWk[NTCFnb9GC73
+I@_>LR?=YTUiSAYk4F9onm2
+!s105 telemetry_sv_unit
+S1
+R2
+w1648055506
+8I:/ECE 551/551_Project/551_Project/SensorCondition/telemetry.sv
+FI:/ECE 551/551_Project/551_Project/SensorCondition/telemetry.sv
+L0 1
+R6
+!s108 1650474865.564000
+!s107 I:/ECE 551/551_Project/551_Project/SensorCondition/telemetry.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE 551/551_Project/551_Project/SensorCondition/telemetry.sv|
+!i113 0
+R10
+vUART_tx
+R0
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 ZRPC>[[NOMbkSFiQdOS0?0
+IA<VM2h0bgb7G>COFUB_e^0
+!s105 UART_tx_sv_unit
+S1
+R2
+w1646866351
+8I:/ECE 551/551_Project/551_Project/SensorCondition/UART_tx.sv
+FI:/ECE 551/551_Project/551_Project/SensorCondition/UART_tx.sv
+L0 1
+R6
+!s108 1650474865.181000
+!s107 I:/ECE 551/551_Project/551_Project/SensorCondition/UART_tx.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE 551/551_Project/551_Project/SensorCondition/UART_tx.sv|
+!i113 0
+R10
+n@u@a@r@t_tx

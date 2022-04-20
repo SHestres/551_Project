@@ -58,4 +58,6 @@ end
 
 assign capture_per = cadence_rise | countEqThird;
 
+assign not_pedaling = THIRD_SEC_UPPER == cadence_per;
+
 endmodule
