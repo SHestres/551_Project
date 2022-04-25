@@ -30,7 +30,7 @@ if(!rst_n) begin
 	end
 else begin
 	prev <= cadence_filt;	
-	cadence_rise <= cadence_filt && (cadence_filt ^ prev);
+	cadence_rise <= cadence_filt & (cadence_filt ^ prev);
 	end
 end: riseDetect
 

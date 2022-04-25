@@ -5,6 +5,20 @@ Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
 Top level modules:
 	cadence_meas
 
+} {} {}} {I:/ECE 551/551_Project/551_Project/SensorCondition/cadence_filt.sv} {1 {vlog -work work -vopt -sv -stats=none {I:\ECE 551\551_Project\551_Project\SensorCondition\cadence_filt.sv}
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module cadence_filt
+
+Top level modules:
+	cadence_filt
+
+} {} {}} {I:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition.sv} {1 {vlog -work work -vopt -sv -stats=none {I:\ECE 551\551_Project\551_Project\SensorCondition\sensorCondition.sv}
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module sensorCondition
+
+Top level modules:
+	sensorCondition
+
 } {} {}} {I:/ECE 551/551_Project/551_Project/SensorCondition/incline_sat.sv} {2 {vlog -work work -vopt -sv -stats=none {I:/ECE 551/551_Project/551_Project/SensorCondition/incline_sat.sv}
 Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
 -- Compiling module incline_sat
@@ -16,20 +30,6 @@ Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
 Top level modules:
 	incline_sat
 
-} {} {}} {I:/ECE 551/551_Project/551_Project/SensorCondition/cadence_filt.sv} {1 {vlog -work work -vopt -sv -stats=none {I:/ECE 551/551_Project/551_Project/SensorCondition/cadence_filt.sv}
-Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
--- Compiling module cadence_filt
-
-Top level modules:
-	cadence_filt
-
-} {} {}} {I:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition.sv} {1 {vlog -work work -vopt -sv -stats=none {I:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition.sv}
-Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
--- Compiling module sensorCondition
-
-Top level modules:
-	sensorCondition
-
 } {} {}} {I:/ECE 551/551_Project/551_Project/SensorCondition/desiredDrive.sv} {2 {vlog -work work -vopt -sv -stats=none {I:/ECE 551/551_Project/551_Project/SensorCondition/desiredDrive.sv}
 Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
 -- Compiling module desiredDrive
@@ -40,13 +40,6 @@ Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
 
 Top level modules:
 	desiredDrive
-
-} {} {}} {I:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition_tb.sv} {1 {vlog -work work -vopt -sv -stats=none {I:/ECE 551/551_Project/551_Project/SensorCondition/sensorCondition_tb.sv}
-Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
--- Compiling module sensorCondition_tb
-
-Top level modules:
-	sensorCondition_tb
 
 } {} {}} {I:/ECE 551/551_Project/551_Project/SensorCondition/telemetry.sv} {1 {vlog -work work -vopt -sv -stats=none {I:/ECE 551/551_Project/551_Project/SensorCondition/telemetry.sv}
 Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014

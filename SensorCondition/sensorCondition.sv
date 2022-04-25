@@ -31,15 +31,15 @@ generate
 		assign include_smpl = &count[15:0];
 endgenerate
 
-cadence_filt iCadFilt(.clk(clk), .rst_n(rst_n), .cadence(cadence_raw), .cadence_filt(cadence_filt), .cadence_rise(cadence_rise));
+cadence_filt #(.FAST_SIM(FAST_SIM)) iCadFilt(.clk(clk), .rst_n(rst_n), .cadence(cadence_raw), .cadence_filt(cadence_filt), .cadence_rise(cadence_rise));
 cadence_meas #(.FAST_SIM(FAST_SIM)) iCadMeas(.clk(clk), .rst_n(rst_n), .cadence_filt(cadence_filt), .cadence_per(cadence_per), .not_pedaling(not_pedaling));
 cadence_LU iCadLU(.cadence_per(cadence_per), .cadence(cadence));
 
 //Pedaling Resumes
 logic prev;
 always_ff @(posedge clk) begin: not_ped_fall_detect
-	prev <= !not_pedaling;
-	pedaling_resumes <= (!not_pedaling) & (prev ^ !not_pedaling);
+	prev <= not_pedaling;
+	pedaling_resumes <= (!not_pedaling) & prev;
 end: not_ped_fall_detect
 
 //Include Sample Timer

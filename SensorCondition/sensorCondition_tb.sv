@@ -30,7 +30,7 @@ always
 #5 clk = ~clk;
 
 initial begin
-repeat(100000) @(posedge clk);
+//repeat(100000) @(posedge clk);
 while(1) begin
 repeat(4096) @(posedge clk);
 cadence_raw = ~cadence_raw;
