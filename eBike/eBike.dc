@@ -1,0 +1,85 @@
+#######################################
+# Read in the verilog files first
+#######################################
+
+read_file -format sverilog { rst_synch.sv A2D_intf.sv SPI_mnrch.sv sensorCondition.sv \
+cadence_filt.sv cadence_meas.sv cadence_LU.sv desiredDrive.sv incline_sat.sv telemetry.sv \
+UART_tx.sv PID.sv brushless.sv mtr_drv.sv PWM.sv nonoverlap.sv inert_intf.sv inertial_integrator.sv \
+PB_intf.sv eBike.sv}
+
+							
+#####################################
+# Set current design to top level
+#####################################
+
+set current_design eBike
+
+#####################################################
+# Create clk and tell Synopsys not to touch it
+#####################################################
+
+create_clock -name "clk" -period 2.5 -waveform {0 1} {clk}
+set_dont_touch_network [find port clk]
+
+####################################################
+# Set input delay for all inputs except for clk
+####################################################
+
+set prim_inputs [remove_from_collection [all_inputs] [find port clk]]
+set_input_delay -clock clk 0.3 $prim_inputs
+
+####################################
+# Set driving strength of inputs 
+####################################
+
+set sec_inputs [remove_from_collection $prim_inputs [find port rst_n]]
+set_driving_cell -lib_cell NAND2X2_LVT -library saed321vt_tt0p85v25c $sec_inputs
+
+####################################
+# Set output delay timing and load
+####################################
+
+set_output_delay -clock clk 0.5 [all_outputs]
+set_load 50 [all_outputs]
+
+##########################################
+# Set wireload and transition time
+##########################################
+
+set_wire_load_model -name 16000 -library saed321vt_tt0p85v25c
+set_max_transition 0.20 [current_design]
+
+####################################
+# Compile the design and reports
+####################################
+
+compile -map_effort high
+
+##########################################
+# Add clock uncertainty and fix hold
+##########################################
+set_clock_uncertainty 0.15 clk
+set_fix_hold clk
+
+######################
+# Flatten hierarchy
+######################
+ungroup -all -flatten
+
+###################
+# Compile again
+###################
+compile -map_effort high
+
+#############
+# Reports
+#############
+report_timing -delay max
+report_timing -delay min
+report_area > eBike.txt
+
+##################################################
+# Write out resulting sythesized netlist
+##################################################
+
+write -format verilog eBike -output eBike.vg
