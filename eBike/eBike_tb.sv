@@ -21,7 +21,7 @@ module eBike_tb();
   wire highGrn,lowGrn,highYlw,lowYlw,highBlu,lowBlu;
   wire hallGrn,hallBlu,hallYlw;
   wire inertSS_n,inertSCLK,inertMISO,inertMOSI,inertINT;
-  wire cadence;
+  logic cadence;
   wire [1:0] LED;			// hook to setting from PB_intf
   
   wire signed [11:0] coilGY,coilYB,coilBG;
@@ -66,32 +66,116 @@ module eBike_tb();
 	
 
 
-  localparam test_duration = 500000;
+  localparam test_duration = 50000;
+  int cadence_period = 50000;
 
   //TODO: Add UART checks
+  //TODO: tgglMD checks
+  //TODO: torque checks
+  //TODO: brake checks
+  //TODO: batt checks
+  //TODO: YAW_RT checks
   initial begin
-    	clk = 0;
+    clk = 0;
 	RST_n = 0;
 	cadence = 0;
-
+	tgglMd = 1'b0;
+	YAW_RT = 16'h0000;
+	TORQUE = 12'h0F0;
+	BRAKE = 12'h000;
+	BATT = 12'hFFF;
+	
 	@(posedge clk);
 	@(negedge clk);
-	RST_n = 1;
+	RST_n = 1; 
+	repeat(5)@(posedge clk)
+	
+	//Test reset conditions
+	
+	//Test PB_intf -------------do via task?
+	if (iDUT.scale !== 3'b101) begin
+		$display("scale should be 101 upon reset");
+		$stop;
+	end
+	 
+	@(posedge clk)
+	tgglMd = 1'b1;
+	repeat(10)@(posedge clk)
+	tgglMd = 1'b0;
+	
+	if (iDUT.scale !== 3'b111) begin
+		$display("scale should be 111 now");
+		$stop;
+	end
+	
+	@(posedge clk)
+	tgglMd = 1'b1;
+	repeat(10)@(posedge clk)
+	tgglMd = 1'b0;
+	
+	if (iDUT.scale !== 3'b000) begin
+		$display("scale should be 000 now");
+		$stop;
+	end
+	
+	@(posedge clk)
+	tgglMd = 1'b1;
+	repeat(10)@(posedge clk)
+	tgglMd = 1'b0;
+	
+	if (iDUT.scale !== 3'b011) begin
+		$display("scale should be 011 now");
+		$stop;
+	end
+	
+	@(posedge clk)
+	tgglMd = 1'b1;
+	repeat(10)@(posedge clk)
+	tgglMd = 1'b0;
+	
+	if (iDUT.scale !== 3'b101) begin
+		$display("scale should be 101 now");
+		$stop;
+	end
 	
 	repeat(test_duration) @(posedge clk);
 	
 	//Tests with different cadences
-	cadence_period = 150000;
+	cadence_period = 100000;
 	repeat(test_duration) @(posedge clk);
 	
-	cadence_period = 75000;
+	cadence_period = 150000;
 	repeat(test_duration) @(posedge clk);
 
 	cadence_period = 100000;
+	
 	//Tests with different inclines
+	YAW_RT = 16'h1000;
+	repeat(test_duration) @(posedge clk);
+	
+	YAW_RT = 16'h2000;
+	repeat(test_duration) @(posedge clk);
+	  
+	YAW_RT = 16'h9000;
+	repeat(test_duration) @(posedge clk);
+	
+	YAW_RT = 16'h0000;
+	repeat(test_duration) @(posedge clk);
+	
+	//Tests with different torques
+	TORQUE = 12'hF00;
+	repeat(test_duration) @(posedge clk);
+	
+	TORQUE = 12'hFFF;
+	repeat(test_duration) @(posedge clk);
+	
+	TORQUE = 12'h000;
+	repeat(test_duration) @(posedge clk);
+	
+	
 	//TODO
 
-
+	$stop;
 	
   end
   
@@ -99,19 +183,12 @@ module eBike_tb();
   // Generate clk //
   /////////////////
   always
-    #10 clk = ~clk;
+    #10 clk <= ~clk;
 
   ///////////////////////////////////////////
   // Block for cadence signal generation? //
   /////////////////////////////////////////
-  localparam cadence_period = 100000;
-
-  always begin
-  	repeat(cadence_period)
-		@(posedge clk);
-	cadence = ~cadence;
-  end
-
-
+  always 
+  	#cadence_period cadence <= ~cadence;
 
 endmodule
