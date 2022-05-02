@@ -63,9 +63,35 @@ module eBike_tb();
   ////////////////////////////////////////////////////////////
   // Instantiate UART_rcv or some other telemetry monitor? //
   //////////////////////////////////////////////////////////
-			 
+	
+
+
+  localparam test_duration = 500000;
+
+  //TODO: Add UART checks
   initial begin
-    <your magic here>
+    	clk = 0;
+	RST_n = 0;
+	cadence = 0;
+
+	@(posedge clk);
+	@(negedge clk);
+	RST_n = 1;
+	
+	repeat(test_duration) @(posedge clk);
+	
+	//Tests with different cadences
+	cadence_period = 150000;
+	repeat(test_duration) @(posedge clk);
+	
+	cadence_period = 75000;
+	repeat(test_duration) @(posedge clk);
+
+	cadence_period = 100000;
+	//Tests with different inclines
+	//TODO
+
+
 	
   end
   
@@ -78,5 +104,14 @@ module eBike_tb();
   ///////////////////////////////////////////
   // Block for cadence signal generation? //
   /////////////////////////////////////////
-	
+  localparam cadence_period = 100000;
+
+  always begin
+  	repeat(cadence_period)
+		@(posedge clk);
+	cadence = ~cadence;
+  end
+
+
+
 endmodule
