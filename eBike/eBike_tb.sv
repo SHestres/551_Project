@@ -28,6 +28,7 @@ module eBike_tb();
   logic [11:0] curr;		// comes from hub_wheel_model
   wire [11:0] BATT_TX, TORQUE_TX, CURR_TX;
   logic vld_TX;
+  logic [7:0] rx_data;
   
   //////////////////////////////////////////////////
   // Instantiate model of analog input circuitry //
@@ -63,18 +64,13 @@ module eBike_tb();
   ////////////////////////////////////////////////////////////
   // Instantiate UART_rcv or some other telemetry monitor? //
   //////////////////////////////////////////////////////////
-	
+  UART_rcv iUART(.clk(clk), .rst_n(rst_n), .RX(TX_RX), .rdy(rdy), .rx_data(rx_data), .clr_rdy(rdy));
 
 
-  localparam test_duration = 50000;
+  localparam test_duration = 500000;
   int cadence_period = 50000;
 
-  //TODO: Add UART checks
-  //TODO: tgglMD checks
-  //TODO: torque checks
-  //TODO: brake checks
-  //TODO: batt checks
-  //TODO: YAW_RT checks
+  //TODO: self checks
   initial begin
     clk = 0;
 	RST_n = 0;
@@ -82,15 +78,15 @@ module eBike_tb();
 	tgglMd = 1'b0;
 	YAW_RT = 16'h0000;
 	TORQUE = 12'h0F0;
-	BRAKE = 12'h000;
-	BATT = 12'hFFF;
+	BRAKE = 12'h000;		//FFF or 000?
+	BATT = 12'h0FF;
 	
 	@(posedge clk);
 	@(negedge clk);
 	RST_n = 1; 
 	repeat(5)@(posedge clk)
 	
-	//Test reset conditions
+	//Test reset conditions -------------do via task?
 	
 	//Test PB_intf -------------do via task?
 	if (iDUT.scale !== 3'b101) begin
@@ -140,6 +136,7 @@ module eBike_tb();
 	
 	repeat(test_duration) @(posedge clk);
 	
+	/* save simulation time
 	//Tests with different cadences
 	cadence_period = 100000;
 	repeat(test_duration) @(posedge clk);
@@ -155,7 +152,7 @@ module eBike_tb();
 	
 	YAW_RT = 16'h2000;
 	repeat(test_duration) @(posedge clk);
-	  
+	
 	YAW_RT = 16'h9000;
 	repeat(test_duration) @(posedge clk);
 	
@@ -172,8 +169,56 @@ module eBike_tb();
 	TORQUE = 12'h000;
 	repeat(test_duration) @(posedge clk);
 	
+	//Test with different braking
+	BRAKE = 12'h0FF;
+	repeat(test_duration) @(posedge clk);
 	
-	//TODO
+	BRAKE = 12'hFFF;
+	repeat(test_duration) @(posedge clk);
+	
+	BRAKE = 12'h000;
+	repeat(test_duration) @(posedge clk);
+	*/
+	
+	//Pedaling, no incline to higher incline
+	cadence_period = 75000;
+	TORQUE = 12'h0FF;
+	YAW_RT = 16'h0000;
+	repeat(100000) @(posedge clk);
+	YAW_RT = 16'h0500;
+	repeat(100000) @(posedge clk);
+	YAW_RT = 16'h1000;
+	repeat(100000) @(posedge clk);
+	YAW_RT = 16'h2000;
+	repeat(100000) @(posedge clk);
+	
+	//Pedaling fast, uphill
+	cadence_period = 25000;
+	TORQUE = 12'h7FF;
+	YAW_RT = 16'h2000;
+	repeat(test_duration) @(posedge clk);
+	
+	//Not pedaling, braking, going down an incline
+	cadence_period = 1000000;
+	TORQUE = 12'h000;
+	BRAKE = 12'hFFF;
+	YAW_RT = 16'h90F0;
+	repeat(test_duration) @(posedge clk);
+	
+	//Not pedalling, no incline, high assist
+	@(posedge clk)
+	tgglMd = 1'b1;
+	repeat(10)@(posedge clk)
+	tgglMd = 1'b0;
+	cadence_period = 1000000;
+	BRAKE = 12'h000;
+	TORQUE = 12'h000;
+	YAW_RT = 16'h0000;
+	repeat(test_duration) @(posedge clk);
+	
+	//TODO: self checking
+	//why is curr always 0????????????????????????
+	//why is incline always 0?????????????????????
 
 	$stop;
 	
