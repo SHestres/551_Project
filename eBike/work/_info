@@ -164,12 +164,18 @@ R9
 R10
 vdesiredDrive
 R0
-R1
+!s110 1651693825
 !i10b 1
+<<<<<<< HEAD
 !s100 D^ET@mdY8]@0^^HREjiE^3
+=======
+!s100 9>kVU]0NVoTFXl_9f<zJm3
+IJ@Vk31jT@mCR^7Q>T;@d=2
+>>>>>>> 0259657c63a53bf5389652d64b73589809b69635
 R2
 I58UG`CKPX78OTQXnb12U>2
 R3
+<<<<<<< HEAD
 S1
 R4
 w1651693233
@@ -187,6 +193,21 @@ R8
 !i113 0
 R9
 R10
+=======
+w1651693822
+8C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desiredDrive.sv
+FC:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desiredDrive.sv
+L0 1
+R5
+r1
+!s85 0
+31
+!s108 1651693825.000000
+!s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desiredDrive.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desiredDrive.sv|
+!i113 1
+R7
+>>>>>>> 0259657c63a53bf5389652d64b73589809b69635
 ndesired@drive
 veBike
 R0
@@ -216,12 +237,20 @@ R10
 ne@bike
 veBike_tb
 R0
+<<<<<<< HEAD
 R1
 !i10b 1
 !s100 Jm0jh?2ELMJa9=CZnUfO40
+=======
+!s110 1651690865
+!i10b 1
+!s100 n9N_GX:3lGLJMQfK73zh;3
+IUg;D0nn@DN;cnHTe8]00Q3
+>>>>>>> 0259657c63a53bf5389652d64b73589809b69635
 R2
 ID_]?ERL6L3gkSl24dH@P13
 R3
+<<<<<<< HEAD
 S1
 R4
 Z14 w1651689108
@@ -239,6 +268,21 @@ R8
 !i113 0
 R9
 R10
+=======
+w1651690863
+8C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike_tb.sv
+FC:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike_tb.sv
+L0 1
+R5
+r1
+!s85 0
+31
+!s108 1651690865.000000
+!s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike_tb.sv|
+!i113 1
+R7
+>>>>>>> 0259657c63a53bf5389652d64b73589809b69635
 ne@bike_tb
 veBikePhysics
 R0
@@ -441,12 +485,20 @@ R10
 n@p@b_rise
 vPID
 R0
+<<<<<<< HEAD
 R15
 !i10b 1
 !s100 FbVG_VjWjVf<B^2`Ui6i<1
+=======
+!s110 1651687460
+!i10b 1
+!s100 lV8M[:l^?<]gB<D0JVAfm3
+IScC@L;l2W^7LSaF4E1cga2
+>>>>>>> 0259657c63a53bf5389652d64b73589809b69635
 R2
 I94f>8LNeh?8]VaciAD2NE2
 R3
+<<<<<<< HEAD
 S1
 R4
 w1651689757
@@ -464,6 +516,21 @@ R20
 !i113 0
 R9
 R10
+=======
+w1651687433
+8C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PID.sv
+FC:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PID.sv
+L0 1
+R5
+r1
+!s85 0
+31
+!s108 1651687460.000000
+!s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PID.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PID.sv|
+!i113 1
+R7
+>>>>>>> 0259657c63a53bf5389652d64b73589809b69635
 n@p@i@d
 vPWM
 R0
@@ -518,12 +585,17 @@ R9
 R10
 vsensorCondition
 R0
+<<<<<<< HEAD
 R15
+=======
+!s110 1651689261
+>>>>>>> 0259657c63a53bf5389652d64b73589809b69635
 !i10b 1
 !s100 j[:VhVgdKf@CMSdk3zA?V3
 R2
 IM?<HW3DzJo;iGi7iH55eW3
 R3
+<<<<<<< HEAD
 S1
 R4
 w1651693225
@@ -545,6 +617,25 @@ nsensor@condition
 vSPI_ADC128S
 R0
 R15
+=======
+w1651687743
+8C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/sensorCondition.sv
+FC:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/sensorCondition.sv
+L0 1
+R5
+r1
+!s85 0
+31
+!s108 1651689261.000000
+!s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/sensorCondition.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/sensorCondition.sv|
+!i113 1
+R7
+nsensor@condition
+vSPI_ADC128S
+R0
+Z12 !s110 1651686511
+>>>>>>> 0259657c63a53bf5389652d64b73589809b69635
 !i10b 1
 !s100 93oj0i;UV@::cHMPGHMJ>1
 R2

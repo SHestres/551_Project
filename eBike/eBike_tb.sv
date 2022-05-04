@@ -67,7 +67,7 @@ module eBike_tb();
   UART_rcv iUART(.clk(clk), .rst_n(rst_n), .RX(TX_RX), .rdy(rdy), .rx_data(rx_data), .clr_rdy(rdy));
 
 
-  localparam test_duration = 1000000;
+  localparam test_duration = 1500000;
   int cadence_period = 100000;
 
   //TODO: self checks
@@ -211,21 +211,21 @@ module eBike_tb();
 	// Waves from video
 	//////////////////////////////////////
 	//Pedalling fast, high torque
-	cadence_period = 44000;
+	cadence_period = 22000;
 	TORQUE = 12'h700;
 	YAW_RT = 16'h0000;
 	repeat(test_duration) @(posedge clk);
+	//repeat(test_duration) @(posedge clk);
+	
+	//$stop;
+	
+	//Pedaling slower, lower torque
+	cadence_period = 80000;
+	TORQUE = 12'h500;
+	//YAW_RT = 16'h0000;
 	repeat(test_duration) @(posedge clk);
 	
 	$stop;
-	
-	//Pedaling slow, lower torque
-	cadence_period = 163840;
-	TORQUE = 12'h500;
-	YAW_RT = 16'h0000;
-	repeat(test_duration) @(posedge clk);
-	
-	//$stop;
 	
 	
 	//Pedaling, even incline to higher incline

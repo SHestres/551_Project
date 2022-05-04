@@ -1,13 +1,4 @@
-desiredDrive.sv {0 {vlog -work work -vopt -sv -stats=none {/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/desiredDrive.sv}
-QuestaSim vlog 2020.2_2 Compiler 2020.06 Jun 13 2020
--- Compiling module desiredDrive
-** Error (suppressible): /filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/desiredDrive.sv(37): (vlog-13299) Undefined variable: 'clk'.
-** Error: /filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/desiredDrive.sv(1): (vlog-2730) Undefined variable: 'clk'.
-** Error: /filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/desiredDrive.sv(1): (vlog-13294) Identifier must be declared with a port mode: clk.
-** Error: /filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/desiredDrive.sv(1): (vlog-2730) Undefined variable: 'rst_n'.
-** Error: /filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/desiredDrive.sv(1): (vlog-13294) Identifier must be declared with a port mode: rst_n.
-
-} {5.0 9.0} {}} AnalogModel.sv {1 {vlog -work work -vopt -sv -stats=none {/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/AnalogModel.sv}
+AnalogModel.sv {1 {vlog -work work -vopt -sv -stats=none {/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/AnalogModel.sv}
 QuestaSim vlog 2020.2_2 Compiler 2020.06 Jun 13 2020
 -- Compiling module AnalogModel
 
@@ -34,13 +25,6 @@ QuestaSim vlog 2020.2_2 Compiler 2020.06 Jun 13 2020
 
 Top level modules:
 	rst_synch
-
-} {} {}} eBike_tb.sv {1 {vlog -work work -vopt -sv -stats=none {/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/eBike_tb.sv}
-QuestaSim vlog 2020.2_2 Compiler 2020.06 Jun 13 2020
--- Compiling module eBike_tb
-
-Top level modules:
-	eBike_tb
 
 } {} {}} mtr_drv.sv {1 {vlog -work work -vopt -sv -stats=none {/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/mtr_drv.sv}
 QuestaSim vlog 2020.2_2 Compiler 2020.06 Jun 13 2020
