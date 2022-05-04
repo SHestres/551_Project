@@ -74,7 +74,7 @@ compile -map_effort high
 #############
 # Reports
 #############
-report_timing -delay max
+report_timing -delay max > delay_max.txt
 report_timing -delay min
 report_area > eBike.txt
 

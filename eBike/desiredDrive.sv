@@ -1,7 +1,8 @@
-module desiredDrive(clk, rst_n, avg_torque, cadence, not_pedaling, incline, scale, target_curr);
+module desiredDrive(clk, avg_torque, cadence, not_pedaling, incline, scale, target_curr);
 
 localparam TORQUE_MIN = 12'h380;
 
+input clk;
 input [11:0]avg_torque;
 input [4:0]cadence;
 input not_pedaling;

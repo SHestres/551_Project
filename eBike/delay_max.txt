@@ -1,0 +1,137 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : eBike
+Version: S-2021.06
+Date   : Wed May  4 14:46:29 2022
+****************************************
+
+Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: iSENSE/iDesDrive/torque_pos_reg[7]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: iMTR/PWM1/PWM_sig_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  eBike              16000                 saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  iSENSE/iDesDrive/torque_pos_reg[7]/CLK (DFFSSRX1_LVT)
+                                                          0.00       0.00 r
+  iSENSE/iDesDrive/torque_pos_reg[7]/Q (DFFSSRX1_LVT)     0.10       0.10 f
+  U3439/Y (NAND2X0_LVT)                                   0.05       0.15 r
+  U3435/Y (XOR2X2_LVT)                                    0.08       0.23 f
+  U3396/Y (NAND2X0_LVT)                                   0.04       0.27 r
+  U3395/Y (NAND2X0_LVT)                                   0.03       0.30 f
+  U3394/Y (NAND3X0_LVT)                                   0.04       0.33 r
+  U3393/Y (OA221X1_LVT)                                   0.05       0.39 r
+  U3391/Y (XNOR2X2_LVT)                                   0.09       0.48 r
+  U3290/Y (XOR2X2_LVT)                                    0.09       0.58 f
+  U3285/Y (NAND2X0_LVT)                                   0.04       0.62 r
+  U3286/Y (NAND2X0_LVT)                                   0.03       0.64 f
+  U3375/Y (NAND3X0_LVT)                                   0.03       0.68 r
+  U3374/Y (OA221X1_LVT)                                   0.05       0.73 r
+  U3370/Y (XOR2X2_LVT)                                    0.08       0.81 f
+  U3373/Y (NAND2X0_LVT)                                   0.04       0.85 r
+  U3120/Y (NBUFFX2_LVT)                                   0.04       0.89 r
+  U3118/Y (NAND3X0_LVT)                                   0.03       0.93 f
+  U3117/Y (OA221X1_LVT)                                   0.06       0.99 f
+  U3114/Y (XOR3X2_LVT)                                    0.11       1.10 f
+  U3115/Y (INVX0_LVT)                                     0.03       1.13 r
+  U3112/Y (NAND2X0_LVT)                                   0.03       1.16 f
+  U3842/Y (INVX0_LVT)                                     0.03       1.19 r
+  U3875/Y (NAND2X0_LVT)                                   0.03       1.22 f
+  U3872/Y (AND4X1_LVT)                                    0.06       1.28 f
+  U3871/Y (XOR2X2_LVT)                                    0.09       1.37 r
+  U3870/Y (XNOR2X1_LVT)                                   0.10       1.46 r
+  U4283/Y (XOR3X2_LVT)                                    0.11       1.58 r
+  U2968/Y (AO21X2_LVT)                                    0.07       1.65 r
+  U3505/Y (NAND2X0_LVT)                                   0.03       1.68 f
+  U3509/Y (NAND2X0_LVT)                                   0.04       1.72 r
+  U3316/Y (NAND3X0_LVT)                                   0.03       1.76 f
+  U5764/Y (NAND2X0_LVT)                                   0.05       1.81 r
+  U5816/Y (NAND2X0_LVT)                                   0.03       1.83 f
+  U5969/Y (NAND2X0_LVT)                                   0.04       1.87 r
+  U4150/Y (NAND3X0_LVT)                                   0.04       1.91 f
+  U4252/Y (NAND2X0_LVT)                                   0.05       1.96 r
+  U5970/Y (NAND2X0_LVT)                                   0.04       2.00 f
+  U6093/Y (NAND2X0_LVT)                                   0.05       2.05 r
+  U3823/Y (NAND3X0_LVT)                                   0.03       2.08 f
+  U6097/Y (NAND2X0_LVT)                                   0.05       2.13 r
+  U6105/Y (NAND2X0_LVT)                                   0.03       2.16 f
+  U2656/Y (XOR2X2_LVT)                                    0.09       2.25 r
+  U3040/Y (XNOR2X2_LVT)                                   0.10       2.35 r
+  U3895/Y (XNOR2X2_LVT)                                   0.09       2.44 f
+  U3257/Y (NAND2X0_LVT)                                   0.05       2.49 r
+  U3166/Y (XOR3X2_LVT)                                    0.12       2.61 f
+  U3169/Y (AOI21X1_LVT)                                   0.06       2.66 r
+  U6139/Y (NAND2X0_LVT)                                   0.03       2.69 f
+  U4300/Y (AO21X1_LVT)                                    0.05       2.75 f
+  U6144/Y (NAND2X0_LVT)                                   0.04       2.79 r
+  U6148/Y (NAND4X0_LVT)                                   0.04       2.83 f
+  U3028/Y (NAND2X0_LVT)                                   0.05       2.89 r
+  U3026/Y (NAND2X0_LVT)                                   0.03       2.92 f
+  U3203/Y (XNOR2X1_LVT)                                   0.09       3.01 r
+  U3202/Y (NAND3X0_LVT)                                   0.04       3.05 f
+  U3195/Y (OA21X1_LVT)                                    0.06       3.11 f
+  U3226/Y (AO21X1_LVT)                                    0.05       3.16 f
+  U3266/Y (NAND3X0_LVT)                                   0.03       3.20 r
+  U3574/Y (NAND4X0_LVT)                                   0.05       3.25 f
+  U3624/Y (NAND3X0_LVT)                                   0.05       3.30 r
+  U3642/Y (NAND3X0_LVT)                                   0.03       3.33 f
+  U3677/Y (NAND3X0_LVT)                                   0.04       3.37 r
+  U3675/Y (XOR3X2_LVT)                                    0.06       3.43 f
+  U3685/Y (INVX0_LVT)                                     0.04       3.47 r
+  U3865/Y (NAND3X0_LVT)                                   0.04       3.51 f
+  U3479/Y (NAND2X0_LVT)                                   0.05       3.57 r
+  U2987/Y (OAI221X2_LVT)                                  0.07       3.63 f
+  U3926/Y (NAND2X0_LVT)                                   0.04       3.68 r
+  U3927/Y (INVX0_LVT)                                     0.03       3.70 f
+  U6330/Y (NAND2X0_LVT)                                   0.04       3.74 r
+  U4451/Y (AND2X1_LVT)                                    0.04       3.78 r
+  U6332/Y (NAND2X0_LVT)                                   0.03       3.82 f
+  U6352/Y (NAND3X0_LVT)                                   0.04       3.86 r
+  U6353/Y (NAND2X0_LVT)                                   0.04       3.90 f
+  U3359/Y (OR3X1_LVT)                                     0.05       3.95 f
+  U3935/Y (NAND2X0_LVT)                                   0.04       3.99 r
+  U3931/Y (OA21X1_LVT)                                    0.05       4.04 r
+  U3588/Y (NAND2X0_LVT)                                   0.03       4.07 f
+  U3348/Y (NAND2X0_LVT)                                   0.05       4.11 r
+  U3090/Y (NAND3X0_LVT)                                   0.05       4.16 f
+  U3081/Y (NAND2X0_LVT)                                   0.05       4.21 r
+  U3079/Y (NAND3X0_LVT)                                   0.03       4.25 f
+  U3077/Y (AND2X1_LVT)                                    0.05       4.30 f
+  U3078/Y (AO22X1_LVT)                                    0.04       4.33 f
+  U3210/Y (NAND3X0_LVT)                                   0.03       4.36 r
+  U3460/Y (NAND2X0_LVT)                                   0.03       4.39 f
+  U3461/Y (NAND3X0_LVT)                                   0.03       4.42 r
+  U3531/Y (NAND3X0_LVT)                                   0.03       4.46 f
+  iMTR/PWM1/PWM_sig_reg/D (DFFARX1_LVT)                   0.01       4.47 f
+  data arrival time                                                  4.47
+
+  clock clk (rise edge)                                   2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.15       2.35
+  iMTR/PWM1/PWM_sig_reg/CLK (DFFARX1_LVT)                 0.00       2.35 r
+  library setup time                                     -0.03       2.32
+  data required time                                                 2.32
+  --------------------------------------------------------------------------
+  data required time                                                 2.32
+  data arrival time                                                 -4.47
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -2.15
+
+
+1
