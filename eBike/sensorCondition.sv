@@ -1,4 +1,4 @@
-module sensorCondition#(parameter FAST_SIM = 1)(clk, rst_n, torque, cadence_raw, curr, incline, scale, batt, error, not_pedaling, TX);
+module sensorCondition #(parameter FAST_SIM = 1)(clk, rst_n, torque, cadence_raw, curr, incline, scale, batt, error, not_pedaling, TX);
 
 input clk, rst_n, cadence_raw;
 input[11:0] torque, curr, batt;
