@@ -4,7 +4,7 @@ localparam TORQUE_MIN = 12'h380;
 
 input [11:0]avg_torque;
 input [4:0]cadence;
-input not_pedaling;
+input not_pedaling, clk, rst_n;
 input [12:0]incline;
 input[2:0]scale;
 output [11:0]target_curr;
