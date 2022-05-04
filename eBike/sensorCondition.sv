@@ -1,4 +1,4 @@
-module sensorCondition(clk, rst_n, torque, cadence_raw, curr, incline, scale, batt, error, not_pedaling, TX);
+module sensorCondition#(parameter FAST_SIM)(clk, rst_n, torque, cadence_raw, curr, incline, scale, batt, error, not_pedaling, TX);
 
 input clk, rst_n, cadence_raw;
 input[11:0] torque, curr, batt;
@@ -8,7 +8,7 @@ output logic[12:0] error;
 output not_pedaling, TX;
 
 localparam LOW_BATT_THRES = 12'hA98;
-parameter FAST_SIM;
+//parameter FAST_SIM;
 
 logic cadence_rise, cadence_filt;
 logic not_pedaling;

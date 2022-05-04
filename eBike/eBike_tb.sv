@@ -27,7 +27,7 @@ module eBike_tb();
   wire signed [11:0] coilGY,coilYB,coilBG;
   logic [11:0] curr;		// comes from hub_wheel_model
   wire [11:0] BATT_TX, TORQUE_TX, CURR_TX;
-  logic vld_TX;
+  logic vld_TX, rdy;
   logic [7:0] rx_data;
   
   //////////////////////////////////////////////////
@@ -67,8 +67,8 @@ module eBike_tb();
   UART_rcv iUART(.clk(clk), .rst_n(rst_n), .RX(TX_RX), .rdy(rdy), .rx_data(rx_data), .clr_rdy(rdy));
 
 
-  localparam test_duration = 500000;
-  int cadence_period = 50000;
+  localparam test_duration = 1000000;
+  int cadence_period = 100000;
 
   //TODO: self checks
   initial begin
@@ -77,9 +77,9 @@ module eBike_tb();
 	cadence = 0;
 	tgglMd = 1'b0;
 	YAW_RT = 16'h0000;
-	TORQUE = 12'h0F0;
-	BRAKE = 12'h000;		//FFF or 000?
-	BATT = 12'h0FF;
+	TORQUE = 12'h000;
+	BRAKE = 12'hFFF;		//FFF or 000?
+	BATT = 12'hFFF;
 	
 	@(posedge clk);
 	@(negedge clk);
@@ -134,53 +134,69 @@ module eBike_tb();
 		$stop;
 	end
 	
-	repeat(test_duration) @(posedge clk);
+	repeat(500000) @(posedge clk);
 	
 	/* save simulation time
 	//Tests with different cadences
 	cadence_period = 100000;
-	repeat(test_duration) @(posedge clk);
+	repeat(100000) @(posedge clk);
 	
 	cadence_period = 150000;
-	repeat(test_duration) @(posedge clk);
+	repeat(100000) @(posedge clk);
 
 	cadence_period = 100000;
 	
 	//Tests with different inclines
 	YAW_RT = 16'h1000;
-	repeat(test_duration) @(posedge clk);
+	repeat(100000) @(posedge clk);
 	
 	YAW_RT = 16'h2000;
-	repeat(test_duration) @(posedge clk);
+	repeat(100000) @(posedge clk);
 	
 	YAW_RT = 16'h9000;
-	repeat(test_duration) @(posedge clk);
+	repeat(100000) @(posedge clk);
 	
 	YAW_RT = 16'h0000;
-	repeat(test_duration) @(posedge clk);
+	repeat(100000) @(posedge clk);
 	
 	//Tests with different torques
 	TORQUE = 12'hF00;
-	repeat(test_duration) @(posedge clk);
+	repeat(100000) @(posedge clk);
 	
 	TORQUE = 12'hFFF;
-	repeat(test_duration) @(posedge clk);
+	repeat(100000) @(posedge clk);
 	
 	TORQUE = 12'h000;
-	repeat(test_duration) @(posedge clk);
+	repeat(100000) @(posedge clk);
 	
 	//Test with different braking
 	BRAKE = 12'h0FF;
-	repeat(test_duration) @(posedge clk);
+	repeat(100000) @(posedge clk);
 	
 	BRAKE = 12'hFFF;
-	repeat(test_duration) @(posedge clk);
+	repeat(100000) @(posedge clk);
 	
 	BRAKE = 12'h000;
-	repeat(test_duration) @(posedge clk);
+	repeat(100000) @(posedge clk);
 	*/
 	
-	//Pedaling, no incline to higher incline
+	//////////////////////////////////////
+	// Waves from video
+	//////////////////////////////////////
+	//Pedalling fast, high torque
+	cadence_period = 44000;
+	TORQUE = 12'h700;
+	YAW_RT = 16'h0000;
+	repeat(test_duration) @(posedge clk);
+	
+	//Pedaling slow, low torque
+	cadence_period = 163840;
+	TORQUE = 12'h500;
+	YAW_RT = 16'h0000;
+	repeat(test_duration) @(posedge clk);
+	
+	
+	//Pedaling, even incline to higher incline
 	cadence_period = 75000;
 	TORQUE = 12'h0FF;
 	YAW_RT = 16'h0000;
@@ -201,25 +217,22 @@ module eBike_tb();
 	//Not pedaling, braking, going down an incline
 	cadence_period = 1000000;
 	TORQUE = 12'h000;
-	BRAKE = 12'hFFF;
+	BRAKE = 12'h000;
 	YAW_RT = 16'h90F0;
 	repeat(test_duration) @(posedge clk);
 	
-	//Not pedalling, no incline, high assist
-	@(posedge clk)
-	tgglMd = 1'b1;
-	repeat(10)@(posedge clk)
-	tgglMd = 1'b0;
-	cadence_period = 1000000;
-	BRAKE = 12'h000;
+	//Not pedalling, no incline
+	cadence_period = 10000000;
+	BRAKE = 12'hFFF;
 	TORQUE = 12'h000;
 	YAW_RT = 16'h0000;
 	repeat(test_duration) @(posedge clk);
 	
+	
 	//TODO: self checking
 	//why is curr always 0????????????????????????
 	//why is incline always 0?????????????????????
-
+	
 	$stop;
 	
   end

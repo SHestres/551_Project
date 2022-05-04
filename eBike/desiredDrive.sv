@@ -35,4 +35,4 @@ assign assist_prod = not_pedaling ? 0 : torque_pos * incline_lim * cadence_facto
 
 assign target_curr = |assist_prod[29:27] ? 12'hFFF : assist_prod[26:15];
 
-endmodule;
+endmodule

@@ -1,9 +1,9 @@
-module cadence_filt(clk, rst_n, cadence, cadence_filt, cadence_rise);
+module cadence_filt#(parameter FAST_SIM)(clk, rst_n, cadence, cadence_filt, cadence_rise);
 
 input logic clk, rst_n, cadence;
 output logic cadence_filt, cadence_rise;
 
-parameter FAST_SIM;
+//parameter FAST_SIM;
 
 logic q1, q2, q3; //Metastability flop outputs and delay input flop
 logic chngd_n;
