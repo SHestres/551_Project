@@ -1,4 +1,4 @@
-module cadence_meas#(parameter FAST_SIM)(clk, rst_n, cadence_filt, cadence_per, not_pedaling);
+module cadence_meas#(parameter FAST_SIM = 1)(clk, rst_n, cadence_filt, cadence_per, not_pedaling);
 
 input cadence_filt, clk, rst_n;
 output logic [7:0] cadence_per;

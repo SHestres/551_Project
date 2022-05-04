@@ -1,4 +1,4 @@
-module cadence_filt#(parameter FAST_SIM)(clk, rst_n, cadence, cadence_filt, cadence_rise);
+module cadence_filt#(parameter FAST_SIM = 1)(clk, rst_n, cadence, cadence_filt, cadence_rise);
 
 input logic clk, rst_n, cadence;
 output logic cadence_filt, cadence_rise;
