@@ -1,10 +1,9 @@
-Warning: Design 'eBike' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
  
 ****************************************
 Report : area
 Design : eBike
 Version: S-2021.06
-Date   : Wed May  4 11:58:07 2022
+Date   : Wed May  4 12:36:44 2022
 ****************************************
 
 Library(s) Used:
@@ -12,22 +11,22 @@ Library(s) Used:
     saed32lvt_tt0p85v25c (File: /cae/apps/data/saed32_edk-2018/lib/stdcell_lvt/db_nldm/saed32lvt_tt0p85v25c.db)
 
 Number of ports:                           25
-Number of nets:                          5257
-Number of cells:                         4946
-Number of combinational cells:           4479
-Number of sequential cells:               454
+Number of nets:                          5357
+Number of cells:                         5053
+Number of combinational cells:           4584
+Number of sequential cells:               456
 Number of macros/black boxes:               0
-Number of buf/inv:                        884
+Number of buf/inv:                        894
 Number of references:                      86
 
-Combinational area:              10775.959755
-Buf/Inv area:                     1344.167628
-Noncombinational area:            3205.518327
+Combinational area:              10791.716694
+Buf/Inv area:                     1349.250510
+Noncombinational area:            3224.070840
 Macro/Black Box area:                0.000000
-Net Interconnect area:            3124.531911
+Net Interconnect area:            3165.698758
 
-Total cell area:                 13981.478082
-Total area:                      17106.009992
+Total cell area:                 14015.787534
+Total area:                      17181.486291
 
 Information: This design contains black box (unknown) components. (RPT-8)
 1
