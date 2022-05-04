@@ -5,7 +5,7 @@
 read_file -format sverilog { rst_synch.sv A2D_intf.sv SPI_mnrch.sv sensorCondition.sv \
 cadence_filt.sv cadence_meas.sv cadence_LU.sv desiredDrive.sv incline_sat.sv telemetry.sv \
 UART_tx.sv PID.sv brushless.sv mtr_drv.sv PWM.sv nonoverlap.sv inert_intf.sv inertial_integrator.sv \
-PB_intf.sv eBike.sv}
+PB_intf.sv PB_rise.sv eBike.sv}
 
 							
 #####################################
