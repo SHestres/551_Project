@@ -12,6 +12,13 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	PB_rise
 
+} {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PID.sv} {1 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PID.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module PID
+
+Top level modules:
+	PID
+
 } {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike_tb.sv} {1 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike_tb.sv}
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module eBike_tb

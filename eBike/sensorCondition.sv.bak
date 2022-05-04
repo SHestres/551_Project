@@ -67,7 +67,7 @@ end
 //Exponential Accum Torque
 logic [21:0] prod_torque;
 assign avg_torque = accum_torque[16:5];
-assign prod_torque = (accum_torque << 5) - accum_torque;
+assign prod_torque = (accum_torque << 5) - accum_torque;  // * 31
 
 always_ff @(posedge clk, negedge rst_n) begin
 if(!rst_n)
