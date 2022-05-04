@@ -1,0 +1,180 @@
+{C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PWM.sv} {1 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PWM.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module PWM
+
+Top level modules:
+	PWM
+
+} {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PB_rise.sv} {1 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PB_rise.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module PB_rise
+
+Top level modules:
+	PB_rise
+
+} {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PID.sv} {1 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PID.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module PID
+
+Top level modules:
+	PID
+
+} {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike_tb.sv} {1 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike_tb.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module eBike_tb
+
+Top level modules:
+	eBike_tb
+
+} {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/inertial_integrator.sv} {2 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/inertial_integrator.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module inertial_integrator
+** Warning: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/inertial_integrator.sv(32): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+
+Top level modules:
+	inertial_integrator
+
+} {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/cadence_meas.sv} {1 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/cadence_meas.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module cadence_meas
+
+Top level modules:
+	cadence_meas
+
+} {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/cadence_filt.sv} {1 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/cadence_filt.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module cadence_filt
+
+Top level modules:
+	cadence_filt
+
+} {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/incline_sat.sv} {1 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/incline_sat.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module incline_sat
+
+Top level modules:
+	incline_sat
+
+} {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/AnalogModel.sv} {1 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/AnalogModel.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module AnalogModel
+
+Top level modules:
+	AnalogModel
+
+} {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/brushless.sv} {1 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/brushless.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module brushless
+
+Top level modules:
+	brushless
+
+} {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/cadence_LU.sv} {1 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/cadence_LU.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module cadence_LU
+
+Top level modules:
+	cadence_LU
+
+} {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/nonoverlap.sv} {1 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/nonoverlap.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module nonoverlap
+
+Top level modules:
+	nonoverlap
+
+} {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/rst_synch.sv} {1 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/rst_synch.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module rst_synch
+
+Top level modules:
+	rst_synch
+
+} {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/UART_rcv.sv} {1 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/UART_rcv.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module UART_rcv
+
+Top level modules:
+	UART_rcv
+
+} {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/mtr_drv.sv} {1 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/mtr_drv.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module mtr_drv
+
+Top level modules:
+	mtr_drv
+
+} {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/UART_tx.sv} {1 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/UART_tx.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module UART_tx
+
+Top level modules:
+	UART_tx
+
+} {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/A2D_intf.sv} {2 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/A2D_intf.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module A2D_intf
+** Warning: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/A2D_intf.sv(22): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+
+Top level modules:
+	A2D_intf
+
+} {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike.sv} {1 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module eBike
+
+Top level modules:
+	eBike
+
+} {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/SPI_ADC128S.sv} {1 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/SPI_ADC128S.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module SPI_ADC128S
+
+Top level modules:
+	SPI_ADC128S
+
+} {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/sensorCondition.sv} {1 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/sensorCondition.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module sensorCondition
+
+Top level modules:
+	sensorCondition
+
+} {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PB_intf.sv} {1 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PB_intf.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module PB_intf
+
+Top level modules:
+	PB_intf
+
+} {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desiredDrive.sv} {1 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desiredDrive.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module desiredDrive
+
+Top level modules:
+	desiredDrive
+
+} {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/telemetry.sv} {1 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/telemetry.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module telemetry
+
+Top level modules:
+	telemetry
+
+} {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/SPI_mnrch.sv} {1 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/SPI_mnrch.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module SPI_mnrch
+
+Top level modules:
+	SPI_mnrch
+
+} {} {}} {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBikePhysics.sv} {1 {vlog -work work -sv -stats=none {C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBikePhysics.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module eBikePhysics
+
+Top level modules:
+	eBikePhysics
+
+} {} {}}

@@ -76,16 +76,13 @@ module eBike_tb();
 	RST_n = 0;
 	cadence = 0;
 	tgglMd = 1'b0;
-	YAW_RT = 16'h0000;
-	TORQUE = 12'h000;
-	BRAKE = 12'hFFF;		//FFF or 000?
-	BATT = 12'hFFF;
+	
 	
 	@(posedge clk);
 	@(negedge clk);
 	RST_n = 1; 
 	repeat(5)@(posedge clk)
-	
+	/*
 	//Test reset conditions -------------do via task?
 	
 	//Test PB_intf -------------do via task?
@@ -134,7 +131,37 @@ module eBike_tb();
 		$stop;
 	end
 	
-	repeat(500000) @(posedge clk);
+	//repeat(100000) @(posedge clk);
+	
+	if (iDUT.curr !== 12'h000) begin
+		$display("curr should be 0 after reset");
+		$stop;
+	end
+	
+	if (iDUT.torque !== 12'h000) begin
+		$display("torque should be 0 after reset");
+		$stop;
+	end
+	
+	if (iDUT.batt !== 12'h000) begin
+		$display("batt should be 0 after reset");
+		$stop;
+	end
+	
+	if (iDUT.brake !== 12'h000) begin
+		$display("brake should be 0 after reset");
+		$stop;
+	end	
+	
+	// end reset tests
+	*/
+	
+	YAW_RT = 16'h0000;
+	TORQUE = 12'h000;
+	BRAKE = 12'hFFF;		//FFF or 000?
+	BATT = 12'hFFF;
+	
+	repeat(100000) @(posedge clk);
 	
 	/* save simulation time
 	//Tests with different cadences
@@ -188,12 +215,17 @@ module eBike_tb();
 	TORQUE = 12'h700;
 	YAW_RT = 16'h0000;
 	repeat(test_duration) @(posedge clk);
+	repeat(test_duration) @(posedge clk);
 	
-	//Pedaling slow, low torque
+	$stop;
+	
+	//Pedaling slow, lower torque
 	cadence_period = 163840;
 	TORQUE = 12'h500;
 	YAW_RT = 16'h0000;
 	repeat(test_duration) @(posedge clk);
+	
+	//$stop;
 	
 	
 	//Pedaling, even incline to higher incline
@@ -230,7 +262,6 @@ module eBike_tb();
 	
 	
 	//TODO: self checking
-	//why is curr always 0????????????????????????
 	//why is incline always 0?????????????????????
 	
 	$stop;

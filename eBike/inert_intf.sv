@@ -1,7 +1,8 @@
 module inert_intf(
   input clk, rst_n, MISO, INT,
-  output logic SS_n, SCLK, MOSI, vld, LED,
-  output logic [12:0] incline
+  output logic SS_n, SCLK, MOSI, vld,
+  output logic [12:0] incline,
+  output logic [7:0] LED
 );
   
   logic C_R_H, C_R_L, C_Y_H, C_Y_L, C_AY_H, C_AY_L, C_AZ_H, C_AZ_L, snd, done, INT_ff1, INT_ff2;
