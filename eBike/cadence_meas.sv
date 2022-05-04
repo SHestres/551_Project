@@ -1,4 +1,4 @@
-module cadence_meas(clk, rst_n, cadence_filt, cadence_per, not_pedaling);
+module cadence_meas#(parameter FAST_SIM)(clk, rst_n, cadence_filt, cadence_per, not_pedaling);
 
 input cadence_filt, clk, rst_n;
 output logic [7:0] cadence_per;
@@ -8,7 +8,7 @@ localparam THIRD_SEC_REAL = 24'hE4E1C0;
 localparam THIRD_SEC_FAST = 24'h007271;
 localparam THIRD_SEC_UPPER = 8'hE4;
 
-parameter FAST_SIM;
+//parameter FAST_SIM;
 
 logic [23:0]THIRD_SEC;
 logic cadence_rise, capture_per;
@@ -23,7 +23,7 @@ endgenerate
 
 
 logic prev;
-always_ff @(posedge clk, rst_n) begin: riseDetect
+always_ff @(posedge clk, negedge rst_n) begin: riseDetect
 if(!rst_n) begin
 	cadence_rise <= 0;
 	prev <= 0;
