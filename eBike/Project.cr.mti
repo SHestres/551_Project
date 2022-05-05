@@ -19,6 +19,13 @@ QuestaSim vlog 2020.2_2 Compiler 2020.06 Jun 13 2020
 Top level modules:
 	eBikePhysics
 
+} {} {}} eBike_tb.sv {1 {vlog -work work -vopt -sv -stats=none {/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/eBike_tb.sv}
+QuestaSim vlog 2020.2_2 Compiler 2020.06 Jun 13 2020
+-- Compiling module eBike_tb
+
+Top level modules:
+	eBike_tb
+
 } {} {}} rst_synch.sv {1 {vlog -work work -vopt -sv -stats=none {/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/rst_synch.sv}
 QuestaSim vlog 2020.2_2 Compiler 2020.06 Jun 13 2020
 -- Compiling module rst_synch
@@ -53,6 +60,13 @@ QuestaSim vlog 2020.2_2 Compiler 2020.06 Jun 13 2020
 
 Top level modules:
 	eBike
+
+} {} {}} sensorCondition.sv {1 {vlog -work work -vopt -sv -stats=none {/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/sensorCondition.sv}
+QuestaSim vlog 2020.2_2 Compiler 2020.06 Jun 13 2020
+-- Compiling module sensorCondition
+
+Top level modules:
+	sensorCondition
 
 } {} {}} cadence_filt.sv {1 {vlog -work work -vopt -sv -stats=none {/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/cadence_filt.sv}
 QuestaSim vlog 2020.2_2 Compiler 2020.06 Jun 13 2020
