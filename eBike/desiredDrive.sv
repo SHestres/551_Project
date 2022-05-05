@@ -45,9 +45,17 @@ cadence_factor <= |cadence[4:1] ? cadence + 32 : 0;
 torque_pos <= torque_off[12] ? 0 : torque_off[11:0];
 
 end: pipeline_flops
-	
 
-assign assist_prod = not_pedaling ? 0 : torque_pos * incline_lim * cadence_factor * scale;
+
+logic [14:0]mult1;
+logic [14:0]mult2;
+always_ff @(posedge clk) begin: second_pipeline
+mult1 <= torque_pos * scale;
+mult2 <= incline_lim * cadence_factor;
+assist_prod <= mult1 * mult2;
+end: second_pipeline
+
+//assign assist_prod = not_pedaling ? 0 : torque_pos * incline_lim * cadence_factor * scale;
 
 assign target_curr = |assist_prod[29:27] ? 12'hFFF : assist_prod[26:15];
 
