@@ -83,7 +83,7 @@ module eBike_tb();
 	RST_n = 1; 
 	repeat(5)@(posedge clk)
 	/*
-	//Test reset conditions -------------do via task?
+	//Test reset conditions
 	
 	//Test PB_intf -------------do via task?
 	if (iDUT.scale !== 3'b101) begin
@@ -225,7 +225,7 @@ module eBike_tb();
 	//YAW_RT = 16'h0000;
 	repeat(test_duration) @(posedge clk);
 	
-	$stop;
+	//$stop;
 	
 	
 	//Pedaling, even incline to higher incline
@@ -247,14 +247,19 @@ module eBike_tb();
 	repeat(test_duration) @(posedge clk);
 	
 	//Not pedaling, braking, going down an incline
-	cadence_period = 1000000;
+	cadence_period = 10000000;
 	TORQUE = 12'h000;
 	BRAKE = 12'h000;
 	YAW_RT = 16'h90F0;
 	repeat(test_duration) @(posedge clk);
 	
+	if (!iDUT.not_pedaling) begin
+		$display("not_pedaling should be high");
+		$stop;
+	end
+	
 	//Not pedalling, no incline
-	cadence_period = 10000000;
+	//cadence_period = 10000000;
 	BRAKE = 12'hFFF;
 	TORQUE = 12'h000;
 	YAW_RT = 16'h0000;
