@@ -158,7 +158,7 @@ module eBike_tb();
 	
 	YAW_RT = 16'h0000;
 	TORQUE = 12'h000;
-	BRAKE = 12'hFFF;		//FFF or 000?
+	BRAKE = 12'hFFF;
 	BATT = 12'hFFF;
 	
 	repeat(100000) @(posedge clk);
@@ -233,7 +233,7 @@ module eBike_tb();
 	TORQUE = 12'h0FF;
 	YAW_RT = 16'h0000;
 	repeat(100000) @(posedge clk);
-	YAW_RT = 16'h0500;
+	YAW_RT = 16'h0800;
 	repeat(100000) @(posedge clk);
 	YAW_RT = 16'h1000;
 	repeat(100000) @(posedge clk);
