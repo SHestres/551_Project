@@ -83,19 +83,21 @@ end
 
 logic signed [12:0] D_diff;
 logic signed [8:0] D_diff_sat;
-
-assign D_diff = error - prev_err;
-assign D_diff_sat = (D_diff > $signed(9'h0FF)) ? $signed(9'h0FF) :
+logic signed [9:0] D_term;
+always_ff @(posedge clk) begin: pipeline_flops
+    D_diff <= error - prev_err;
+    D_diff_sat <= (D_diff > $signed(9'h0FF)) ? $signed(9'h0FF) :
                     (D_diff < $signed(9'h100)) ? $signed(9'h100) : D_diff;
 
-logic signed [9:0] D_term;
-assign D_term = D_diff_sat << 2;
+
+    D_term <= D_diff_sat << 2;
+end: pipeline_flops
 
 ///////////////////////////////////////////////////////////
 ///// Sum over the PID term and determine the drv_mag /////
 ///////////////////////////////////////////////////////////
 logic [13:0] PID, I_ext, D_ext;
-logic [11:0] drv_mag_tmp;
+logic [11:0] drv_mag_tmp; 
 assign I_ext = {1'b0, I_term};
 assign D_ext = {{4{D_term[9]}}, D_term};
 assign PID = P_term + I_term + D_term;

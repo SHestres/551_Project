@@ -17,20 +17,27 @@ module SPI_mnrch(
 	if (ld_SCLK)
 	  SCLK_div <= 5'b10111;
 	else
-	  SCLK_div <= SCLK_div + 1'b1;	
+	  SCLK_div <= SCLK_div + 1'b1;
   end	
   assign SCLK = SCLK_div[4];	
   assign full = (&SCLK_div) ? 1'b1 : 1'b0;	
   assign shft = (SCLK_div == 5'b10001) ? 1'b1 : 1'b0;
   
   // Counter to know when shifting is done
-  assign bit_cntr_d1 = (shft == 1'b1) ? bit_cntr + 1 : bit_cntr; 
-  assign bit_cntr_d2 = (init == 1'b1) ? 5'b00000 : bit_cntr_d1;	  
-  assign done16 = (bit_cntr == 5'b10000) ? 1'b1 : 1'b0;
-  always @(posedge clk) begin
-    if (shft | init)
-      bit_cntr <= bit_cntr_d2; 
+  always @(posedge clk) begin 
+	if (init) 
+	  bit_cntr <=  5'b00000;
+	else if (shft)
+	  bit_cntr <= bit_cntr + 1'b1;
   end
+  assign done16 = (bit_cntr == 5'b10000) ? 1'b1 : 1'b0;
+  //assign bit_cntr_d1 = (shft == 1'b1) ? bit_cntr + 1 : bit_cntr; 
+  //assign bit_cntr_d2 = (init == 1'b1) ? 5'b00000 : bit_cntr_d1;	  
+  
+  //always @(posedge clk) begin
+  //  if (shft | init)
+  //    bit_cntr <= bit_cntr_d2; 
+  //end
   
   
   // Shift Register

@@ -114,12 +114,12 @@ module inert_intf(
 						      nxt_state = rollL;
 						  end
 	  rollL            : begin
-						    cmd = 16'hA4xx;
+						    cmd = 16'hA400;
 						    snd = 1'b1;
 						    nxt_state = rollH;
 						  end
 	  rollH				: begin
-						    cmd = 16'hA5xx;
+						    cmd = 16'hA500;
 						    if (done) begin
 						      C_R_L = 1'b1;
 						      snd = 1'b1;
@@ -127,7 +127,7 @@ module inert_intf(
 						    end
 						  end
 	  yawL            	: begin
-						    cmd = 16'hA6xx;
+						    cmd = 16'hA600;
 						    if (done) begin
 						      C_R_H = 1'b1;
 						      snd = 1'b1;
@@ -135,7 +135,7 @@ module inert_intf(
 						    end
 						  end
 	  yawH			  	: begin
-						    cmd = 16'hA7xx;
+						    cmd = 16'hA700;
 						    if (done) begin
 						      C_Y_L = 1'b1;
 						      snd = 1'b1;
@@ -143,7 +143,7 @@ module inert_intf(
 						    end
 						  end
 	  AYL            	: begin
-						    cmd = 16'hAAxx;
+						    cmd = 16'hAA00;
 						    if (done) begin
 						      C_Y_H = 1'b1;
 						      snd = 1'b1;
@@ -151,7 +151,7 @@ module inert_intf(
 						    end
 						  end
 	  AYH			  	: begin
-						    cmd = 16'hABxx;
+						    cmd = 16'hAB00;
 						    if (done) begin
 						      C_AY_L = 1'b1;
 						      snd = 1'b1;
@@ -159,7 +159,7 @@ module inert_intf(
 						    end
 						  end
 	  AZL            	: begin
-						    cmd = 16'hACxx;
+						    cmd = 16'hAC00;
 						    if (done) begin
 						      C_AY_H = 1'b1;
 						      snd = 1'b1;
@@ -167,7 +167,7 @@ module inert_intf(
 						    end
 						  end
 	  AZH			  	: begin
-						    cmd = 16'hADxx;
+						    cmd = 16'hAD00;
 						    if (done) begin
 						      C_AZ_L = 1'b1;
 						      snd = 1'b1;
