@@ -1,64 +1,129 @@
-module desiredDrive(clk, avg_torque, cadence, not_pedaling, incline, scale, target_curr);
+// module desiredDrive(
+//     input [11:0] avg_torque,
+//     input [4:0] cadence,
+//     input not_pedaling,
+//     input signed [12:0] incline,
+//     input [2:0] scale,
+//     input clk,
+//     input rst_n,
+//     output [11:0] target_curr
+// );
+
+// localparam TORQUE_MIN = 12'h380;
+// localparam TOO_SMALL = 5'h05;
+
+// // Limit the incling sensor to its effective 10 bit range.
+// logic signed [9:0] incline_sat;
+// assign incline_sat = (incline[12] & ~&incline[11:9]) ? 10'h200 :
+//                     (~incline[12] & |incline[11:9]) ? 10'h1FF :
+//                     incline[9:0];
+
+// // Adjust the pedaling helping effort for steep hills
+// logic signed [10:0] incline_factor;
+// assign incline_factor = {incline_sat[9], incline_sat[9:0]} + 11'd256;
+
+// // Make the inc_factor fall in the range of 0-511 by limiting and clipping it
+// logic [8:0] incline_factor_limit;
+// assign incline_factor_limit = (incline_factor[10]) ? 9'h000 : 		// set value to 0 if less than 0
+//                             (incline_factor[9]) ? 9'd511 :		// saturate at 511 if larger than 511
+//                             incline_factor[8:0];
+
+// // Adjust the helping rate from motor and add that to the cadence
+// logic [5:0] cadence_factor;
+// assign cadence_factor = (cadence > 1) ? (cadence + 6'd32) : 6'h00;
+
+// // Subtract the offset of the start of the motor
+// logic signed [12:0]torque_off;
+// assign torque_off = {1'b0, avg_torque} - {1'b0, TORQUE_MIN};
+
+// // Limit the torque_off to zero when the subtraction gives a negative value; we don't want to interpret it as negative val.
+// logic [12:0] torque_pos;
+// assign torque_pos = (torque_off[12]) ? 12'h000 : torque_off[11:0];
+
+// // The assist level is the product of incline factor, rider's riding effort, and scale.
+// logic signed [30:0] assist_prod;
+// assign assist_prod = not_pedaling ? 30'h00000000 : (torque_pos * incline_factor_limit * cadence_factor * scale);
+
+// // If the assist level saturates to a 12-bit value we make the max assist.
+// assign target_curr = (|assist_prod[29:27]) ? 12'hFFF : assist_prod[26:15];
+
+// endmodule
+
+module desiredDrive(
+    input [11:0] avg_torque,
+    input [4:0] cadence,
+    input not_pedaling,
+    input signed [12:0] incline,
+    input [2:0] scale,
+    input clk,
+    input rst_n,
+    output [11:0] target_curr
+);
 
 localparam TORQUE_MIN = 12'h380;
+localparam TOO_SMALL = 5'h05;
 
-input clk;
-input [11:0]avg_torque;
-input [4:0]cadence;
-input not_pedaling;
-input [12:0]incline;
-input[2:0]scale;
-output [11:0]target_curr;
+// Limit the incling sensor to its effective 10 bit range.
+logic signed [9:0] incline_sat;
+assign incline_sat = (incline[12] & ~&incline[11:9]) ? 10'h200 :
+                    (~incline[12] & |incline[11:9]) ? 10'h1FF :
+                    incline[9:0];
 
-logic [9:0]inclineSat;
-logic signed [10:0]incline_factor;
-logic [8:0]incline_lim;
-logic [12:0]torque_off;
-logic [11:0]torque_pos;
-logic [29:0]assist_prod, assist_prod_1;
-logic [5:0]cadence_factor;
+// Adjust the pedaling helping effort for steep hills
+logic signed [10:0] incline_factor;
+assign incline_factor = {incline_sat[9], incline_sat[9:0]} + 11'd256;
 
-incline_sat iInSat(.incline(incline), .incline_sat(inclineSat));
+// Make the inc_factor fall in the range of 0-511 by limiting and clipping it
+logic [8:0] incline_factor_limit;
+assign incline_factor_limit = (incline_factor[10]) ? 9'h000 : 		// set value to 0 if less than 0
+                            (incline_factor[9]) ? 9'd511 :		// saturate at 511 if larger than 511
+                            incline_factor[8:0];
 
-assign incline_factor = {inclineSat[9], inclineSat} + 256;
-
-/*
-assign incline_lim = 	incline_factor[10] ? 0 :
-			|incline_factor[10:9] ? 511 :
-			incline_factor[8:0];
-*/
-
-//assign cadence_factor = |cadence[4:1] ? cadence + 32 : 0;
-
+// Subtract the offset of the start of the motor
+logic signed [12:0] torque_off;
+logic [12:0] torque_pos;
 assign torque_off = {1'b0, avg_torque} - {1'b0, TORQUE_MIN};
 
-//assign torque_pos = torque_off[12] ? 0 : torque_off[11:0];
-
-
-always_ff @(posedge clk) begin: pipeline_flops
-incline_lim <= incline_factor[10] ? 0 :
-		|incline_factor[10:9] ? 511 :
-		incline_factor[8:0];
-
-cadence_factor <= |cadence[4:1] ? cadence + 32 : 0;
-
-torque_pos <= torque_off[12] ? 0 : torque_off[11:0];
-
+// Adjust the helping rate from motor and add that to the cadence
+logic [5:0] cadence_factor, cad_plus_32, cad_old;
+// ------------------Pipelining to meet timing and reduce area added by Synopsis---------------
+always_ff @(posedge clk, negedge rst_n) begin: pipeline_flops
+    if (~rst_n) begin
+        cadence_factor <= 0;
+        cad_plus_32 <= 0;
+        cad_old <= 0;
+    end
+    else begin
+        cad_old <= cadence;
+        cad_plus_32 <= cadence + 32;
+        cadence_factor <= (cad_old > 1) ? cad_plus_32 : 6'h00;
+        // Limit the torque_off to zero when the subtraction gives a negative value; we don't want to interpret it as negative val.
+        torque_pos <= torque_off[12] ? 12'h000 : torque_off[11:0];
+    end
 end: pipeline_flops
 
+logic signed [30:0] torq_times_scale, inc_times_cad;
+logic signed [30:0] assist_prod_check;
+always_ff @(posedge clk, negedge rst_n) begin: second_pipeline
+    if (~rst_n) begin
+        torq_times_scale <= 0;
+        inc_times_cad <= 0;
+        assist_prod_check <= 0;
+    end
+    else begin
+        torq_times_scale <= torque_pos * scale;
+        inc_times_cad <= incline_factor_limit * cadence_factor;
+        assist_prod_check <= torq_times_scale * inc_times_cad;
+    end
 
-logic [14:0]mult1;
-logic [14:0]mult2;
-always_ff @(posedge clk) begin: second_pipeline
-	mult1 <= torque_pos * scale;
-	mult2 <= incline_lim * cadence_factor;
-	assist_prod <= mult1 * mult2;
 end: second_pipeline
+// ------------------Pipelining to meet timing and reduce area added by Synopsis---------------
 
-//assign assist_prod = not_pedaling ? 0 : torque_pos * incline_lim * cadence_factor * scale;
+// The assist level is the product of incline factor, rider's riding effort, and scale.
+logic signed [30:0] assist_prod;
+assign assist_prod = not_pedaling ? 30'h00000000 : assist_prod_check;
 
-assign assist_prod_1 = not_pedaling ? 0 : assist_prod;
-
-assign target_curr = |assist_prod_1[29:27] ? 12'hFFF : assist_prod_1[26:15];
+// If the assist level saturates to a 12-bit value we make the max assist.
+assign target_curr = (|assist_prod[29:27]) ? 12'hFFF : assist_prod[26:15];
 
 endmodule
