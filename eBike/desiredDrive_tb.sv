@@ -31,7 +31,7 @@ initial begin
     inc = 13'h1F22;
     sc = 3'h5;
     np = 1'b0;
-    #25;
+    #50;
     if (tar_cur !== 12'h11E)
         begin
             $display("error present in test2\n");
