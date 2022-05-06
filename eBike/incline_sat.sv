@@ -1,15 +1,8 @@
 module incline_sat(
-  input signed [12:0] incline,
-  output signed [9:0] incline_sat
+    input [12:0] incline,
+    output [9:0] incline_sat
 );
 
-	logic signed [12:0] max = 13'b0000111111111;
-	logic signed [12:0] min = 13'b1111000000000;
-	logic signed [12:0] minmax;
-	
-	assign minmax = (incline[12] == 0) ? (incline - max) : (incline - min);
-	
-	assign incline_sat = (incline[12] == 0) ? ((minmax > 13'h0000) ? max[9:0] : {1'b0, incline[8:0]}) 
-											  : ((minmax < 13'h0000) ? min[9:0] : {1'b1, incline[8:0]});
-
+assign incline_sat = (~incline[12] && |incline[12:9]) ? 10'h1FF :// if pos and larger
+                    (incline[12] && ~(&incline[12:9])) ? 10'h200 : incline[9:0];
 endmodule
