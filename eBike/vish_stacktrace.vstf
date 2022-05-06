@@ -1,0 +1,27 @@
+# Current time Fri May 06 13:00:03 2022
+# ModelSim ALTERA Stack Trace
+# Program = vish
+# Id = "10.4d"
+# Version = "2015.12"
+# Date = "Dec 30 2015"
+# Platform = win32pe
+
+Exception c0000005 has occurred at address 00555bb5. Traceback:
+# Current time Fri May 06 13:06:11 2022
+# ModelSim ALTERA Stack Trace
+# Program = vish
+# Id = "10.4d"
+# Version = "2015.12"
+# Date = "Dec 30 2015"
+# Platform = win32pe
+
+Exception c0000005 has occurred at address 0061a0aa. Traceback:
+# Current time Fri May 06 13:15:41 2022
+# ModelSim ALTERA Stack Trace
+# Program = vish
+# Id = "10.4d"
+# Version = "2015.12"
+# Date = "Dec 30 2015"
+# Platform = win32pe
+
+Exception c0000005 has occurred at address 0061aca8. Traceback:
