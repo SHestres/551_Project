@@ -10,45 +10,108 @@ z2
 cModel Technology
 Z0 dC:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project
 <<<<<<< HEAD
-!s100 6`aLnTc^F5WaR3jB<@M=h3
-INdf84V8I;Bn38:lBzYnJN2
-Z1 =======
-R0
-<<<<<<< HEAD
-!s100 D^ET@mdY8]@0^^HREjiE^3
-R1
-!s100 9>kVU]0NVoTFXl_9f<zJm3
-IJ@Vk31jT@mCR^7Q>T;@d=2
-R0
-<<<<<<< HEAD
-w1651693970
-R1
-R0
-<<<<<<< HEAD
 S1
-Z2 d/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike
-w1651693233
-8/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/desiredDrive.sv
-F/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/desiredDrive.sv
-!i122 29
-L0 1 54
-Z3 OE;L;2020.2_2;71
+Z1 d/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike
+w1651693225
+8/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/sensorCondition.sv
+F/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/sensorCondition.sv
+!i122 41
+L0 1 98
+Z2 OE;L;2020.2_2;71
 r1
 !s85 0
 31
-Z4 !s108 1651693236.000000
-!s107 /filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/desiredDrive.sv|
-!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/desiredDrive.sv|
+Z3 !s108 1651693237.000000
+!s107 /filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/sensorCondition.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/sensorCondition.sv|
 !i113 0
-Z5 o-work work -sv
-Z6 tCvgOpt 0
+Z4 o-work work -sv
+Z5 tCvgOpt 0
+Z6 nsensor@condition
+<<<<<<< HEAD
+Z7 !s110 1651693237
+Z8 =======
+!s110 1651689261
+R0
+<<<<<<< HEAD
+S1
 R1
-w1651693822
+w1651689757
+8/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/PID.sv
+F/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/PID.sv
+!i122 38
+L0 1 106
+R2
+r1
+!s85 0
+31
+R3
+!s107 /filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/PID.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/PID.sv|
+!i113 0
+R4
+R5
+R8
+w1651687433
+Z9 8C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PID.sv
+Z10 FC:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PID.sv
+L0 1
+Z11 w1651509084
+r1
+!s85 0
+31
+!s108 1651687460.000000
+Z12 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PID.sv|
+Z13 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PID.sv|
+!i113 1
+R2
+<<<<<<< HEAD
+R7
+!i10b 1
+!s100 FbVG_VjWjVf<B^2`Ui6i<1
+R8
+!s110 1651687460
+!i10b 1
+Z14 !s100 lV8M[:l^?<]gB<D0JVAfm3
+Z15 IScC@L;l2W^7LSaF4E1cga2
+R0
+<<<<<<< HEAD
+S1
+R1
+w1651689108
+8/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/eBike_tb.sv
+F/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/eBike_tb.sv
+!i122 31
+L0 1 283
+R2
+r1
+!s85 0
+31
+Z16 !s108 1651693236.000000
+!s107 /filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/eBike_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/eBike_tb.sv|
+!i113 0
+R4
+R5
+R8
+w1651690863
+Z17 8C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike_tb.sv
+Z18 FC:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike_tb.sv
+L0 1
+R11
+r1
+!s85 0
+31
+!s108 1651690865.000000
+!s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike_tb.sv|
+Z19 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike_tb.sv|
+!i113 1
+R2
 <<<<<<< HEAD
 !s110 1651693236
 !i10b 1
 !s100 Jm0jh?2ELMJa9=CZnUfO40
-R1
+R8
 !s110 1651690865
 !i10b 1
 !s100 n9N_GX:3lGLJMQfK73zh;3
@@ -56,123 +119,63 @@ IUg;D0nn@DN;cnHTe8]00Q3
 R0
 <<<<<<< HEAD
 S1
+R1
+w1651693233
+8/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/desiredDrive.sv
+F/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/desiredDrive.sv
+!i122 29
+L0 1 54
 R2
-w1651689108
-8/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/eBike_tb.sv
-F/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/eBike_tb.sv
-!i122 31
-L0 1 283
-R3
 r1
 !s85 0
 31
+R16
+!s107 /filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/desiredDrive.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/desiredDrive.sv|
+!i113 0
 R4
-!s107 /filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/eBike_tb.sv|
-!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/eBike_tb.sv|
-!i113 0
 R5
-R6
-R1
-w1651690863
-Z7 8C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike_tb.sv
-Z8 FC:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike_tb.sv
-L0 1
-Z9 w1651509084
-r1
-!s85 0
-31
-!s108 1651690865.000000
-!s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike_tb.sv|
-Z10 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike_tb.sv|
-!i113 1
-R3
+R8
+w1651693822
 <<<<<<< HEAD
-Z11 !s110 1651693237
+w1651693970
+R8
+R0
+<<<<<<< HEAD
+!s100 D^ET@mdY8]@0^^HREjiE^3
+R8
+!s100 9>kVU]0NVoTFXl_9f<zJm3
+IJ@Vk31jT@mCR^7Q>T;@d=2
+R0
+<<<<<<< HEAD
+!s100 6`aLnTc^F5WaR3jB<@M=h3
+INdf84V8I;Bn38:lBzYnJN2
+R8
+R0
+>>>>>>> 0259657c63a53bf5389652d64b73589809b69635
 !i10b 1
-!s100 FbVG_VjWjVf<B^2`Ui6i<1
-R1
-!s110 1651687460
-!i10b 1
-Z12 !s100 lV8M[:l^?<]gB<D0JVAfm3
-Z13 IScC@L;l2W^7LSaF4E1cga2
-R0
-<<<<<<< HEAD
-S1
-R2
-w1651689757
-8/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/PID.sv
-F/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/PID.sv
-!i122 38
-L0 1 106
-R3
-r1
-!s85 0
-31
-Z14 !s108 1651693237.000000
-!s107 /filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/PID.sv|
-!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/PID.sv|
-!i113 0
-R5
-R6
-R1
-w1651687433
-Z15 8C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PID.sv
-Z16 FC:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PID.sv
-L0 1
-R9
-r1
-!s85 0
-31
-!s108 1651687460.000000
-Z17 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PID.sv|
-Z18 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PID.sv|
-!i113 1
-R3
-<<<<<<< HEAD
-R11
-R1
-!s110 1651689261
-R0
-<<<<<<< HEAD
-S1
-R2
-w1651693225
-8/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/sensorCondition.sv
-F/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/sensorCondition.sv
-!i122 41
-L0 1 98
-R3
-r1
-!s85 0
-31
-R14
-!s107 /filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/sensorCondition.sv|
-!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/sensorCondition.sv|
-!i113 0
-R5
-R6
-Z19 nsensor@condition
->>>>>>> 0259657c63a53bf5389652d64b73589809b69635
-R0
->>>>>>> 0259657c63a53bf5389652d64b73589809b69635
-ndesired@drive
-R0
->>>>>>> 0259657c63a53bf5389652d64b73589809b69635
+!s100 93oj0i;UV@::cHMPGHMJ>1
 Z20 !s11b Dg1SIo80bB@j0V0VzS_@n1
-ID_]?ERL6L3gkSl24dH@P13
+IJNRC;EP5iCOH?TVbbXQgG2
 Z21 VDg1SIo80bB@j0V0VzS_@n1
-R0
->>>>>>> 0259657c63a53bf5389652d64b73589809b69635
-ne@bike_tb
-R0
->>>>>>> 0259657c63a53bf5389652d64b73589809b69635
-R20
-I94f>8LNeh?8]VaciAD2NE2
-R21
-R0
->>>>>>> 0259657c63a53bf5389652d64b73589809b69635
-n@p@i@d
-R0
+S1
+R1
+!s110 1651686511
+8/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/SPI_ADC128S.sv
+F/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/SPI_ADC128S.sv
+!i122 42
+L0 1 140
+R2
+r1
+!s85 0
+31
+R3
+!s107 /filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/SPI_ADC128S.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/SPI_ADC128S.sv|
+!i113 0
+R4
+R5
+n@s@p@i_@a@d@c128@s
 >>>>>>> 0259657c63a53bf5389652d64b73589809b69635
 !i10b 1
 !s100 j[:VhVgdKf@CMSdk3zA?V3
@@ -181,39 +184,31 @@ IM?<HW3DzJo;iGi7iH55eW3
 R21
 R0
 >>>>>>> 0259657c63a53bf5389652d64b73589809b69635
-!i10b 1
-!s100 93oj0i;UV@::cHMPGHMJ>1
+n@p@i@d
+R0
+>>>>>>> 0259657c63a53bf5389652d64b73589809b69635
 R20
-IJNRC;EP5iCOH?TVbbXQgG2
+I94f>8LNeh?8]VaciAD2NE2
 R21
-S1
-R2
-!s110 1651686511
-8/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/SPI_ADC128S.sv
-F/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/SPI_ADC128S.sv
-!i122 42
-L0 1 140
-R3
-r1
-!s85 0
-31
-R14
-!s107 /filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/SPI_ADC128S.sv|
-!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/filespace/s/shestres/ECE 551/551_Project/551_Project/eBike/SPI_ADC128S.sv|
-!i113 0
-R5
-R6
-n@s@p@i_@a@d@c128@s
->>>>>>> 600d4fa9ec9b416b7961783abddb589753b72d91
+R0
+>>>>>>> 0259657c63a53bf5389652d64b73589809b69635
+ne@bike_tb
+R0
+>>>>>>> 0259657c63a53bf5389652d64b73589809b69635
 R20
-I58UG`CKPX78OTQXnb12U>2
+ID_]?ERL6L3gkSl24dH@P13
 R21
+R0
+>>>>>>> 0259657c63a53bf5389652d64b73589809b69635
+ndesired@drive
+R0
+>>>>>>> 0259657c63a53bf5389652d64b73589809b69635
 R0
 >>>>>>> 600d4fa9ec9b416b7961783abddb589753b72d91
 Z22 8C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desiredDrive.sv
 Z23 FC:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desiredDrive.sv
 L0 1
-R9
+R11
 r1
 !s85 0
 31
@@ -221,7 +216,12 @@ r1
 Z24 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desiredDrive.sv|
 Z25 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desiredDrive.sv|
 !i113 1
-R3
+R2
+R0
+>>>>>>> 600d4fa9ec9b416b7961783abddb589753b72d91
+R20
+I58UG`CKPX78OTQXnb12U>2
+R21
 R0
 vA2D_intf
 Z26 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
@@ -245,7 +245,7 @@ r1
 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/A2D_intf.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/A2D_intf.sv|
 !i113 1
-R5
+R4
 n@a2@d_intf
 vAnalogModel
 R26
@@ -269,7 +269,7 @@ Z31 !s108 1651790779.000000
 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/AnalogModel.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/AnalogModel.sv|
 !i113 1
-R5
+R4
 n@analog@model
 vbrushless
 R26
@@ -293,7 +293,7 @@ R31
 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/brushless.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/brushless.sv|
 !i113 1
-R5
+R4
 vcadence_filt
 R26
 R30
@@ -316,7 +316,7 @@ R31
 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/cadence_filt.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/cadence_filt.sv|
 !i113 1
-R5
+R4
 vcadence_LU
 R26
 R30
@@ -339,7 +339,7 @@ R31
 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/cadence_LU.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/cadence_LU.sv|
 !i113 1
-R5
+R4
 ncadence_@l@u
 vcadence_meas
 R26
@@ -363,7 +363,7 @@ Z33 !s108 1651790780.000000
 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/cadence_meas.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/cadence_meas.sv|
 !i113 1
-R5
+R4
 vdesiredDrive
 R26
 !s110 1651797286
@@ -386,7 +386,7 @@ r1
 R24
 R25
 !i113 1
-R5
+R4
 veBike
 R26
 R32
@@ -409,7 +409,7 @@ R33
 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike.sv|
 !i113 1
-R5
+R4
 ne@bike
 XeBike_PB_tb_sv_unit
 R26
@@ -433,32 +433,32 @@ r1
 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike_PB_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike_PB_tb.sv|
 !i113 1
-R5
+R4
 ne@bike_@p@b_tb_sv_unit
 veBike_tb
 R26
-!s110 1651793214
+Z34 !s110 1651806762
 !i10b 1
-!s100 5SRI04c<Zz9VW0Sa:P?M=2
-ITYbTQhhzCMiG93gXD:^O53
+!s100 Z4Zd?O[<c5Te9cU<VkeOK3
+Ilh3O:@C7<H7T_L^VdaOgi0
 R21
 !s105 eBike_tb_sv_unit
 S1
 R27
-w1651793212
-R7
-R8
+w1651806760
+R17
+R18
 FeBike_PB_tb.sv
 L0 1
 R29
 r1
 !s85 0
 31
-!s108 1651793214.000000
+Z35 !s108 1651806762.000000
 !s107 eBike_PB_tb.sv|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike_tb.sv|
-R10
+R19
 !i113 1
-R5
+R4
 veBikePhysics
 R26
 R32
@@ -481,7 +481,7 @@ R33
 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBikePhysics.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBikePhysics.sv|
 !i113 1
-R5
+R4
 ne@bike@physics
 vincline_sat
 R26
@@ -505,7 +505,7 @@ R33
 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/incline_sat.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/incline_sat.sv|
 !i113 1
-R5
+R4
 vinert_intf
 R26
 !s110 1651798043
@@ -528,7 +528,7 @@ r1
 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/inert_intf.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/inert_intf.sv|
 !i113 1
-R5
+R4
 vinertial_integrator
 R26
 R32
@@ -551,7 +551,7 @@ R33
 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/inertial_integrator.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/inertial_integrator.sv|
 !i113 1
-R5
+R4
 vmtr_drv
 R26
 R32
@@ -574,7 +574,7 @@ R33
 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/mtr_drv.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/mtr_drv.sv|
 !i113 1
-R5
+R4
 vnonoverlap
 R26
 R32
@@ -597,7 +597,7 @@ R33
 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/nonoverlap.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/nonoverlap.sv|
 !i113 1
-R5
+R4
 vPB_intf
 R26
 R32
@@ -620,11 +620,11 @@ R33
 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PB_intf.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PB_intf.sv|
 !i113 1
-R5
+R4
 n@p@b_intf
 vPB_rise
 R26
-Z34 !s110 1651790781
+Z36 !s110 1651790781
 !i10b 1
 !s100 CdLj9hcGKdd;W2QcPOTNh0
 IU<G`j4?2NYd@eY1dT?Jfn1
@@ -640,38 +640,38 @@ R29
 r1
 !s85 0
 31
-Z35 !s108 1651790781.000000
+Z37 !s108 1651790781.000000
 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PB_rise.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PB_rise.sv|
 !i113 1
-R5
+R4
 n@p@b_rise
 vPID
 R26
-R34
+R36
 !i10b 1
-R12
-R13
+R14
+R15
 R21
 !s105 PID_sv_unit
 S1
 R27
 w1651783895
-R15
-R16
+R9
+R10
 L0 1
 R29
 r1
 !s85 0
 31
-R35
-R17
-R18
+R37
+R12
+R13
 !i113 1
-R5
+R4
 vPWM
 R26
-R34
+R36
 !i10b 1
 !s100 I;@T@b^Cz8c4WKlK9VF]70
 IPQzF=IWXK2XD6f?dgaSkH2
@@ -687,15 +687,15 @@ R29
 r1
 !s85 0
 31
-R35
+R37
 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PWM.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PWM.sv|
 !i113 1
-R5
+R4
 n@p@w@m
 vrst_synch
 R26
-R34
+R36
 !i10b 1
 !s100 iMOmLzSh6@VgjO0P;[:ja2
 IB4h2mM?^jz[_Cii]F:Wo:0
@@ -711,14 +711,14 @@ R29
 r1
 !s85 0
 31
-R35
+R37
 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/rst_synch.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/rst_synch.sv|
 !i113 1
-R5
+R4
 vsensorCondition
 R26
-R34
+R36
 !i10b 1
 !s100 4`>KmGBQ4Q4bQOCn@Jd`_2
 INBf1jV;=>N7m?YMO`TSi23
@@ -734,61 +734,61 @@ R29
 r1
 !s85 0
 31
-R35
+R37
 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/sensorCondition.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/sensorCondition.sv|
 !i113 1
-R5
+R4
+vSPI_ADC128S
+R26
+R36
+!i10b 1
+Z38 !s100 ;E62=i88@ghW83DU@9;CK1
+Z39 I9K@S^9RXHH<Z=l^?@]h3m2
+R21
+Z40 !s105 SPI_ADC128S_sv_unit
+S1
+R27
+R28
+Z41 8C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/SPI_ADC128S.sv
+Z42 FC:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/SPI_ADC128S.sv
+L0 1
+R29
+r1
+!s85 0
+31
+R37
+Z43 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/SPI_ADC128S.sv|
+Z44 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/SPI_ADC128S.sv|
+!i113 1
+R4
 vSPI_ADC128S
 R26
 !s110 1651694991
 !i10b 1
-Z36 !s100 ;E62=i88@ghW83DU@9;CK1
-Z37 I9K@S^9RXHH<Z=l^?@]h3m2
+R38
+R39
 R21
-Z38 !s105 SPI_ADC128S_sv_unit
+R40
 S1
 R27
 R28
-Z39 8C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/SPI_ADC128S.sv
-Z40 FC:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/SPI_ADC128S.sv
+R41
+R42
 L0 1
 R29
 r1
 !s85 0
 31
 !s108 1651694991.000000
-Z41 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/SPI_ADC128S.sv|
-Z42 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/SPI_ADC128S.sv|
+R43
+R44
 !i113 1
-R5
-R19
-vSPI_ADC128S
-R26
-R34
-!i10b 1
-R36
-R37
-R21
-R38
-S1
-R27
-R28
-R39
-R40
-L0 1
-R29
-r1
-!s85 0
-31
-R35
-R41
-R42
-!i113 1
-R5
+R4
+R6
 vSPI_mnrch
 R26
-!s110 1651801539
+R34
 !i10b 1
 !s100 @4[7U]kB@oFKA9dbeFcg53
 IM:<hJ<]^V0A7X__OATahT1
@@ -796,7 +796,7 @@ R21
 !s105 SPI_mnrch_sv_unit
 S1
 R27
-w1651801532
+w1651802611
 8C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/SPI_mnrch.sv
 FC:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/SPI_mnrch.sv
 L0 1
@@ -804,15 +804,15 @@ R29
 r1
 !s85 0
 31
-!s108 1651801539.000000
+R35
 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/SPI_mnrch.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/SPI_mnrch.sv|
 !i113 1
-R5
+R4
 n@s@p@i_mnrch
 vtelemetry
 R26
-R34
+R36
 !i10b 1
 !s100 UoO`gbzY7FCW?TfZ;LE1P0
 IlN49BiMcVGK0TUEAHWWVG2
@@ -828,14 +828,14 @@ R29
 r1
 !s85 0
 31
-R35
+R37
 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/telemetry.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/telemetry.sv|
 !i113 1
-R5
+R4
 vUART_rcv
 R26
-R34
+R36
 !i10b 1
 !s100 MBb47WGd32`OOK8:kRfJX3
 I=LJn8cfAejAo]9[W0G?N03
@@ -851,15 +851,15 @@ R29
 r1
 !s85 0
 31
-R35
+R37
 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/UART_rcv.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/UART_rcv.sv|
 !i113 1
-R5
+R4
 n@u@a@r@t_rcv
 vUART_tx
 R26
-R34
+R36
 !i10b 1
 !s100 gg7Z3ATZmDYoMNdni17W63
 IEo_kJz81Da`E5KdjNiGIl3
@@ -875,9 +875,9 @@ R29
 r1
 !s85 0
 31
-R35
+R37
 !s107 C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/UART_tx.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/UART_tx.sv|
 !i113 1
-R5
+R4
 n@u@a@r@t_tx

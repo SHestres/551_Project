@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu May 05 22:55:33 2022
+Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+Revision Name : eBike
+Top-level Entity Name : eBike
+Family : Cyclone IV E
+Total logic elements : 1,232
+    Total combinational functions : 1,064
+    Dedicated logic registers : 574
+Total registers : 574
+Total pins : 25
+Total virtual pins : 0
+Total memory bits : 39
+Embedded Multiplier 9-bit elements : 3
+Total PLLs : 0

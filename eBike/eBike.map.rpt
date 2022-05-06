@@ -1,0 +1,1276 @@
+Analysis & Synthesis report for eBike
+Thu May 05 22:55:33 2022
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis DSP Block Usage Summary
+ 10. State Machine - |eBike|inert_intf:iINERT|state
+ 11. State Machine - |eBike|inert_intf:iINERT|SPI_mnrch:SPI|state
+ 12. State Machine - |eBike|sensorCondition:iSENSE|telemetry:iTele|state
+ 13. State Machine - |eBike|A2D_intf:iA2D|state
+ 14. State Machine - |eBike|A2D_intf:iA2D|SPI_mnrch:SPI|state
+ 15. Registers Removed During Synthesis
+ 16. Removed Registers Triggering Further Register Optimizations
+ 17. General Register Statistics
+ 18. Inverted Register Statistics
+ 19. Registers Packed Into Inferred Megafunctions
+ 20. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 21. Source assignments for PID:iPID|altshift_taps:first_synch_val_rtl_0|shift_taps_o5n:auto_generated|altsyncram_r861:altsyncram4
+ 22. Parameter Settings for User Entity Instance: Top-level Entity: |eBike
+ 23. Parameter Settings for User Entity Instance: sensorCondition:iSENSE
+ 24. Parameter Settings for User Entity Instance: sensorCondition:iSENSE|cadence_filt:iCadFilt
+ 25. Parameter Settings for User Entity Instance: sensorCondition:iSENSE|cadence_meas:iCadMeas
+ 26. Parameter Settings for User Entity Instance: PID:iPID
+ 27. Parameter Settings for Inferred Entity Instance: PID:iPID|altshift_taps:first_synch_val_rtl_0
+ 28. Parameter Settings for Inferred Entity Instance: sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult2
+ 29. Parameter Settings for Inferred Entity Instance: sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult0
+ 30. Parameter Settings for Inferred Entity Instance: sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult1
+ 31. Parameter Settings for Inferred Entity Instance: inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1
+ 32. Parameter Settings for Inferred Entity Instance: inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult0
+ 33. altshift_taps Parameter Settings by Entity Instance
+ 34. lpm_mult Parameter Settings by Entity Instance
+ 35. Port Connectivity Checks: "inert_intf:iINERT|SPI_mnrch:SPI"
+ 36. Port Connectivity Checks: "inert_intf:iINERT"
+ 37. Port Connectivity Checks: "A2D_intf:iA2D|SPI_mnrch:SPI"
+ 38. Post-Synthesis Netlist Statistics for Top Partition
+ 39. Elapsed Time Per Partition
+ 40. Analysis & Synthesis Messages
+ 41. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu May 05 22:55:33 2022       ;
+; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Revision Name                      ; eBike                                       ;
+; Top-level Entity Name              ; eBike                                       ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 1,232                                       ;
+;     Total combinational functions  ; 1,064                                       ;
+;     Dedicated logic registers      ; 574                                         ;
+; Total registers                    ; 574                                         ;
+; Total pins                         ; 25                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 39                                          ;
+; Embedded Multiplier 9-bit elements ; 3                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE22F17C6       ;                    ;
+; Top-level entity name                                                      ; eBike              ; eBike              ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                    ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                                          ; Library ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+; SPI_mnrch.sv                     ; yes             ; User SystemVerilog HDL File        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/SPI_mnrch.sv           ;         ;
+; cadence_filt.sv                  ; yes             ; User SystemVerilog HDL File        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/cadence_filt.sv        ;         ;
+; cadence_meas.sv                  ; yes             ; User SystemVerilog HDL File        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/cadence_meas.sv        ;         ;
+; cadence_LU.sv                    ; yes             ; User SystemVerilog HDL File        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/cadence_LU.sv          ;         ;
+; sensorCondition.sv               ; yes             ; User SystemVerilog HDL File        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/sensorCondition.sv     ;         ;
+; UART_tx.sv                       ; yes             ; User SystemVerilog HDL File        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/UART_tx.sv             ;         ;
+; telemetry.sv                     ; yes             ; User SystemVerilog HDL File        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/telemetry.sv           ;         ;
+; PID.sv                           ; yes             ; User SystemVerilog HDL File        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PID.sv                 ;         ;
+; nonoverlap.sv                    ; yes             ; User SystemVerilog HDL File        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/nonoverlap.sv          ;         ;
+; brushless.sv                     ; yes             ; User SystemVerilog HDL File        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/brushless.sv           ;         ;
+; mtr_drv.sv                       ; yes             ; User SystemVerilog HDL File        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/mtr_drv.sv             ;         ;
+; inertial_integrator.sv           ; yes             ; User SystemVerilog HDL File        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/inertial_integrator.sv ;         ;
+; inert_intf.sv                    ; yes             ; User SystemVerilog HDL File        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/inert_intf.sv          ;         ;
+; PB_intf.sv                       ; yes             ; User SystemVerilog HDL File        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PB_intf.sv             ;         ;
+; eBike.sv                         ; yes             ; User SystemVerilog HDL File        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike.sv               ;         ;
+; A2D_intf.sv                      ; yes             ; User SystemVerilog HDL File        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/A2D_intf.sv            ;         ;
+; rst_synch.sv                     ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/rst_synch.sv           ;         ;
+; desireddrive.sv                  ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desireddrive.sv        ;         ;
+; incline_sat.sv                   ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/incline_sat.sv         ;         ;
+; pwm.sv                           ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/pwm.sv                 ;         ;
+; pb_rise.sv                       ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/pb_rise.sv             ;         ;
+; altshift_taps.tdf                ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/altshift_taps.tdf                   ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/altdpram.inc                        ;         ;
+; lpm_counter.inc                  ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/lpm_counter.inc                     ;         ;
+; lpm_compare.inc                  ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/lpm_compare.inc                     ;         ;
+; lpm_constant.inc                 ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/lpm_constant.inc                    ;         ;
+; db/shift_taps_o5n.tdf            ; yes             ; Auto-Generated Megafunction        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/shift_taps_o5n.tdf  ;         ;
+; db/altsyncram_r861.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/altsyncram_r861.tdf ;         ;
+; db/add_sub_24e.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/add_sub_24e.tdf     ;         ;
+; db/cntr_6pf.tdf                  ; yes             ; Auto-Generated Megafunction        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/cntr_6pf.tdf        ;         ;
+; db/cmpr_ogc.tdf                  ; yes             ; Auto-Generated Megafunction        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/cmpr_ogc.tdf        ;         ;
+; db/cntr_p8h.tdf                  ; yes             ; Auto-Generated Megafunction        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/cntr_p8h.tdf        ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/lpm_mult.tdf                        ;         ;
+; aglobal160.inc                   ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/aglobal160.inc                      ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/lpm_add_sub.inc                     ;         ;
+; multcore.inc                     ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/multcore.inc                        ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/bypassff.inc                        ;         ;
+; altshift.inc                     ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/altshift.inc                        ;         ;
+; db/mult_2dt.tdf                  ; yes             ; Auto-Generated Megafunction        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/mult_2dt.tdf        ;         ;
+; multcore.tdf                     ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/multcore.tdf                        ;         ;
+; csa_add.inc                      ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/csa_add.inc                         ;         ;
+; mpar_add.inc                     ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/mpar_add.inc                        ;         ;
+; muleabz.inc                      ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/muleabz.inc                         ;         ;
+; mul_lfrg.inc                     ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/mul_lfrg.inc                        ;         ;
+; mul_boothc.inc                   ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/mul_boothc.inc                      ;         ;
+; alt_ded_mult.inc                 ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/alt_ded_mult.inc                    ;         ;
+; alt_ded_mult_y.inc               ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/alt_ded_mult_y.inc                  ;         ;
+; dffpipe.inc                      ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/dffpipe.inc                         ;         ;
+; mpar_add.tdf                     ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/mpar_add.tdf                        ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/lpm_add_sub.tdf                     ;         ;
+; addcore.inc                      ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/addcore.inc                         ;         ;
+; look_add.inc                     ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/look_add.inc                        ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/alt_stratix_add_sub.inc             ;         ;
+; db/add_sub_2dh.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/add_sub_2dh.tdf     ;         ;
+; db/add_sub_3dh.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/add_sub_3dh.tdf     ;         ;
+; altshift.tdf                     ; yes             ; Megafunction                       ; c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/altshift.tdf                        ;         ;
+; db/mult_8at.tdf                  ; yes             ; Auto-Generated Megafunction        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/mult_8at.tdf        ;         ;
+; db/add_sub_ekh.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/add_sub_ekh.tdf     ;         ;
+; db/add_sub_k9h.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/add_sub_k9h.tdf     ;         ;
+; db/add_sub_ikh.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/add_sub_ikh.tdf     ;         ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 1,232     ;
+;                                             ;           ;
+; Total combinational functions               ; 1064      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 330       ;
+;     -- 3 input functions                    ; 405       ;
+;     -- <=2 input functions                  ; 329       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 566       ;
+;     -- arithmetic mode                      ; 498       ;
+;                                             ;           ;
+; Total registers                             ; 574       ;
+;     -- Dedicated logic registers            ; 574       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 25        ;
+; Total memory bits                           ; 39        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 3         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 587       ;
+; Total fan-out                               ; 5288      ;
+; Average fan-out                             ; 3.10      ;
++---------------------------------------------+-----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                         ;
++---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                    ; Entity Name         ; Library Name ;
++---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |eBike                                            ; 1064 (1)          ; 574 (0)      ; 39          ; 3            ; 1       ; 1         ; 25   ; 0            ; |eBike                                                                                                                                                 ; eBike               ; work         ;
+;    |A2D_intf:iA2D|                                ; 55 (14)           ; 74 (43)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|A2D_intf:iA2D                                                                                                                                   ; A2D_intf            ; work         ;
+;       |SPI_mnrch:SPI|                             ; 41 (41)           ; 31 (31)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|A2D_intf:iA2D|SPI_mnrch:SPI                                                                                                                     ; SPI_mnrch           ; work         ;
+;    |PB_intf:iPB|                                  ; 3 (2)             ; 5 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|PB_intf:iPB                                                                                                                                     ; PB_intf             ; work         ;
+;       |PB_rise:RSED|                              ; 1 (1)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|PB_intf:iPB|PB_rise:RSED                                                                                                                        ; PB_rise             ; work         ;
+;    |PID:iPID|                                     ; 116 (106)         ; 56 (50)      ; 39          ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|PID:iPID                                                                                                                                        ; PID                 ; work         ;
+;       |altshift_taps:first_synch_val_rtl_0|       ; 10 (0)            ; 6 (0)        ; 39          ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|PID:iPID|altshift_taps:first_synch_val_rtl_0                                                                                                    ; altshift_taps       ; work         ;
+;          |shift_taps_o5n:auto_generated|          ; 10 (2)            ; 6 (3)        ; 39          ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|PID:iPID|altshift_taps:first_synch_val_rtl_0|shift_taps_o5n:auto_generated                                                                      ; shift_taps_o5n      ; work         ;
+;             |altsyncram_r861:altsyncram4|         ; 0 (0)             ; 0 (0)        ; 39          ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|PID:iPID|altshift_taps:first_synch_val_rtl_0|shift_taps_o5n:auto_generated|altsyncram_r861:altsyncram4                                          ; altsyncram_r861     ; work         ;
+;             |cntr_6pf:cntr1|                      ; 5 (5)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|PID:iPID|altshift_taps:first_synch_val_rtl_0|shift_taps_o5n:auto_generated|cntr_6pf:cntr1                                                       ; cntr_6pf            ; work         ;
+;             |cntr_p8h:cntr5|                      ; 3 (3)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|PID:iPID|altshift_taps:first_synch_val_rtl_0|shift_taps_o5n:auto_generated|cntr_p8h:cntr5                                                       ; cntr_p8h            ; work         ;
+;    |brushless:iBRUSH|                             ; 10 (10)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|brushless:iBRUSH                                                                                                                                ; brushless           ; work         ;
+;    |inert_intf:iINERT|                            ; 394 (37)          ; 203 (96)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|inert_intf:iINERT                                                                                                                               ; inert_intf          ; work         ;
+;       |SPI_mnrch:SPI|                             ; 48 (48)           ; 31 (31)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|inert_intf:iINERT|SPI_mnrch:SPI                                                                                                                 ; SPI_mnrch           ; work         ;
+;       |inertial_integrator:INRTL|                 ; 309 (165)         ; 76 (76)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|inert_intf:iINERT|inertial_integrator:INRTL                                                                                                     ; inertial_integrator ; work         ;
+;          |lpm_mult:Mult0|                         ; 72 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult0                                                                                      ; lpm_mult            ; work         ;
+;             |multcore:mult_core|                  ; 72 (44)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult0|multcore:mult_core                                                                   ; multcore            ; work         ;
+;                |mpar_add:padder|                  ; 28 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                   ; mpar_add            ; work         ;
+;                   |lpm_add_sub:adder[0]|          ; 14 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                              ; lpm_add_sub         ; work         ;
+;                      |add_sub_k9h:auto_generated| ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_k9h:auto_generated   ; add_sub_k9h         ; work         ;
+;                   |lpm_add_sub:adder[1]|          ; 14 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]                              ; lpm_add_sub         ; work         ;
+;                      |add_sub_ekh:auto_generated| ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]|add_sub_ekh:auto_generated   ; add_sub_ekh         ; work         ;
+;          |lpm_mult:Mult1|                         ; 72 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1                                                                                      ; lpm_mult            ; work         ;
+;             |multcore:mult_core|                  ; 72 (44)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1|multcore:mult_core                                                                   ; multcore            ; work         ;
+;                |mpar_add:padder|                  ; 28 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder                                                   ; mpar_add            ; work         ;
+;                   |lpm_add_sub:adder[0]|          ; 14 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                              ; lpm_add_sub         ; work         ;
+;                      |add_sub_k9h:auto_generated| ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_k9h:auto_generated   ; add_sub_k9h         ; work         ;
+;                   |lpm_add_sub:adder[1]|          ; 14 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]                              ; lpm_add_sub         ; work         ;
+;                      |add_sub_ekh:auto_generated| ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]|add_sub_ekh:auto_generated   ; add_sub_ekh         ; work         ;
+;    |mtr_drv:iMTR|                                 ; 51 (6)            ; 28 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|mtr_drv:iMTR                                                                                                                                    ; mtr_drv             ; work         ;
+;       |PWM:PWM1|                                  ; 15 (15)           ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|mtr_drv:iMTR|PWM:PWM1                                                                                                                           ; PWM                 ; work         ;
+;       |nonoverlap:nonoverlap1|                    ; 10 (10)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|mtr_drv:iMTR|nonoverlap:nonoverlap1                                                                                                             ; nonoverlap          ; work         ;
+;       |nonoverlap:nonoverlap2|                    ; 10 (10)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|mtr_drv:iMTR|nonoverlap:nonoverlap2                                                                                                             ; nonoverlap          ; work         ;
+;       |nonoverlap:nonoverlap3|                    ; 10 (10)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|mtr_drv:iMTR|nonoverlap:nonoverlap3                                                                                                             ; nonoverlap          ; work         ;
+;    |rst_synch:iRST|                               ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|rst_synch:iRST                                                                                                                                  ; rst_synch           ; work         ;
+;    |sensorCondition:iSENSE|                       ; 434 (118)         ; 197 (47)     ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |eBike|sensorCondition:iSENSE                                                                                                                          ; sensorCondition     ; work         ;
+;       |cadence_LU:iCadLU|                         ; 26 (26)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|sensorCondition:iSENSE|cadence_LU:iCadLU                                                                                                        ; cadence_LU          ; work         ;
+;       |cadence_filt:iCadFilt|                     ; 14 (14)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|sensorCondition:iSENSE|cadence_filt:iCadFilt                                                                                                    ; cadence_filt        ; work         ;
+;       |cadence_meas:iCadMeas|                     ; 46 (46)           ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|sensorCondition:iSENSE|cadence_meas:iCadMeas                                                                                                    ; cadence_meas        ; work         ;
+;       |desiredDrive:iDesDrive|                    ; 144 (72)          ; 72 (72)      ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |eBike|sensorCondition:iSENSE|desiredDrive:iDesDrive                                                                                                   ; desiredDrive        ; work         ;
+;          |incline_sat:iInSat|                     ; 23 (23)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|sensorCondition:iSENSE|desiredDrive:iDesDrive|incline_sat:iInSat                                                                                ; incline_sat         ; work         ;
+;          |lpm_mult:Mult0|                         ; 49 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult0                                                                                    ; lpm_mult            ; work         ;
+;             |multcore:mult_core|                  ; 49 (36)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult0|multcore:mult_core                                                                 ; multcore            ; work         ;
+;                |mpar_add:padder|                  ; 13 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                 ; mpar_add            ; work         ;
+;                   |lpm_add_sub:adder[0]|          ; 13 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; lpm_add_sub         ; work         ;
+;                      |add_sub_2dh:auto_generated| ; 13 (13)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_2dh:auto_generated ; add_sub_2dh         ; work         ;
+;          |lpm_mult:Mult1|                         ; 0 (0)             ; 0 (0)        ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |eBike|sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult1                                                                                    ; lpm_mult            ; work         ;
+;             |mult_8at:auto_generated|             ; 0 (0)             ; 0 (0)        ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |eBike|sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult1|mult_8at:auto_generated                                                            ; mult_8at            ; work         ;
+;          |lpm_mult:Mult2|                         ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |eBike|sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult2                                                                                    ; lpm_mult            ; work         ;
+;             |mult_2dt:auto_generated|             ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |eBike|sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult2|mult_2dt:auto_generated                                                            ; mult_2dt            ; work         ;
+;       |telemetry:iTele|                           ; 86 (11)           ; 31 (7)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|sensorCondition:iSENSE|telemetry:iTele                                                                                                          ; telemetry           ; work         ;
+;          |UART_tx:iTX|                            ; 75 (75)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eBike|sensorCondition:iSENSE|telemetry:iTele|UART_tx:iTX                                                                                              ; UART_tx             ; work         ;
++---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                      ;
++-------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                                              ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++-------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; PID:iPID|altshift_taps:first_synch_val_rtl_0|shift_taps_o5n:auto_generated|altsyncram_r861:altsyncram4|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 3            ; 13           ; 3            ; 13           ; 39   ; None ;
++-------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 1           ;
+; Simple Multipliers (18-bit)           ; 1           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 3           ;
+; Signed Embedded Multipliers           ; 0           ;
+; Unsigned Embedded Multipliers         ; 2           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |eBike|inert_intf:iINERT|state                                                                                                                                                      ;
++-------------+------------+-----------+-----------+-----------+-----------+------------+------------+-------------+-------------+------------+-------------+-------------+-------------+-------------+
+; Name        ; state.DONE ; state.AZH ; state.AZL ; state.AYH ; state.AYL ; state.yawH ; state.yawL ; state.rollH ; state.rollL ; state.WAIT ; state.INIT4 ; state.INIT3 ; state.INIT2 ; state.INIT1 ;
++-------------+------------+-----------+-----------+-----------+-----------+------------+------------+-------------+-------------+------------+-------------+-------------+-------------+-------------+
+; state.INIT1 ; 0          ; 0         ; 0         ; 0         ; 0         ; 0          ; 0          ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ;
+; state.INIT2 ; 0          ; 0         ; 0         ; 0         ; 0         ; 0          ; 0          ; 0           ; 0           ; 0          ; 0           ; 0           ; 1           ; 1           ;
+; state.INIT3 ; 0          ; 0         ; 0         ; 0         ; 0         ; 0          ; 0          ; 0           ; 0           ; 0          ; 0           ; 1           ; 0           ; 1           ;
+; state.INIT4 ; 0          ; 0         ; 0         ; 0         ; 0         ; 0          ; 0          ; 0           ; 0           ; 0          ; 1           ; 0           ; 0           ; 1           ;
+; state.WAIT  ; 0          ; 0         ; 0         ; 0         ; 0         ; 0          ; 0          ; 0           ; 0           ; 1          ; 0           ; 0           ; 0           ; 1           ;
+; state.rollL ; 0          ; 0         ; 0         ; 0         ; 0         ; 0          ; 0          ; 0           ; 1           ; 0          ; 0           ; 0           ; 0           ; 1           ;
+; state.rollH ; 0          ; 0         ; 0         ; 0         ; 0         ; 0          ; 0          ; 1           ; 0           ; 0          ; 0           ; 0           ; 0           ; 1           ;
+; state.yawL  ; 0          ; 0         ; 0         ; 0         ; 0         ; 0          ; 1          ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 1           ;
+; state.yawH  ; 0          ; 0         ; 0         ; 0         ; 0         ; 1          ; 0          ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 1           ;
+; state.AYL   ; 0          ; 0         ; 0         ; 0         ; 1         ; 0          ; 0          ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 1           ;
+; state.AYH   ; 0          ; 0         ; 0         ; 1         ; 0         ; 0          ; 0          ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 1           ;
+; state.AZL   ; 0          ; 0         ; 1         ; 0         ; 0         ; 0          ; 0          ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 1           ;
+; state.AZH   ; 0          ; 1         ; 0         ; 0         ; 0         ; 0          ; 0          ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 1           ;
+; state.DONE  ; 1          ; 0         ; 0         ; 0         ; 0         ; 0          ; 0          ; 0           ; 0           ; 0          ; 0           ; 0           ; 0           ; 1           ;
++-------------+------------+-----------+-----------+-----------+-----------+------------+------------+-------------+-------------+------------+-------------+-------------+-------------+-------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------+
+; State Machine - |eBike|inert_intf:iINERT|SPI_mnrch:SPI|state ;
++-------------+------------+------------+----------------------+
+; Name        ; state.IDLE ; state.DONE ; state.SHIFT          ;
++-------------+------------+------------+----------------------+
+; state.IDLE  ; 0          ; 0          ; 0                    ;
+; state.SHIFT ; 1          ; 0          ; 1                    ;
+; state.DONE  ; 1          ; 1          ; 0                    ;
++-------------+------------+------------+----------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------+
+; State Machine - |eBike|sensorCondition:iSENSE|telemetry:iTele|state                                   ;
++------------+------------+------------+------------+------------+------------+------------+------------+
+; Name       ; state.pl_1 ; state.pl_6 ; state.pl_5 ; state.pl_4 ; state.pl_3 ; state.pl_2 ; state.IDLE ;
++------------+------------+------------+------------+------------+------------+------------+------------+
+; state.IDLE ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ;
+; state.pl_2 ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 1          ;
+; state.pl_3 ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 1          ;
+; state.pl_4 ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 1          ;
+; state.pl_5 ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 1          ;
+; state.pl_6 ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 1          ;
+; state.pl_1 ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ;
++------------+------------+------------+------------+------------+------------+------------+------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------+
+; State Machine - |eBike|A2D_intf:iA2D|state                      ;
++-------------+-----------+------------+-------------+------------+
+; Name        ; state.SEC ; state.WAIT ; state.FIRST ; state.IDLE ;
++-------------+-----------+------------+-------------+------------+
+; state.IDLE  ; 0         ; 0          ; 0           ; 0          ;
+; state.FIRST ; 0         ; 0          ; 1           ; 1          ;
+; state.WAIT  ; 0         ; 1          ; 0           ; 1          ;
+; state.SEC   ; 1         ; 0          ; 0           ; 1          ;
++-------------+-----------+------------+-------------+------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------+
+; State Machine - |eBike|A2D_intf:iA2D|SPI_mnrch:SPI|state ;
++-------------+------------+------------+------------------+
+; Name        ; state.IDLE ; state.DONE ; state.SHIFT      ;
++-------------+------------+------------+------------------+
+; state.IDLE  ; 0          ; 0          ; 0                ;
+; state.SHIFT ; 1          ; 0          ; 1                ;
+; state.DONE  ; 1          ; 1          ; 0                ;
++-------------+------------+------------+------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                      ;
++--------------------------------------------------------------+------------------------------------------+
+; Register name                                                ; Reason for Removal                       ;
++--------------------------------------------------------------+------------------------------------------+
+; PID:iPID|D_term[0,1]                                         ; Stuck at GND due to stuck port data_in   ;
+; sensorCondition:iSENSE|telemetry:iTele|period_cnt[19]        ; Merged with PID:iPID|decimator[19]       ;
+; sensorCondition:iSENSE|telemetry:iTele|period_cnt[18]        ; Merged with PID:iPID|decimator[18]       ;
+; sensorCondition:iSENSE|telemetry:iTele|period_cnt[17]        ; Merged with PID:iPID|decimator[17]       ;
+; sensorCondition:iSENSE|telemetry:iTele|period_cnt[16]        ; Merged with PID:iPID|decimator[16]       ;
+; sensorCondition:iSENSE|telemetry:iTele|period_cnt[15]        ; Merged with PID:iPID|decimator[15]       ;
+; sensorCondition:iSENSE|telemetry:iTele|period_cnt[14]        ; Merged with PID:iPID|decimator[14]       ;
+; sensorCondition:iSENSE|telemetry:iTele|period_cnt[13]        ; Merged with PID:iPID|decimator[13]       ;
+; sensorCondition:iSENSE|telemetry:iTele|period_cnt[12]        ; Merged with PID:iPID|decimator[12]       ;
+; sensorCondition:iSENSE|telemetry:iTele|period_cnt[11]        ; Merged with PID:iPID|decimator[11]       ;
+; sensorCondition:iSENSE|telemetry:iTele|period_cnt[10]        ; Merged with PID:iPID|decimator[10]       ;
+; sensorCondition:iSENSE|telemetry:iTele|period_cnt[9]         ; Merged with PID:iPID|decimator[9]        ;
+; sensorCondition:iSENSE|telemetry:iTele|period_cnt[8]         ; Merged with PID:iPID|decimator[8]        ;
+; sensorCondition:iSENSE|telemetry:iTele|period_cnt[7]         ; Merged with PID:iPID|decimator[7]        ;
+; sensorCondition:iSENSE|telemetry:iTele|period_cnt[6]         ; Merged with PID:iPID|decimator[6]        ;
+; sensorCondition:iSENSE|telemetry:iTele|period_cnt[5]         ; Merged with PID:iPID|decimator[5]        ;
+; sensorCondition:iSENSE|telemetry:iTele|period_cnt[4]         ; Merged with PID:iPID|decimator[4]        ;
+; sensorCondition:iSENSE|telemetry:iTele|period_cnt[3]         ; Merged with PID:iPID|decimator[3]        ;
+; sensorCondition:iSENSE|telemetry:iTele|period_cnt[2]         ; Merged with PID:iPID|decimator[2]        ;
+; sensorCondition:iSENSE|telemetry:iTele|period_cnt[1]         ; Merged with PID:iPID|decimator[1]        ;
+; sensorCondition:iSENSE|telemetry:iTele|period_cnt[0]         ; Merged with PID:iPID|decimator[0]        ;
+; PID:iPID|integrator[17]                                      ; Stuck at GND due to stuck port data_in   ;
+; A2D_intf:iA2D|cnt_14[0]                                      ; Merged with inert_intf:iINERT|cnt_16[0]  ;
+; mtr_drv:iMTR|PWM:PWM1|cnt[0]                                 ; Merged with inert_intf:iINERT|cnt_16[0]  ;
+; PID:iPID|decimator[0]                                        ; Merged with inert_intf:iINERT|cnt_16[0]  ;
+; A2D_intf:iA2D|cnt_14[1]                                      ; Merged with inert_intf:iINERT|cnt_16[1]  ;
+; PID:iPID|decimator[1]                                        ; Merged with inert_intf:iINERT|cnt_16[1]  ;
+; mtr_drv:iMTR|PWM:PWM1|cnt[1]                                 ; Merged with inert_intf:iINERT|cnt_16[1]  ;
+; A2D_intf:iA2D|cnt_14[2]                                      ; Merged with PID:iPID|decimator[2]        ;
+; PID:iPID|decimator[2]                                        ; Merged with inert_intf:iINERT|cnt_16[2]  ;
+; A2D_intf:iA2D|cnt_14[3]                                      ; Merged with PID:iPID|decimator[3]        ;
+; PID:iPID|decimator[3]                                        ; Merged with inert_intf:iINERT|cnt_16[3]  ;
+; mtr_drv:iMTR|PWM:PWM1|cnt[2]                                 ; Merged with inert_intf:iINERT|cnt_16[2]  ;
+; A2D_intf:iA2D|cnt_14[4]                                      ; Merged with PID:iPID|decimator[4]        ;
+; PID:iPID|decimator[4]                                        ; Merged with inert_intf:iINERT|cnt_16[4]  ;
+; mtr_drv:iMTR|PWM:PWM1|cnt[3]                                 ; Merged with inert_intf:iINERT|cnt_16[3]  ;
+; A2D_intf:iA2D|cnt_14[5]                                      ; Merged with PID:iPID|decimator[5]        ;
+; PID:iPID|decimator[5]                                        ; Merged with inert_intf:iINERT|cnt_16[5]  ;
+; mtr_drv:iMTR|PWM:PWM1|cnt[4]                                 ; Merged with inert_intf:iINERT|cnt_16[4]  ;
+; A2D_intf:iA2D|cnt_14[6]                                      ; Merged with PID:iPID|decimator[6]        ;
+; PID:iPID|decimator[6]                                        ; Merged with inert_intf:iINERT|cnt_16[6]  ;
+; mtr_drv:iMTR|PWM:PWM1|cnt[5]                                 ; Merged with inert_intf:iINERT|cnt_16[5]  ;
+; A2D_intf:iA2D|cnt_14[7]                                      ; Merged with PID:iPID|decimator[7]        ;
+; PID:iPID|decimator[7]                                        ; Merged with inert_intf:iINERT|cnt_16[7]  ;
+; mtr_drv:iMTR|PWM:PWM1|cnt[6]                                 ; Merged with inert_intf:iINERT|cnt_16[6]  ;
+; A2D_intf:iA2D|cnt_14[8]                                      ; Merged with PID:iPID|decimator[8]        ;
+; PID:iPID|decimator[8]                                        ; Merged with inert_intf:iINERT|cnt_16[8]  ;
+; mtr_drv:iMTR|PWM:PWM1|cnt[7]                                 ; Merged with inert_intf:iINERT|cnt_16[7]  ;
+; A2D_intf:iA2D|cnt_14[9]                                      ; Merged with PID:iPID|decimator[9]        ;
+; PID:iPID|decimator[9]                                        ; Merged with inert_intf:iINERT|cnt_16[9]  ;
+; mtr_drv:iMTR|PWM:PWM1|cnt[8]                                 ; Merged with inert_intf:iINERT|cnt_16[8]  ;
+; A2D_intf:iA2D|cnt_14[10]                                     ; Merged with PID:iPID|decimator[10]       ;
+; PID:iPID|decimator[10]                                       ; Merged with inert_intf:iINERT|cnt_16[10] ;
+; mtr_drv:iMTR|PWM:PWM1|cnt[9]                                 ; Merged with inert_intf:iINERT|cnt_16[9]  ;
+; A2D_intf:iA2D|cnt_14[11]                                     ; Merged with PID:iPID|decimator[11]       ;
+; PID:iPID|decimator[11]                                       ; Merged with inert_intf:iINERT|cnt_16[11] ;
+; mtr_drv:iMTR|PWM:PWM1|cnt[10]                                ; Merged with inert_intf:iINERT|cnt_16[10] ;
+; A2D_intf:iA2D|cnt_14[12]                                     ; Merged with PID:iPID|decimator[12]       ;
+; PID:iPID|decimator[12]                                       ; Merged with inert_intf:iINERT|cnt_16[12] ;
+; A2D_intf:iA2D|cnt_14[13]                                     ; Merged with PID:iPID|decimator[13]       ;
+; PID:iPID|decimator[13]                                       ; Merged with inert_intf:iINERT|cnt_16[13] ;
+; PID:iPID|decimator[14]                                       ; Merged with inert_intf:iINERT|cnt_16[14] ;
+; PID:iPID|decimator[15]                                       ; Merged with inert_intf:iINERT|cnt_16[15] ;
+; A2D_intf:iA2D|brake[0..10]                                   ; Lost fanout                              ;
+; inert_intf:iINERT|state~4                                    ; Lost fanout                              ;
+; inert_intf:iINERT|state~5                                    ; Lost fanout                              ;
+; inert_intf:iINERT|state~6                                    ; Lost fanout                              ;
+; inert_intf:iINERT|state~7                                    ; Lost fanout                              ;
+; sensorCondition:iSENSE|telemetry:iTele|state~4               ; Lost fanout                              ;
+; sensorCondition:iSENSE|telemetry:iTele|state~5               ; Lost fanout                              ;
+; sensorCondition:iSENSE|telemetry:iTele|state~6               ; Lost fanout                              ;
+; A2D_intf:iA2D|state~4                                        ; Lost fanout                              ;
+; A2D_intf:iA2D|state~5                                        ; Lost fanout                              ;
+; sensorCondition:iSENSE|count[0]                              ; Merged with inert_intf:iINERT|cnt_16[0]  ;
+; sensorCondition:iSENSE|count[1]                              ; Merged with inert_intf:iINERT|cnt_16[1]  ;
+; sensorCondition:iSENSE|count[16..21]                         ; Lost fanout                              ;
+; sensorCondition:iSENSE|cadence_filt:iCadFilt|stbl_cnt[9..15] ; Lost fanout                              ;
+; Total Number of Removed Registers = 99                       ;                                          ;
++--------------------------------------------------------------+------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                 ;
++----------------------------------+--------------------+---------------------------------------------------------------------+
+; Register name                    ; Reason for Removal ; Registers Removed due to This Register                              ;
++----------------------------------+--------------------+---------------------------------------------------------------------+
+; sensorCondition:iSENSE|count[21] ; Lost Fanouts       ; sensorCondition:iSENSE|count[20], sensorCondition:iSENSE|count[19], ;
+;                                  ;                    ; sensorCondition:iSENSE|count[18], sensorCondition:iSENSE|count[17], ;
+;                                  ;                    ; sensorCondition:iSENSE|count[16]                                    ;
++----------------------------------+--------------------+---------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 574   ;
+; Number of registers using Synchronous Clear  ; 57    ;
+; Number of registers using Synchronous Load   ; 27    ;
+; Number of registers using Asynchronous Clear ; 391   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 311   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                               ;
++----------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                ; Fan out ;
++----------------------------------------------------------------------------------+---------+
+; A2D_intf:iA2D|SPI_mnrch:SPI|SS_n                                                 ; 1       ;
+; inert_intf:iINERT|SPI_mnrch:SPI|SS_n                                             ; 1       ;
+; sensorCondition:iSENSE|telemetry:iTele|UART_tx:iTX|n003[0]                       ; 2       ;
+; PB_intf:iPB|setting[1]                                                           ; 26      ;
+; sensorCondition:iSENSE|telemetry:iTele|UART_tx:iTX|n005[8]                       ; 3       ;
+; sensorCondition:iSENSE|telemetry:iTele|UART_tx:iTX|n005[7]                       ; 3       ;
+; sensorCondition:iSENSE|telemetry:iTele|UART_tx:iTX|n005[5]                       ; 3       ;
+; sensorCondition:iSENSE|telemetry:iTele|UART_tx:iTX|n005[4]                       ; 3       ;
+; sensorCondition:iSENSE|telemetry:iTele|UART_tx:iTX|n005[1]                       ; 3       ;
+; sensorCondition:iSENSE|telemetry:iTele|UART_tx:iTX|n003[1]                       ; 1       ;
+; PB_intf:iPB|PB_rise:RSED|intr2                                                   ; 3       ;
+; PB_intf:iPB|PB_rise:RSED|intr3                                                   ; 2       ;
+; sensorCondition:iSENSE|telemetry:iTele|UART_tx:iTX|n003[2]                       ; 1       ;
+; PB_intf:iPB|PB_rise:RSED|intr1                                                   ; 1       ;
+; sensorCondition:iSENSE|telemetry:iTele|UART_tx:iTX|n003[3]                       ; 1       ;
+; sensorCondition:iSENSE|telemetry:iTele|UART_tx:iTX|n003[4]                       ; 1       ;
+; sensorCondition:iSENSE|telemetry:iTele|UART_tx:iTX|n003[5]                       ; 1       ;
+; PID:iPID|altshift_taps:first_synch_val_rtl_0|shift_taps_o5n:auto_generated|dffe6 ; 13      ;
+; sensorCondition:iSENSE|telemetry:iTele|UART_tx:iTX|n003[6]                       ; 1       ;
+; sensorCondition:iSENSE|telemetry:iTele|UART_tx:iTX|n003[7]                       ; 1       ;
+; sensorCondition:iSENSE|telemetry:iTele|UART_tx:iTX|n003[8]                       ; 2       ;
+; Total number of inverted registers = 21                                          ;         ;
++----------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                   ;
++----------------------------------+--------------------------------+------------+
+; Register Name                    ; Megafunction                   ; Type       ;
++----------------------------------+--------------------------------+------------+
+; PID:iPID|prev_err[0..12]         ; PID:iPID|first_synch_val_rtl_0 ; SHIFT_TAPS ;
+; PID:iPID|second_synch_val[0..12] ; PID:iPID|first_synch_val_rtl_0 ; SHIFT_TAPS ;
+; PID:iPID|first_synch_val[0..12]  ; PID:iPID|first_synch_val_rtl_0 ; SHIFT_TAPS ;
++----------------------------------+--------------------------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
+; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |eBike|A2D_intf:iA2D|SPI_mnrch:SPI|bit_cntr[2]                      ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |eBike|inert_intf:iINERT|SPI_mnrch:SPI|shft_reg[14]                 ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |eBike|inert_intf:iINERT|SPI_mnrch:SPI|shft_reg[8]                  ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |eBike|sensorCondition:iSENSE|telemetry:iTele|UART_tx:iTX|n005[6]   ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |eBike|sensorCondition:iSENSE|cadence_meas:iCadMeas|count[12]       ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |eBike|sensorCondition:iSENSE|accum_torque[3]                       ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |eBike|sensorCondition:iSENSE|accum_torque[11]                      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |eBike|PID:iPID|D_diff_sat[4]                                       ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |eBike|sensorCondition:iSENSE|telemetry:iTele|UART_tx:iTX|n004[1]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |eBike|sensorCondition:iSENSE|cadence_meas:iCadMeas|cadence_per[7]  ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |eBike|A2D_intf:iA2D|SPI_mnrch:SPI|shft_reg[13]                     ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |eBike|PID:iPID|integrator[15]                                      ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |eBike|sensorCondition:iSENSE|telemetry:iTele|UART_tx:iTX|n005[8]   ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |eBike|sensorCondition:iSENSE|desiredDrive:iDesDrive|incline_lim[2] ;
+; 14:1               ; 3 bits    ; 27 LEs        ; 6 LEs                ; 21 LEs                 ; Yes        ; |eBike|sensorCondition:iSENSE|telemetry:iTele|UART_tx:iTX|n003[6]   ;
+; 14:1               ; 4 bits    ; 36 LEs        ; 16 LEs               ; 20 LEs                 ; Yes        ; |eBike|sensorCondition:iSENSE|telemetry:iTele|UART_tx:iTX|n003[4]   ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |eBike|sensorCondition:iSENSE|desiredDrive:iDesDrive|target_curr[9] ;
+; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; No         ; |eBike|sensorCondition:iSENSE|error[6]                              ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |eBike|brushless:iBRUSH|duty[5]                                     ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |eBike|inert_intf:iINERT|SPI_mnrch:SPI|Selector1                    ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |eBike|A2D_intf:iA2D|Selector1                                      ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |eBike|A2D_intf:iA2D|SPI_mnrch:SPI|Selector0                        ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |eBike|A2D_intf:iA2D|Selector2                                      ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |eBike|inert_intf:iINERT|Selector2                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for PID:iPID|altshift_taps:first_synch_val_rtl_0|shift_taps_o5n:auto_generated|altsyncram_r861:altsyncram4 ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                              ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                               ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |eBike ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; FAST_SIM       ; 1     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sensorCondition:iSENSE ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; FAST_SIM       ; 1     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sensorCondition:iSENSE|cadence_filt:iCadFilt ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; FAST_SIM       ; 1     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sensorCondition:iSENSE|cadence_meas:iCadMeas ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; FAST_SIM       ; 1     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PID:iPID ;
++----------------+-------+------------------------------+
+; Parameter Name ; Value ; Type                         ;
++----------------+-------+------------------------------+
+; FAST_SIM       ; 1     ; Signed Integer               ;
++----------------+-------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: PID:iPID|altshift_taps:first_synch_val_rtl_0 ;
++----------------+----------------+-------------------------------------------------------------+
+; Parameter Name ; Value          ; Type                                                        ;
++----------------+----------------+-------------------------------------------------------------+
+; WIDTH_BYTEENA  ; 1              ; Untyped                                                     ;
+; NUMBER_OF_TAPS ; 1              ; Untyped                                                     ;
+; TAP_DISTANCE   ; 3              ; Untyped                                                     ;
+; WIDTH          ; 13             ; Untyped                                                     ;
+; POWER_UP_STATE ; CLEARED        ; Untyped                                                     ;
+; CBXI_PARAMETER ; shift_taps_o5n ; Untyped                                                     ;
++----------------+----------------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult2 ;
++------------------------------------------------+--------------+-----------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                          ;
++------------------------------------------------+--------------+-----------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                ;
+; LPM_WIDTHA                                     ; 15           ; Untyped                                       ;
+; LPM_WIDTHB                                     ; 15           ; Untyped                                       ;
+; LPM_WIDTHP                                     ; 30           ; Untyped                                       ;
+; LPM_WIDTHR                                     ; 30           ; Untyped                                       ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                       ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                       ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                       ;
+; LATENCY                                        ; 0            ; Untyped                                       ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                       ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                       ;
+; USE_EAB                                        ; OFF          ; Untyped                                       ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                       ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                       ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                       ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                           ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                       ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                       ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                       ;
+; CBXI_PARAMETER                                 ; mult_2dt     ; Untyped                                       ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                       ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                       ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                       ;
++------------------------------------------------+--------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+-----------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                          ;
++------------------------------------------------+--------------+-----------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                ;
+; LPM_WIDTHA                                     ; 12           ; Untyped                                       ;
+; LPM_WIDTHB                                     ; 3            ; Untyped                                       ;
+; LPM_WIDTHP                                     ; 15           ; Untyped                                       ;
+; LPM_WIDTHR                                     ; 15           ; Untyped                                       ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                       ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                       ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                       ;
+; LATENCY                                        ; 0            ; Untyped                                       ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                       ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                       ;
+; USE_EAB                                        ; OFF          ; Untyped                                       ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                       ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                       ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                       ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                           ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                       ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                       ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                       ;
+; CBXI_PARAMETER                                 ; NOTHING      ; Untyped                                       ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                       ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                       ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                       ;
++------------------------------------------------+--------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult1 ;
++------------------------------------------------+--------------+-----------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                          ;
++------------------------------------------------+--------------+-----------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                ;
+; LPM_WIDTHA                                     ; 9            ; Untyped                                       ;
+; LPM_WIDTHB                                     ; 6            ; Untyped                                       ;
+; LPM_WIDTHP                                     ; 15           ; Untyped                                       ;
+; LPM_WIDTHR                                     ; 15           ; Untyped                                       ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                       ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                       ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                       ;
+; LATENCY                                        ; 0            ; Untyped                                       ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                       ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                       ;
+; USE_EAB                                        ; OFF          ; Untyped                                       ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                       ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                       ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                       ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                           ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                       ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                       ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                       ;
+; CBXI_PARAMETER                                 ; mult_8at     ; Untyped                                       ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                       ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                       ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                       ;
++------------------------------------------------+--------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1 ;
++------------------------------------------------+--------------+---------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                        ;
++------------------------------------------------+--------------+---------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                  ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                              ;
+; LPM_WIDTHA                                     ; 16           ; Untyped                                     ;
+; LPM_WIDTHB                                     ; 10           ; Untyped                                     ;
+; LPM_WIDTHP                                     ; 26           ; Untyped                                     ;
+; LPM_WIDTHR                                     ; 26           ; Untyped                                     ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                     ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped                                     ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                     ;
+; LATENCY                                        ; 0            ; Untyped                                     ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                     ;
+; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped                                     ;
+; USE_EAB                                        ; OFF          ; Untyped                                     ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                     ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                     ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                     ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                         ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                     ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                     ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                     ;
+; CBXI_PARAMETER                                 ; NOTHING      ; Untyped                                     ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                     ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                     ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                     ;
++------------------------------------------------+--------------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+---------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                        ;
++------------------------------------------------+--------------+---------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                  ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                              ;
+; LPM_WIDTHA                                     ; 16           ; Untyped                                     ;
+; LPM_WIDTHB                                     ; 10           ; Untyped                                     ;
+; LPM_WIDTHP                                     ; 26           ; Untyped                                     ;
+; LPM_WIDTHR                                     ; 26           ; Untyped                                     ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                     ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped                                     ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                     ;
+; LATENCY                                        ; 0            ; Untyped                                     ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                     ;
+; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped                                     ;
+; USE_EAB                                        ; OFF          ; Untyped                                     ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                     ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                     ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                     ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                         ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                     ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                     ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                     ;
+; CBXI_PARAMETER                                 ; NOTHING      ; Untyped                                     ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                     ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                     ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                     ;
++------------------------------------------------+--------------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; altshift_taps Parameter Settings by Entity Instance                       ;
++----------------------------+----------------------------------------------+
+; Name                       ; Value                                        ;
++----------------------------+----------------------------------------------+
+; Number of entity instances ; 1                                            ;
+; Entity Instance            ; PID:iPID|altshift_taps:first_synch_val_rtl_0 ;
+;     -- NUMBER_OF_TAPS      ; 1                                            ;
+;     -- TAP_DISTANCE        ; 3                                            ;
+;     -- WIDTH               ; 13                                           ;
++----------------------------+----------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                                       ;
++---------------------------------------+--------------------------------------------------------------+
+; Name                                  ; Value                                                        ;
++---------------------------------------+--------------------------------------------------------------+
+; Number of entity instances            ; 5                                                            ;
+; Entity Instance                       ; sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult2 ;
+;     -- LPM_WIDTHA                     ; 15                                                           ;
+;     -- LPM_WIDTHB                     ; 15                                                           ;
+;     -- LPM_WIDTHP                     ; 30                                                           ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                     ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                           ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                           ;
+;     -- USE_EAB                        ; OFF                                                          ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                         ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                           ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                           ;
+; Entity Instance                       ; sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 12                                                           ;
+;     -- LPM_WIDTHB                     ; 3                                                            ;
+;     -- LPM_WIDTHP                     ; 15                                                           ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                     ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                           ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                           ;
+;     -- USE_EAB                        ; OFF                                                          ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                         ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                           ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                           ;
+; Entity Instance                       ; sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult1 ;
+;     -- LPM_WIDTHA                     ; 9                                                            ;
+;     -- LPM_WIDTHB                     ; 6                                                            ;
+;     -- LPM_WIDTHP                     ; 15                                                           ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                     ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                           ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                           ;
+;     -- USE_EAB                        ; OFF                                                          ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                         ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                           ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                           ;
+; Entity Instance                       ; inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1   ;
+;     -- LPM_WIDTHA                     ; 16                                                           ;
+;     -- LPM_WIDTHB                     ; 10                                                           ;
+;     -- LPM_WIDTHP                     ; 26                                                           ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                                       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                           ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                                          ;
+;     -- USE_EAB                        ; OFF                                                          ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                         ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                           ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                           ;
+; Entity Instance                       ; inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult0   ;
+;     -- LPM_WIDTHA                     ; 16                                                           ;
+;     -- LPM_WIDTHB                     ; 10                                                           ;
+;     -- LPM_WIDTHP                     ; 26                                                           ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                                       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                           ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                                          ;
+;     -- USE_EAB                        ; OFF                                                          ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                         ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                           ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                           ;
++---------------------------------------+--------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "inert_intf:iINERT|SPI_mnrch:SPI"                                                           ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; cmd[3..2]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cmd[14]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cmd[7]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; resp[15..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "inert_intf:iINERT"     ;
++------+--------+----------+------------------------+
+; Port ; Type   ; Severity ; Details                ;
++------+--------+----------+------------------------+
+; vld  ; Output ; Info     ; Explicitly unconnected ;
+; LED  ; Output ; Info     ; Explicitly unconnected ;
++------+--------+----------+------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "A2D_intf:iA2D|SPI_mnrch:SPI"                                                                ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; cmd[15..14]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cmd[10..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; resp[15..12] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 25                          ;
+; cycloneiii_ff         ; 574                         ;
+;     CLR               ; 97                          ;
+;     CLR SCLR          ; 15                          ;
+;     ENA               ; 14                          ;
+;     ENA CLR           ; 238                         ;
+;     ENA CLR SCLR      ; 24                          ;
+;     ENA CLR SLD       ; 17                          ;
+;     ENA SCLR          ; 18                          ;
+;     SLD               ; 10                          ;
+;     plain             ; 141                         ;
+; cycloneiii_lcell_comb ; 1068                        ;
+;     arith             ; 498                         ;
+;         2 data inputs ; 174                         ;
+;         3 data inputs ; 324                         ;
+;     normal            ; 570                         ;
+;         0 data inputs ; 10                          ;
+;         1 data inputs ; 32                          ;
+;         2 data inputs ; 117                         ;
+;         3 data inputs ; 81                          ;
+;         4 data inputs ; 330                         ;
+; cycloneiii_mac_mult   ; 2                           ;
+; cycloneiii_mac_out    ; 2                           ;
+; cycloneiii_ram_block  ; 13                          ;
+;                       ;                             ;
+; Max LUT depth         ; 12.30                       ;
+; Average LUT depth     ; 4.40                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+    Info: Processing started: Thu May 05 22:55:18 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off eBike -c eBike
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file spi_mnrch.sv
+    Info (12023): Found entity 1: SPI_mnrch File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/SPI_mnrch.sv Line: 1
+Warning (12019): Can't analyze file -- file reset_synch.sv is missing
+Info (12021): Found 1 design units, including 1 entities, in source file cadence_filt.sv
+    Info (12023): Found entity 1: cadence_filt File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/cadence_filt.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cadence_meas.sv
+    Info (12023): Found entity 1: cadence_meas File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/cadence_meas.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cadence_lu.sv
+    Info (12023): Found entity 1: cadence_LU File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/cadence_LU.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sensorcondition.sv
+    Info (12023): Found entity 1: sensorCondition File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/sensorCondition.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file uart_tx.sv
+    Info (12023): Found entity 1: UART_tx File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/UART_tx.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file telemetry.sv
+    Info (12023): Found entity 1: telemetry File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/telemetry.sv Line: 1
+Warning (12019): Can't analyze file -- file desiredDrive.v is missing
+Info (12021): Found 1 design units, including 1 entities, in source file pid.sv
+    Info (12023): Found entity 1: PID File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PID.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file nonoverlap.sv
+    Info (12023): Found entity 1: nonoverlap File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/nonoverlap.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file brushless.sv
+    Info (12023): Found entity 1: brushless File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/brushless.sv Line: 1
+Warning (12019): Can't analyze file -- file PWM11.sv is missing
+Info (12021): Found 1 design units, including 1 entities, in source file mtr_drv.sv
+    Info (12023): Found entity 1: mtr_drv File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/mtr_drv.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file inertial_integrator.sv
+    Info (12023): Found entity 1: inertial_integrator File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/inertial_integrator.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file inert_intf.sv
+    Info (12023): Found entity 1: inert_intf File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/inert_intf.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pb_intf.sv
+    Info (12023): Found entity 1: PB_intf File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PB_intf.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ebike.sv
+    Info (12023): Found entity 1: eBike File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file a2d_intf.sv
+    Info (12023): Found entity 1: A2D_intf File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/A2D_intf.sv Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at PID.sv(40): created implicit net for "pos_ov" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PID.sv Line: 40
+Info (12127): Elaborating entity "eBike" for the top level hierarchy
+Warning (12125): Using design file rst_synch.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: rst_synch File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/rst_synch.sv Line: 1
+Info (12128): Elaborating entity "rst_synch" for hierarchy "rst_synch:iRST" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike.sv Line: 59
+Info (12128): Elaborating entity "A2D_intf" for hierarchy "A2D_intf:iA2D" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike.sv Line: 64
+Info (10264): Verilog HDL Case Statement information at A2D_intf.sv(54): all case item expressions in this case statement are onehot File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/A2D_intf.sv Line: 54
+Info (12128): Elaborating entity "SPI_mnrch" for hierarchy "A2D_intf:iA2D|SPI_mnrch:SPI" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/A2D_intf.sv Line: 17
+Info (10264): Verilog HDL Case Statement information at SPI_mnrch.sv(68): all case item expressions in this case statement are onehot File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/SPI_mnrch.sv Line: 68
+Info (12128): Elaborating entity "sensorCondition" for hierarchy "sensorCondition:iSENSE" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike.sv Line: 71
+Warning (10230): Verilog HDL assignment warning at sensorCondition.sv(51): truncated value with size 32 to match size of target (22) File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/sensorCondition.sv Line: 51
+Warning (10230): Verilog HDL assignment warning at sensorCondition.sv(57): truncated value with size 32 to match size of target (15) File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/sensorCondition.sv Line: 57
+Info (12128): Elaborating entity "cadence_filt" for hierarchy "sensorCondition:iSENSE|cadence_filt:iCadFilt" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/sensorCondition.sv Line: 33
+Warning (10230): Verilog HDL assignment warning at cadence_filt.sv(42): truncated value with size 32 to match size of target (16) File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/cadence_filt.sv Line: 42
+Info (12128): Elaborating entity "cadence_meas" for hierarchy "sensorCondition:iSENSE|cadence_meas:iCadMeas" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/sensorCondition.sv Line: 34
+Warning (10230): Verilog HDL assignment warning at cadence_meas.sv(48): truncated value with size 32 to match size of target (24) File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/cadence_meas.sv Line: 48
+Info (12128): Elaborating entity "cadence_LU" for hierarchy "sensorCondition:iSENSE|cadence_LU:iCadLU" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/sensorCondition.sv Line: 35
+Warning (12125): Using design file desireddrive.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: desiredDrive File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desireddrive.sv Line: 1
+Info (12128): Elaborating entity "desiredDrive" for hierarchy "sensorCondition:iSENSE|desiredDrive:iDesDrive" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/sensorCondition.sv Line: 84
+Warning (10230): Verilog HDL assignment warning at desireddrive.sv(23): truncated value with size 32 to match size of target (11) File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desireddrive.sv Line: 23
+Warning (10230): Verilog HDL assignment warning at desireddrive.sv(39): truncated value with size 32 to match size of target (9) File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desireddrive.sv Line: 39
+Warning (10230): Verilog HDL assignment warning at desireddrive.sv(43): truncated value with size 32 to match size of target (6) File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desireddrive.sv Line: 43
+Warning (10230): Verilog HDL assignment warning at desireddrive.sv(45): truncated value with size 32 to match size of target (12) File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desireddrive.sv Line: 45
+Warning (10230): Verilog HDL assignment warning at desireddrive.sv(60): truncated value with size 32 to match size of target (30) File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desireddrive.sv Line: 60
+Warning (12125): Using design file incline_sat.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: incline_sat File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/incline_sat.sv Line: 1
+Info (12128): Elaborating entity "incline_sat" for hierarchy "sensorCondition:iSENSE|desiredDrive:iDesDrive|incline_sat:iInSat" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desireddrive.sv Line: 21
+Info (12128): Elaborating entity "telemetry" for hierarchy "sensorCondition:iSENSE|telemetry:iTele" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/sensorCondition.sv Line: 96
+Warning (10230): Verilog HDL assignment warning at telemetry.sv(20): truncated value with size 32 to match size of target (20) File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/telemetry.sv Line: 20
+Info (10264): Verilog HDL Case Statement information at telemetry.sv(35): all case item expressions in this case statement are onehot File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/telemetry.sv Line: 35
+Info (12128): Elaborating entity "UART_tx" for hierarchy "sensorCondition:iSENSE|telemetry:iTele|UART_tx:iTX" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/telemetry.sv Line: 9
+Warning (10230): Verilog HDL assignment warning at UART_tx.sv(43): truncated value with size 32 to match size of target (4) File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/UART_tx.sv Line: 43
+Warning (10230): Verilog HDL assignment warning at UART_tx.sv(54): truncated value with size 32 to match size of target (9) File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/UART_tx.sv Line: 54
+Info (12128): Elaborating entity "PID" for hierarchy "PID:iPID" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike.sv Line: 76
+Warning (10036): Verilog HDL or VHDL warning at PID.sv(99): object "I_ext" assigned a value but never read File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PID.sv Line: 99
+Warning (10036): Verilog HDL or VHDL warning at PID.sv(99): object "D_ext" assigned a value but never read File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PID.sv Line: 99
+Warning (10230): Verilog HDL assignment warning at PID.sv(25): truncated value with size 32 to match size of target (20) File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PID.sv Line: 25
+Warning (10230): Verilog HDL assignment warning at PID.sv(89): truncated value with size 13 to match size of target (9) File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PID.sv Line: 89
+Warning (10230): Verilog HDL assignment warning at PID.sv(101): truncated value with size 15 to match size of target (14) File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PID.sv Line: 101
+Info (12128): Elaborating entity "brushless" for hierarchy "brushless:iBRUSH" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike.sv Line: 81
+Info (12128): Elaborating entity "mtr_drv" for hierarchy "mtr_drv:iMTR" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike.sv Line: 86
+Warning (12125): Using design file pwm.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: PWM File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/pwm.sv Line: 1
+Info (12128): Elaborating entity "PWM" for hierarchy "mtr_drv:iMTR|PWM:PWM1" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/mtr_drv.sv Line: 10
+Info (12128): Elaborating entity "nonoverlap" for hierarchy "mtr_drv:iMTR|nonoverlap:nonoverlap1" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/mtr_drv.sv Line: 11
+Info (12128): Elaborating entity "inert_intf" for hierarchy "inert_intf:iINERT" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike.sv Line: 91
+Info (10264): Verilog HDL Case Statement information at inert_intf.sv(90): all case item expressions in this case statement are onehot File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/inert_intf.sv Line: 90
+Info (12128): Elaborating entity "inertial_integrator" for hierarchy "inert_intf:iINERT|inertial_integrator:INRTL" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/inert_intf.sv Line: 13
+Warning (10230): Verilog HDL assignment warning at inertial_integrator.sv(81): truncated value with size 13 to match size of target (12) File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/inertial_integrator.sv Line: 81
+Warning (10034): Output port "LED" at inertial_integrator.sv(11) has no driver File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/inertial_integrator.sv Line: 11
+Info (12128): Elaborating entity "PB_intf" for hierarchy "PB_intf:iPB" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike.sv Line: 96
+Warning (12125): Using design file pb_rise.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: PB_rise File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/pb_rise.sv Line: 1
+Info (12128): Elaborating entity "PB_rise" for hierarchy "PB_intf:iPB|PB_rise:RSED" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/PB_intf.sv Line: 9
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276034): Inferred altshift_taps megafunction from the following design logic: "PID:iPID|first_synch_val_rtl_0"
+        Info (286033): Parameter NUMBER_OF_TAPS set to 1
+        Info (286033): Parameter TAP_DISTANCE set to 3
+        Info (286033): Parameter WIDTH set to 13
+Info (278001): Inferred 5 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "sensorCondition:iSENSE|desiredDrive:iDesDrive|Mult2" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desireddrive.sv Line: 55
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "sensorCondition:iSENSE|desiredDrive:iDesDrive|Mult0" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desireddrive.sv Line: 53
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "sensorCondition:iSENSE|desiredDrive:iDesDrive|Mult1" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desireddrive.sv Line: 54
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "inert_intf:iINERT|inertial_integrator:INRTL|Mult1" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/inertial_integrator.sv Line: 91
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "inert_intf:iINERT|inertial_integrator:INRTL|Mult0" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/inertial_integrator.sv Line: 90
+Info (12130): Elaborated megafunction instantiation "PID:iPID|altshift_taps:first_synch_val_rtl_0"
+Info (12133): Instantiated megafunction "PID:iPID|altshift_taps:first_synch_val_rtl_0" with the following parameter:
+    Info (12134): Parameter "NUMBER_OF_TAPS" = "1"
+    Info (12134): Parameter "TAP_DISTANCE" = "3"
+    Info (12134): Parameter "WIDTH" = "13"
+Info (12021): Found 1 design units, including 1 entities, in source file db/shift_taps_o5n.tdf
+    Info (12023): Found entity 1: shift_taps_o5n File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/shift_taps_o5n.tdf Line: 31
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_r861.tdf
+    Info (12023): Found entity 1: altsyncram_r861 File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/altsyncram_r861.tdf Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_24e.tdf
+    Info (12023): Found entity 1: add_sub_24e File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/add_sub_24e.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_6pf.tdf
+    Info (12023): Found entity 1: cntr_6pf File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/cntr_6pf.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_ogc.tdf
+    Info (12023): Found entity 1: cmpr_ogc File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/cmpr_ogc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_p8h.tdf
+    Info (12023): Found entity 1: cntr_p8h File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/cntr_p8h.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult2" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desireddrive.sv Line: 55
+Info (12133): Instantiated megafunction "sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult2" with the following parameter: File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desireddrive.sv Line: 55
+    Info (12134): Parameter "LPM_WIDTHA" = "15"
+    Info (12134): Parameter "LPM_WIDTHB" = "15"
+    Info (12134): Parameter "LPM_WIDTHP" = "30"
+    Info (12134): Parameter "LPM_WIDTHR" = "30"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_2dt.tdf
+    Info (12023): Found entity 1: mult_2dt File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/mult_2dt.tdf Line: 29
+Info (12130): Elaborated megafunction instantiation "sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult0" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desireddrive.sv Line: 53
+Info (12133): Instantiated megafunction "sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult0" with the following parameter: File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desireddrive.sv Line: 53
+    Info (12134): Parameter "LPM_WIDTHA" = "12"
+    Info (12134): Parameter "LPM_WIDTHB" = "3"
+    Info (12134): Parameter "LPM_WIDTHP" = "15"
+    Info (12134): Parameter "LPM_WIDTHR" = "15"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12131): Elaborated megafunction instantiation "sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult0" File: c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/lpm_mult.tdf Line: 324
+Info (12131): Elaborated megafunction instantiation "sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult0" File: c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/multcore.tdf Line: 283
+Info (12131): Elaborated megafunction instantiation "sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult0" File: c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_2dh.tdf
+    Info (12023): Found entity 1: add_sub_2dh File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/add_sub_2dh.tdf Line: 23
+Info (12131): Elaborated megafunction instantiation "sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add", which is child of megafunction instantiation "sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult0" File: c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/mpar_add.tdf Line: 138
+Info (12131): Elaborated megafunction instantiation "sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]", which is child of megafunction instantiation "sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult0" File: c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_3dh.tdf
+    Info (12023): Found entity 1: add_sub_3dh File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/add_sub_3dh.tdf Line: 23
+Info (12131): Elaborated megafunction instantiation "sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult0" File: c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
+Info (12130): Elaborated megafunction instantiation "sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult1" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desireddrive.sv Line: 54
+Info (12133): Instantiated megafunction "sensorCondition:iSENSE|desiredDrive:iDesDrive|lpm_mult:Mult1" with the following parameter: File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/desireddrive.sv Line: 54
+    Info (12134): Parameter "LPM_WIDTHA" = "9"
+    Info (12134): Parameter "LPM_WIDTHB" = "6"
+    Info (12134): Parameter "LPM_WIDTHP" = "15"
+    Info (12134): Parameter "LPM_WIDTHR" = "15"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_8at.tdf
+    Info (12023): Found entity 1: mult_8at File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/mult_8at.tdf Line: 29
+Info (12130): Elaborated megafunction instantiation "inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1" File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/inertial_integrator.sv Line: 91
+Info (12133): Instantiated megafunction "inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1" with the following parameter: File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/inertial_integrator.sv Line: 91
+    Info (12134): Parameter "LPM_WIDTHA" = "16"
+    Info (12134): Parameter "LPM_WIDTHB" = "10"
+    Info (12134): Parameter "LPM_WIDTHP" = "26"
+    Info (12134): Parameter "LPM_WIDTHR" = "26"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12131): Elaborated megafunction instantiation "inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1|multcore:mult_core", which is child of megafunction instantiation "inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1" File: c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/lpm_mult.tdf Line: 309
+Info (12131): Elaborated megafunction instantiation "inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1" File: c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/multcore.tdf Line: 229
+Info (12131): Elaborated megafunction instantiation "inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]", which is child of megafunction instantiation "inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1" File: c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/mpar_add.tdf Line: 115
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_ekh.tdf
+    Info (12023): Found entity 1: add_sub_ekh File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/add_sub_ekh.tdf Line: 23
+Info (12131): Elaborated megafunction instantiation "inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1" File: c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/mpar_add.tdf Line: 115
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_k9h.tdf
+    Info (12023): Found entity 1: add_sub_k9h File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/add_sub_k9h.tdf Line: 23
+Info (12131): Elaborated megafunction instantiation "inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add", which is child of megafunction instantiation "inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1" File: c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/mpar_add.tdf Line: 138
+Info (12131): Elaborated megafunction instantiation "inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]", which is child of megafunction instantiation "inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1" File: c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/mpar_add.tdf Line: 115
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_ikh.tdf
+    Info (12023): Found entity 1: add_sub_ikh File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/db/add_sub_ikh.tdf Line: 23
+Info (12131): Elaborated megafunction instantiation "inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1|altshift:external_latency_ffs", which is child of megafunction instantiation "inert_intf:iINERT|inertial_integrator:INRTL|lpm_mult:Mult1" File: c:/users/mwzie/onedrive/documents/school/modelsim/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
+Info (13000): Registers with preset signals will power-up high File: C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/SPI_mnrch.sv Line: 4
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 33 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1294 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 15 output pins
+    Info (21061): Implemented 1253 logic cells
+    Info (21064): Implemented 13 RAM segments
+    Info (21062): Implemented 3 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
+    Info: Peak virtual memory: 5012 megabytes
+    Info: Processing ended: Thu May 05 22:55:33 2022
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:28
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/mwzie/OneDrive/Documents/School/Spring 2022/ECE 551/Project/Project/551_Project/eBike/eBike.map.smsg.
+
+

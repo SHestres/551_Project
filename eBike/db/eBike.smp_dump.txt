@@ -1,0 +1,46 @@
+
+State Machine - |eBike|inert_intf:iINERT|state
+Name state.DONE state.AZH state.AZL state.AYH state.AYL state.yawH state.yawL state.rollH state.rollL state.WAIT state.INIT4 state.INIT3 state.INIT2 state.INIT1 
+state.INIT1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.INIT2 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.INIT3 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.INIT4 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.WAIT 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.rollL 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.rollH 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.yawL 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.yawH 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.AYL 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.AYH 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.AZL 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.AZH 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.DONE 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |eBike|inert_intf:iINERT|SPI_mnrch:SPI|state
+Name state.IDLE state.DONE state.SHIFT 
+state.IDLE 0 0 0 
+state.SHIFT 1 0 1 
+state.DONE 1 1 0 
+
+State Machine - |eBike|sensorCondition:iSENSE|telemetry:iTele|state
+Name state.pl_1 state.pl_6 state.pl_5 state.pl_4 state.pl_3 state.pl_2 state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 
+state.pl_2 0 0 0 0 0 1 1 
+state.pl_3 0 0 0 0 1 0 1 
+state.pl_4 0 0 0 1 0 0 1 
+state.pl_5 0 0 1 0 0 0 1 
+state.pl_6 0 1 0 0 0 0 1 
+state.pl_1 1 0 0 0 0 0 1 
+
+State Machine - |eBike|A2D_intf:iA2D|state
+Name state.SEC state.WAIT state.FIRST state.IDLE 
+state.IDLE 0 0 0 0 
+state.FIRST 0 0 1 1 
+state.WAIT 0 1 0 1 
+state.SEC 1 0 0 1 
+
+State Machine - |eBike|A2D_intf:iA2D|SPI_mnrch:SPI|state
+Name state.IDLE state.DONE state.SHIFT 
+state.IDLE 0 0 0 
+state.SHIFT 1 0 1 
+state.DONE 1 1 0 

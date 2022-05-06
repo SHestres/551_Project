@@ -73,7 +73,7 @@ module eBike_tb();
     clk = 0;
 	RST_n = 0;
 	cadence = 0;
-	//tgglMd = 1'b0;
+	tgglMd = 1'b0;
 	
 	@(posedge clk);
 	@(negedge clk);
@@ -82,6 +82,7 @@ module eBike_tb();
 	
 	//eBike_PB_tb(clk, tgglMd);
 	//$display("here1");
+	
 	/*
 	//Test reset conditions
 	
@@ -153,8 +154,12 @@ module eBike_tb();
 		$stop;
 	end	
 	
+	$display("good");
+	
 	// end reset tests
 	*/
+	
+	//$stop;
 	
 	YAW_RT = 16'h0000;
 	TORQUE = 12'h000;
@@ -221,8 +226,6 @@ module eBike_tb();
 	repeat(test_duration) @(posedge clk);
 		
 	$stop;
-	
-	
 	
 	end
   
