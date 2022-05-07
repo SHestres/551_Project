@@ -81,7 +81,7 @@ end
 
 //Error
 logic[11:0] target_curr;
-desiredDrive iDesDrive(.clk(clk), .avg_torque(avg_torque), .cadence(cadence), .incline(incline), .scale(scale), .not_pedaling(not_pedaling), .target_curr(target_curr));
+desiredDrive iDesDrive(.clk(clk), .rst_n(rst_n), .avg_torque(avg_torque), .cadence(cadence), .incline(incline), .scale(scale), .not_pedaling(not_pedaling), .target_curr(target_curr));
 
 always_comb begin
 if(not_pedaling) 
