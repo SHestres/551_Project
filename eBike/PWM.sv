@@ -6,7 +6,7 @@ module PWM(
   output PWM_synch
 );
 
-  logic [10:0] cnt = 11'h000;
+  logic [10:0] cnt;
   logic PWM_sig_d;
   
   assign PWM_sig_d = (cnt <= duty) ? 1'b1 : 1'b0;				// PWM is on if cnt is less than or equal to duty 

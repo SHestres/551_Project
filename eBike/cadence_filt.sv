@@ -24,27 +24,26 @@ end
 
 // Separate the ff because they're different functions
 // This ff tells when the candence stabilizes
-generate
 always_ff @(posedge clk, negedge rst_n) begin
-	if ((cadence_ff2 != cadence_ff3) || (~rst_n))
-		stbl_cnt <= 0;
+	if(!rst_n)
+	stbl_cnt <= 0;
 	else
-		stbl_cnt <= stbl_cnt + 1;
-
-	if(!FAST_SIM) begin
-		if (stable) 
-			cadence_filt <= cadence_ff3;
-	end
-	else begin
-		if(&stbl_cnt[8:0])
-			cadence_filt <= cadence_ff3;
-	end
+	stbl_cnt <= (cadence_ff2 != cadence_ff3) ? 0 : stbl_cnt + 1;
 end
-endgenerate
 
+always_ff @(posedge clk) begin
+	if (stable) 
+	cadence_filt <= cadence_ff3;
+end
 
 always_comb begin
-	stable = &stbl_cnt;
+	if (FAST_SIM) begin
+		stable = &stbl_cnt[8:0];
+	end 
+	else begin
+		stable = &stbl_cnt;
+	end
+	
 	cadence_rise = cadence_ff2 & ~cadence_ff3;
 end
 

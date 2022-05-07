@@ -35,7 +35,6 @@ assign P_term = {error[12], error};
 // /////////////////////////////
 logic [17:0] integrator;
 logic [17:0] added;
-logic pos_ov;
 
 assign added = integrator + {{5{error[12]}}, error};
 assign pos_ov = added[17] && (!added[16]);
@@ -84,33 +83,22 @@ end
 
 logic signed [12:0] D_diff;
 logic signed [8:0] D_diff_sat;
-logic signed [9:0] D_term;
-always_ff @(posedge clk) begin: pipeline_flops
-    D_diff <= error - prev_err;
-    D_diff_sat <= (D_diff > $signed(9'h0FF)) ? $signed(9'h0FF) :
+
+assign D_diff = error - prev_err;
+assign D_diff_sat = (D_diff > $signed(9'h0FF)) ? $signed(9'h0FF) :
                     (D_diff < $signed(9'h100)) ? $signed(9'h100) : D_diff;
-    D_term <= D_diff_sat << 2;
-end: pipeline_flops
+
+logic signed [9:0] D_term;
+assign D_term = D_diff_sat << 2;
 
 ///////////////////////////////////////////////////////////
 ///// Sum over the PID term and determine the drv_mag /////
 ///////////////////////////////////////////////////////////
-logic [13:0] PID, I_ext, D_ext, p_plus_i;
-logic [11:0] drv_mag_tmp; 
+logic [13:0] PID, I_ext, D_ext;
+logic [11:0] drv_mag_tmp;
 assign I_ext = {1'b0, I_term};
 assign D_ext = {{4{D_term[9]}}, D_term};
-always_ff @(posedge clk, negedge rst_n) begin
-    if (~rst_n) begin
-        p_plus_i <= 0;
-        PID <= 0;
-    end
-    else begin
-        p_plus_i <= P_term + I_term;
-        PID <= p_plus_i + D_term;
-    end
-end
-
-// assign PID = P_term + I_term + D_term;
+assign PID = P_term + I_term + D_term;
 
 assign drv_mag_tmp = PID[12] ? 12'hFFF : PID[11:0];
 assign drv_mag = PID[13] ? 12'h000 : drv_mag_tmp;

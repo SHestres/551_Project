@@ -29,7 +29,7 @@ module inertial_integrator(clk,rst_n,vld,roll_rt,yaw_rt,AY,AZ,incline,LED);
   reg signed [23:0] roll_int;
   
   localparam YAW_RT_OFFSET = 16'h0054;		// offset of this inertial sensor for yaw rate
-  localparam ROLL_THRES = 12'h0098;		   // Threshold of too much lean for when incline set to zero
+  localparam ROLL_THRES = 12'h098;		   // Threshold of too much lean for when incline set to zero
   
 
   always_ff @(posedge clk, negedge rst_n)

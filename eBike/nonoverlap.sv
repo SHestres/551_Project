@@ -4,7 +4,7 @@ module nonoverlap(
 );
 
   logic highIn_1, lowIn_1, high_chg, low_chg;
-  logic [4:0] cnt = 5'b00000;
+  logic [4:0] cnt;
 
   always_ff @(posedge clk)										// flop to test for change
     highIn_1 <= highIn;
@@ -33,7 +33,7 @@ module nonoverlap(
 	  highOut <= highIn;
   end
   
-  always_ff @(posedge clk, negedge rst_n) begin					// f no rst_n asserted or input change output driven with input
+  always_ff @(posedge clk, negedge rst_n) begin					// if no rst_n asserted or input change output driven with input
     if (!rst_n)
 	  lowOut <= 1'b0;
 	else if (low_chg)
