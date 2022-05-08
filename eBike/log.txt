@@ -1,0 +1,1812 @@
+#######################################
+# Read in the verilog files first
+#######################################
+read_file -format sverilog { rst_synch.sv A2D_intf.sv SPI_mnrch.sv sensorCondition.sv cadence_filt.sv cadence_meas.sv cadence_LU.sv desiredDrive.sv incline_sat.sv telemetry.sv UART_tx.sv PID.sv brushless.sv mtr_drv.sv PWM.sv nonoverlap.sv inert_intf.sv inertial_integrator.sv PB_intf.sv PB_rise.sv eBike.sv}
+Loading db file '/cae/apps/data/saed32_edk-2018/lib/stdcell_lvt/db_nldm/saed32lvt_tt0p85v25c.db'
+Loading db file '/cae/apps/data/saed32_edk-2018/lib/io_std/db_nldm/saed32io_wb_tt1p05v25c_2p5v.db'
+Loading db file '/cae/apps/data/synopsys-2021/syn/S-2021.06/libraries/syn/gtech.db'
+Loading db file '/cae/apps/data/synopsys-2021/syn/S-2021.06/libraries/syn/standard.sldb'
+  Loading link library 'saed32lvt_tt0p85v25c'
+  Loading link library 'saed32io_wb_tt1p05v25c_2p5v'
+  Loading link library 'gtech'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /filespace/x/xxia48/ece551/ebike/rst_synch.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/A2D_intf.sv
+Warning:  /filespace/x/xxia48/ece551/ebike/A2D_intf.sv:22: The value 00000 is too large for the numeric data type being used (VER-1)
+Compiling source file /filespace/x/xxia48/ece551/ebike/SPI_mnrch.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/sensorCondition.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/cadence_filt.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/cadence_meas.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/cadence_LU.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/desiredDrive.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/incline_sat.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/telemetry.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/UART_tx.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/PID.sv
+Warning:  /filespace/x/xxia48/ece551/ebike/PID.sv:40: the undeclared symbol 'pos_ov' assumed to have the default net type, which is 'wire'. (VER-936)
+Compiling source file /filespace/x/xxia48/ece551/ebike/brushless.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/mtr_drv.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/PWM.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/nonoverlap.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/inert_intf.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/inertial_integrator.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/PB_intf.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/PB_rise.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/eBike.sv
+
+Inferred memory devices in process
+        in routine rst_synch line 8 in file
+                '/filespace/x/xxia48/ece551/ebike/rst_synch.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      rst_n_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      intr_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 50 in file
+        '/filespace/x/xxia48/ece551/ebike/A2D_intf.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            54            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine A2D_intf line 20 in file
+                '/filespace/x/xxia48/ece551/ebike/A2D_intf.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     cnt_14_reg      | Flip-flop |  14   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine A2D_intf line 28 in file
+                '/filespace/x/xxia48/ece551/ebike/A2D_intf.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      cnt_2_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine A2D_intf line 42 in file
+                '/filespace/x/xxia48/ece551/ebike/A2D_intf.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine A2D_intf line 80 in file
+                '/filespace/x/xxia48/ece551/ebike/A2D_intf.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     torque_reg      | Flip-flop |  12   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      batt_reg       | Flip-flop |  12   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      curr_reg       | Flip-flop |  12   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      brake_reg      | Flip-flop |  12   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 56 in file
+        '/filespace/x/xxia48/ece551/ebike/SPI_mnrch.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            61            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine SPI_mnrch line 16 in file
+                '/filespace/x/xxia48/ece551/ebike/SPI_mnrch.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    SCLK_div_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine SPI_mnrch line 30 in file
+                '/filespace/x/xxia48/ece551/ebike/SPI_mnrch.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    bit_cntr_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine SPI_mnrch line 37 in file
+                '/filespace/x/xxia48/ece551/ebike/SPI_mnrch.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    shft_reg_reg     | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine SPI_mnrch line 48 in file
+                '/filespace/x/xxia48/ece551/ebike/SPI_mnrch.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine SPI_mnrch line 84 in file
+                '/filespace/x/xxia48/ece551/ebike/SPI_mnrch.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      SS_n_reg       | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine SPI_mnrch line 94 in file
+                '/filespace/x/xxia48/ece551/ebike/SPI_mnrch.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      done_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine sensorCondition line 39 in file
+                '/filespace/x/xxia48/ece551/ebike/sensorCondition.sv'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+|       prev_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| pedaling_resumes_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+================================================================================
+
+Inferred memory devices in process
+        in routine sensorCondition line 45 in file
+                '/filespace/x/xxia48/ece551/ebike/sensorCondition.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      count_reg      | Flip-flop |  22   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine sensorCondition line 59 in file
+                '/filespace/x/xxia48/ece551/ebike/sensorCondition.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   accum_curr_reg    | Flip-flop |  14   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine sensorCondition line 72 in file
+                '/filespace/x/xxia48/ece551/ebike/sensorCondition.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  accum_torque_reg   | Flip-flop |  17   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cadence_filt line 12 in file
+                '/filespace/x/xxia48/ece551/ebike/cadence_filt.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   cadence_ff3_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   cadence_ff1_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   cadence_ff2_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cadence_filt line 27 in file
+                '/filespace/x/xxia48/ece551/ebike/cadence_filt.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    stbl_cnt_reg     | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cadence_filt line 34 in file
+                '/filespace/x/xxia48/ece551/ebike/cadence_filt.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  cadence_filt_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Warning:  /filespace/x/xxia48/ece551/ebike/cadence_meas.sv:55: Statement unreachable (Prior branch conditions are always met).  (VER-61)
+
+Inferred memory devices in process
+        in routine cadence_meas line 26 in file
+                '/filespace/x/xxia48/ece551/ebike/cadence_meas.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      prev_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  cadence_rise_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cadence_meas line 40 in file
+                '/filespace/x/xxia48/ece551/ebike/cadence_meas.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      count_reg      | Flip-flop |  24   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cadence_meas line 51 in file
+                '/filespace/x/xxia48/ece551/ebike/cadence_meas.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   cadence_per_reg   | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 11 in file
+        '/filespace/x/xxia48/ece551/ebike/cadence_LU.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            12            |    auto/auto     |
+===============================================
+Warning:  /filespace/x/xxia48/ece551/ebike/desiredDrive.sv:17: signed to unsigned part selection occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/desiredDrive.sv:23: signed to unsigned part selection occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/desiredDrive.sv:27: signed to unsigned part selection occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/desiredDrive.sv:34: unsigned to signed assignment occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/desiredDrive.sv:51: signed to unsigned part selection occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/desiredDrive.sv:64: signed to unsigned conversion occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/desiredDrive.sv:65: unsigned to signed assignment occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/desiredDrive.sv:74: signed to unsigned conversion occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/desiredDrive.sv:77: signed to unsigned part selection occurs. (VER-318)
+
+Inferred memory devices in process
+        in routine desiredDrive line 39 in file
+                '/filespace/x/xxia48/ece551/ebike/desiredDrive.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   torque_pos_reg    | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
+| cadence_factor_reg  | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   cad_plus_32_reg   | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     cad_old_reg     | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine desiredDrive line 57 in file
+                '/filespace/x/xxia48/ece551/ebike/desiredDrive.sv'.
+=================================================================================
+|     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=================================================================================
+| assist_prod_check_reg | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+| torq_times_scale_reg  | Flip-flop |  30   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   inc_times_cad_reg   | Flip-flop |  30   |  Y  | N  | Y  | N  | N  | N  | N  |
+=================================================================================
+
+Statistics for case statements in always block at line 45 in file
+        '/filespace/x/xxia48/ece551/ebike/telemetry.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            46            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+        in routine telemetry line 18 in file
+                '/filespace/x/xxia48/ece551/ebike/telemetry.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      cntr_reg       | Flip-flop |  21   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine telemetry line 28 in file
+                '/filespace/x/xxia48/ece551/ebike/telemetry.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine telemetry line 35 in file
+                '/filespace/x/xxia48/ece551/ebike/telemetry.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      trmt_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine telemetry line 45 in file
+                '/filespace/x/xxia48/ece551/ebike/telemetry.sv'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|     tx_data_reg     | Latch |   8   |  Y  | N  | N  | N  | -  | -  | -  |
+|   next_state_reg    | Latch |   4   |  Y  | N  | N  | N  | -  | -  | -  |
+|    trmt_set_reg     | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+Warning:  Latch inferred in design telemetry read with 'hdlin_check_no_latch' (ELAB-395)
+Warning:  /filespace/x/xxia48/ece551/ebike/telemetry.sv:45: Netlist for always_comb block contains a latch. (ELAB-974)
+
+Statistics for case statements in always block at line 79 in file
+        '/filespace/x/xxia48/ece551/ebike/UART_tx.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            88            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine UART_tx line 27 in file
+                '/filespace/x/xxia48/ece551/ebike/UART_tx.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      n001_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine UART_tx line 37 in file
+                '/filespace/x/xxia48/ece551/ebike/UART_tx.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      n004_reg       | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine UART_tx line 48 in file
+                '/filespace/x/xxia48/ece551/ebike/UART_tx.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      n005_reg       | Flip-flop |   5   |  Y  | N  | N  | Y  | N  | N  | N  |
+|      n005_reg       | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine UART_tx line 59 in file
+                '/filespace/x/xxia48/ece551/ebike/UART_tx.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      n003_reg       | Flip-flop |   9   |  Y  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine UART_tx line 70 in file
+                '/filespace/x/xxia48/ece551/ebike/UART_tx.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     tx_done_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Warning:  /filespace/x/xxia48/ece551/ebike/PID.sv:88: unsigned to signed assignment occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/PID.sv:110: signed to unsigned conversion occurs. (VER-318)
+
+Inferred memory devices in process
+        in routine PID line 21 in file
+                '/filespace/x/xxia48/ece551/ebike/PID.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    decimator_reg    | Flip-flop |  20   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine PID line 42 in file
+                '/filespace/x/xxia48/ece551/ebike/PID.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   integrator_reg    | Flip-flop |  18   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine PID line 71 in file
+                '/filespace/x/xxia48/ece551/ebike/PID.sv'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+|     prev_err_reg     | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
+| first_synch_val_reg  | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
+| second_synch_val_reg | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
+================================================================================
+
+Inferred memory devices in process
+        in routine PID line 87 in file
+                '/filespace/x/xxia48/ece551/ebike/PID.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     D_diff_reg      | Flip-flop |  13   |  Y  | N  | N  | N  | N  | N  | N  |
+|   D_diff_sat_reg    | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|     D_term_reg      | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine PID line 103 in file
+                '/filespace/x/xxia48/ece551/ebike/PID.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       PID_reg       | Flip-flop |  14   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    p_plus_i_reg     | Flip-flop |  14   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 36 in file
+        '/filespace/x/xxia48/ece551/ebike/brushless.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            43            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine brushless line 12 in file
+                '/filespace/x/xxia48/ece551/ebike/brushless.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    hallGrn1_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    hallYlw1_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    hallBlu1_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    hallGrn2_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    hallYlw2_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    hallBlu2_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine brushless line 21 in file
+                '/filespace/x/xxia48/ece551/ebike/brushless.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    synchBlu_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    synchGrn_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    synchYlw_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine PWM line 16 in file
+                '/filespace/x/xxia48/ece551/ebike/PWM.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     PWM_sig_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine PWM line 23 in file
+                '/filespace/x/xxia48/ece551/ebike/PWM.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       cnt_reg       | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine nonoverlap line 9 in file
+                '/filespace/x/xxia48/ece551/ebike/nonoverlap.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    highIn_1_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine nonoverlap line 12 in file
+                '/filespace/x/xxia48/ece551/ebike/nonoverlap.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     lowIn_1_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine nonoverlap line 18 in file
+                '/filespace/x/xxia48/ece551/ebike/nonoverlap.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       cnt_reg       | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine nonoverlap line 27 in file
+                '/filespace/x/xxia48/ece551/ebike/nonoverlap.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     highOut_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine nonoverlap line 36 in file
+                '/filespace/x/xxia48/ece551/ebike/nonoverlap.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     lowOut_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 77 in file
+        '/filespace/x/xxia48/ece551/ebike/inert_intf.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            90            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine inert_intf line 19 in file
+                '/filespace/x/xxia48/ece551/ebike/inert_intf.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     INT_ff2_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     INT_ff1_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine inert_intf line 31 in file
+                '/filespace/x/xxia48/ece551/ebike/inert_intf.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     cnt_16_reg      | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine inert_intf line 39 in file
+                '/filespace/x/xxia48/ece551/ebike/inert_intf.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      AZ_L_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    roll_rt_H_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    roll_rt_L_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    yaw_rt_H_reg     | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    yaw_rt_L_reg     | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      AY_H_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      AY_L_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      AZ_H_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine inert_intf line 69 in file
+                '/filespace/x/xxia48/ece551/ebike/inert_intf.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Warning:  /filespace/x/xxia48/ece551/ebike/inertial_integrator.sv:44: signed to unsigned conversion occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/inertial_integrator.sv:57: signed to unsigned conversion occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/inertial_integrator.sv:71: signed to unsigned conversion occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/inertial_integrator.sv:79: signed to unsigned part selection occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/inertial_integrator.sv:80: signed to unsigned part selection occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/inertial_integrator.sv:81: signed to unsigned assignment occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/inertial_integrator.sv:82: signed to unsigned conversion occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/inertial_integrator.sv:94: signed to unsigned part selection occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/inertial_integrator.sv:95: signed to unsigned part selection occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/inertial_integrator.sv:102: unsigned to signed assignment occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/inertial_integrator.sv:103: unsigned to signed assignment occurs. (VER-318)
+
+Inferred memory devices in process
+        in routine inertial_integrator line 35 in file
+                '/filespace/x/xxia48/ece551/ebike/inertial_integrator.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     vld_ff2_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     vld_ff_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine inertial_integrator line 49 in file
+                '/filespace/x/xxia48/ece551/ebike/inertial_integrator.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   incline_int_reg   | Flip-flop |  24   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine inertial_integrator line 63 in file
+                '/filespace/x/xxia48/ece551/ebike/inertial_integrator.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    roll_int_reg     | Flip-flop |  24   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine inertial_integrator line 89 in file
+                '/filespace/x/xxia48/ece551/ebike/inertial_integrator.sv'.
+===================================================================================
+|      Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===================================================================================
+| incline_acc_product_reg | Flip-flop |  13   |  Y  | N  | N  | N  | N  | N  | N  |
+|  roll_acc_product_reg   | Flip-flop |  13   |  Y  | N  | N  | N  | N  | N  | N  |
+===================================================================================
+
+Inferred memory devices in process
+        in routine PB_intf line 11 in file
+                '/filespace/x/xxia48/ece551/ebike/PB_intf.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     setting_reg     | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|     setting_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine PB_rise line 8 in file
+                '/filespace/x/xxia48/ece551/ebike/PB_rise.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      intr3_reg      | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|      intr1_reg      | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|      intr2_reg      | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Loaded 21 designs.
+Current design is 'rst_synch'.
+rst_synch A2D_intf SPI_mnrch sensorCondition cadence_filt cadence_meas cadence_LU desiredDrive incline_sat telemetry UART_tx PID brushless mtr_drv PWM nonoverlap inert_intf inertial_integrator PB_intf PB_rise eBike
+#####################################
+# Set current design to top level
+#####################################
+set current_design eBike
+eBike
+#####################################################
+# Create clk and tell Synopsys not to touch it
+#####################################################
+create_clock -name "clk" -period 2.5 -waveform {0 1} {clk}
+Information: Building the design 'sensorCondition' instantiated from design 'eBike' with
+        the parameters "FAST_SIM=1". (HDL-193)
+
+Inferred memory devices in process
+        in routine sensorCondition_FAST_SIM1 line 39 in file
+                '/filespace/x/xxia48/ece551/ebike/sensorCondition.sv'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+|       prev_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| pedaling_resumes_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+================================================================================
+
+Inferred memory devices in process
+        in routine sensorCondition_FAST_SIM1 line 45 in file
+                '/filespace/x/xxia48/ece551/ebike/sensorCondition.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      count_reg      | Flip-flop |  22   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine sensorCondition_FAST_SIM1 line 59 in file
+                '/filespace/x/xxia48/ece551/ebike/sensorCondition.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   accum_curr_reg    | Flip-flop |  14   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine sensorCondition_FAST_SIM1 line 72 in file
+                '/filespace/x/xxia48/ece551/ebike/sensorCondition.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  accum_torque_reg   | Flip-flop |  17   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (sensorCondition_FAST_SIM1)
+Information: Building the design 'PID' instantiated from design 'eBike' with
+        the parameters "FAST_SIM=1". (HDL-193)
+Warning:  /filespace/x/xxia48/ece551/ebike/PID.sv:88: unsigned to signed assignment occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/PID.sv:110: signed to unsigned conversion occurs. (VER-318)
+
+Inferred memory devices in process
+        in routine PID_FAST_SIM1 line 21 in file
+                '/filespace/x/xxia48/ece551/ebike/PID.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    decimator_reg    | Flip-flop |  20   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine PID_FAST_SIM1 line 42 in file
+                '/filespace/x/xxia48/ece551/ebike/PID.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   integrator_reg    | Flip-flop |  18   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine PID_FAST_SIM1 line 71 in file
+                '/filespace/x/xxia48/ece551/ebike/PID.sv'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+|     prev_err_reg     | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
+| first_synch_val_reg  | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
+| second_synch_val_reg | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
+================================================================================
+
+Inferred memory devices in process
+        in routine PID_FAST_SIM1 line 87 in file
+                '/filespace/x/xxia48/ece551/ebike/PID.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     D_diff_reg      | Flip-flop |  13   |  Y  | N  | N  | N  | N  | N  | N  |
+|   D_diff_sat_reg    | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|     D_term_reg      | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine PID_FAST_SIM1 line 103 in file
+                '/filespace/x/xxia48/ece551/ebike/PID.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       PID_reg       | Flip-flop |  14   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    p_plus_i_reg     | Flip-flop |  14   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (PID_FAST_SIM1)
+Information: Building the design 'cadence_filt' instantiated from design 'sensorCondition_FAST_SIM1' with
+        the parameters "FAST_SIM=1". (HDL-193)
+
+Inferred memory devices in process
+        in routine cadence_filt_FAST_SIM1 line 12 in file
+                '/filespace/x/xxia48/ece551/ebike/cadence_filt.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   cadence_ff3_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   cadence_ff1_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   cadence_ff2_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cadence_filt_FAST_SIM1 line 27 in file
+                '/filespace/x/xxia48/ece551/ebike/cadence_filt.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    stbl_cnt_reg     | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cadence_filt_FAST_SIM1 line 34 in file
+                '/filespace/x/xxia48/ece551/ebike/cadence_filt.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  cadence_filt_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (cadence_filt_FAST_SIM1)
+Information: Building the design 'cadence_meas' instantiated from design 'sensorCondition_FAST_SIM1' with
+        the parameters "FAST_SIM=1". (HDL-193)
+Warning:  /filespace/x/xxia48/ece551/ebike/cadence_meas.sv:55: Statement unreachable (Prior branch conditions are always met).  (VER-61)
+
+Inferred memory devices in process
+        in routine cadence_meas_FAST_SIM1 line 26 in file
+                '/filespace/x/xxia48/ece551/ebike/cadence_meas.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      prev_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  cadence_rise_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cadence_meas_FAST_SIM1 line 40 in file
+                '/filespace/x/xxia48/ece551/ebike/cadence_meas.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      count_reg      | Flip-flop |  24   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cadence_meas_FAST_SIM1 line 51 in file
+                '/filespace/x/xxia48/ece551/ebike/cadence_meas.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   cadence_per_reg   | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (cadence_meas_FAST_SIM1)
+1
+set_dont_touch_network [find port clk]
+1
+####################################################
+# Set input delay for all inputs except for clk
+####################################################
+set prim_inputs [remove_from_collection [all_inputs] [find port clk]]
+{RST_n A2D_MISO hallGrn hallYlw hallBlu inertMISO inertINT cadence tgglMd}
+set_input_delay -clock clk 0.3 $prim_inputs
+1
+####################################
+# Set driving strength of inputs 
+####################################
+set sec_inputs [remove_from_collection $prim_inputs [find port RST_n]]
+{A2D_MISO hallGrn hallYlw hallBlu inertMISO inertINT cadence tgglMd}
+set_driving_cell -lib_cell NAND2X2_LVT -library saed32lvt_tt0p85v25c $sec_inputs
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+1
+####################################
+# Set output delay timing and load
+####################################
+set_output_delay -clock clk 0.5 [all_outputs]
+1
+set_load 50 [all_outputs]
+1
+##########################################
+# Set wireload and transition time
+##########################################
+set_wire_load_model -name 16000 -library saed32lvt_tt0p85v25c
+1
+set_max_transition 0.20 [current_design]
+1
+####################################
+# Compile the design and reports
+####################################
+compile -map_effort high
+Warning: Setting attribute 'fix_multiple_port_nets' on design 'eBike'. (UIO-59)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | S-2021.06-DWBB_202106.0 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 74 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Warning: Operating condition tt0p85v25c set on design eBike has different process,
+voltage and temperatures parameters than the parameters at which target library 
+saed32io_wb_tt1p05v25c_2p5v is characterized. Delays may be inaccurate as a result. (OPT-998)
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'PB_rise'
+  Processing 'PB_intf'
+  Processing 'inertial_integrator'
+  Processing 'SPI_mnrch_0'
+  Processing 'inert_intf'
+  Processing 'nonoverlap_0'
+  Processing 'PWM'
+  Processing 'mtr_drv'
+  Processing 'brushless'
+  Processing 'PID_FAST_SIM1'
+Information: The register 'integrator_reg[17]' is a constant and will be removed. (OPT-1206)
+Information: The register 'D_term_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'D_term_reg[0]' is a constant and will be removed. (OPT-1206)
+  Processing 'UART_tx'
+  Processing 'telemetry'
+  Processing 'desiredDrive'
+Information: The register 'torque_pos_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cad_old_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'torq_times_scale_reg[29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'torq_times_scale_reg[28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'torq_times_scale_reg[27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'torq_times_scale_reg[26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'torq_times_scale_reg[25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'torq_times_scale_reg[24]' is a constant and will be removed. (OPT-1206)
+Information: The register 'torq_times_scale_reg[23]' is a constant and will be removed. (OPT-1206)
+Information: The register 'torq_times_scale_reg[22]' is a constant and will be removed. (OPT-1206)
+Information: The register 'torq_times_scale_reg[21]' is a constant and will be removed. (OPT-1206)
+Information: The register 'torq_times_scale_reg[20]' is a constant and will be removed. (OPT-1206)
+Information: The register 'torq_times_scale_reg[19]' is a constant and will be removed. (OPT-1206)
+Information: The register 'torq_times_scale_reg[18]' is a constant and will be removed. (OPT-1206)
+Information: The register 'torq_times_scale_reg[17]' is a constant and will be removed. (OPT-1206)
+Information: The register 'torq_times_scale_reg[16]' is a constant and will be removed. (OPT-1206)
+Information: The register 'inc_times_cad_reg[29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'inc_times_cad_reg[28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'inc_times_cad_reg[27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'inc_times_cad_reg[26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'inc_times_cad_reg[25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'inc_times_cad_reg[24]' is a constant and will be removed. (OPT-1206)
+Information: The register 'inc_times_cad_reg[23]' is a constant and will be removed. (OPT-1206)
+Information: The register 'inc_times_cad_reg[22]' is a constant and will be removed. (OPT-1206)
+Information: The register 'inc_times_cad_reg[21]' is a constant and will be removed. (OPT-1206)
+Information: The register 'inc_times_cad_reg[20]' is a constant and will be removed. (OPT-1206)
+Information: The register 'inc_times_cad_reg[19]' is a constant and will be removed. (OPT-1206)
+Information: The register 'inc_times_cad_reg[18]' is a constant and will be removed. (OPT-1206)
+Information: The register 'inc_times_cad_reg[17]' is a constant and will be removed. (OPT-1206)
+Information: The register 'inc_times_cad_reg[16]' is a constant and will be removed. (OPT-1206)
+Information: The register 'inc_times_cad_reg[15]' is a constant and will be removed. (OPT-1206)
+  Processing 'cadence_LU'
+  Processing 'cadence_meas_FAST_SIM1'
+  Processing 'cadence_filt_FAST_SIM1'
+  Processing 'sensorCondition_FAST_SIM1'
+  Processing 'A2D_intf'
+  Processing 'rst_synch'
+  Processing 'eBike'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'inert_intf_DW01_inc_0_DW01_inc_3'
+  Processing 'inertial_integrator_DW01_cmp2_0'
+  Processing 'inertial_integrator_DW01_sub_0'
+  Processing 'inertial_integrator_DW01_cmp2_1'
+  Processing 'inertial_integrator_DW01_cmp2_2'
+  Processing 'inertial_integrator_DW01_sub_1'
+  Processing 'SPI_mnrch_1_DW01_inc_0_DW01_inc_4'
+  Processing 'SPI_mnrch_1_DW01_inc_1_DW01_inc_5'
+  Processing 'nonoverlap_1_DW01_inc_0_DW01_inc_6'
+  Processing 'nonoverlap_2_DW01_inc_0_DW01_inc_7'
+  Processing 'nonoverlap_0_DW01_inc_0_DW01_inc_8'
+  Processing 'PWM_DW01_inc_0_DW01_inc_9'
+  Processing 'PWM_DW01_cmp2_0_DW01_cmp2_3'
+  Processing 'brushless_DW01_add_0'
+  Processing 'PID_FAST_SIM1_DW01_add_0_DW01_add_1'
+  Processing 'PID_FAST_SIM1_DW01_add_1_DW01_add_2'
+  Processing 'PID_FAST_SIM1_DW01_cmp2_0_DW01_cmp2_4'
+  Processing 'PID_FAST_SIM1_DW01_cmp2_1_DW01_cmp2_5'
+  Processing 'PID_FAST_SIM1_DW01_sub_0_DW01_sub_2'
+  Processing 'PID_FAST_SIM1_DW01_add_2_DW01_add_3'
+  Processing 'PID_FAST_SIM1_DW01_inc_0_DW01_inc_10'
+  Processing 'sensorCondition_FAST_SIM1_DW01_sub_0_DW01_sub_3'
+  Processing 'sensorCondition_FAST_SIM1_DW01_cmp2_0_DW01_cmp2_6'
+  Processing 'sensorCondition_FAST_SIM1_DW01_add_0_DW01_add_4'
+  Processing 'sensorCondition_FAST_SIM1_DW01_inc_0_DW01_inc_11'
+  Processing 'telemetry_DW01_inc_0_DW01_inc_12'
+  Processing 'UART_tx_DW01_dec_0'
+  Processing 'desiredDrive_DW01_cmp2_0_DW01_cmp2_7'
+  Processing 'desiredDrive_DW01_add_0_DW01_add_5'
+  Processing 'desiredDrive_DW01_sub_0_DW01_sub_4'
+  Processing 'desiredDrive_DW01_add_1_DW01_add_6'
+  Processing 'cadence_meas_FAST_SIM1_DW01_inc_0_DW01_inc_13'
+  Processing 'cadence_filt_FAST_SIM1_DW01_inc_0_DW01_inc_14'
+  Processing 'A2D_intf_DW01_inc_0_DW01_inc_15'
+  Processing 'SPI_mnrch_0_DW01_inc_0_DW01_inc_16'
+  Processing 'SPI_mnrch_0_DW01_inc_1_DW01_inc_17'
+  Allocating blocks in 'DW02_mult_A_width14_B_width2'
+  Building model 'DW01_MUX'
+  Processing 'DW01_MUX'
+  Building model 'DW01_mmux_width2'
+  Processing 'DW01_mmux_width2'
+  Building model 'DW01_mmux_width3'
+  Processing 'DW01_mmux_width3'
+  Building model 'DW01_mmux_width4'
+  Processing 'DW01_mmux_width4'
+  Building model 'DW01_mmux_width5'
+  Processing 'DW01_mmux_width5'
+  Building model 'DW01_NAND2'
+  Processing 'DW01_NAND2'
+  Building model 'DW01_add_width14' (cla)
+  Processing 'DW01_add_width14'
+  Allocating blocks in 'DW01_absval_width14'
+  Building model 'DW01_inc_width14' (cla)
+  Processing 'DW01_inc_width14'
+  Building model 'DW01_absval_width14' (cla)
+  Processing 'DW01_absval_width14'
+  Allocating blocks in 'DW01_absval_width2'
+  Building model 'DW01_inc_width2' (cla)
+  Processing 'DW01_inc_width2'
+  Building model 'DW01_absval_width2' (cla)
+  Processing 'DW01_absval_width2'
+  Building model 'DW01_inc_width16' (cla)
+  Processing 'DW01_inc_width16'
+  Building model 'DW02_mult_A_width14_B_width2' (csa)
+  Processing 'DW02_mult_A_width14_B_width2'
+  Allocating blocks in 'DW02_mult_A_width30_B_width30'
+  Building model 'DW01_add_width58' (cla)
+  Processing 'DW01_add_width58'
+  Building model 'DW02_mult_A_width30_B_width30' (csa)
+  Processing 'DW02_mult_A_width30_B_width30'
+  Allocating blocks in 'DW02_mult_A_width16_B_width10'
+  Building model 'DW01_add_width24' (cla)
+  Processing 'DW01_add_width24'
+  Building model 'DW02_mult_A_width16_B_width10' (csa)
+  Processing 'DW02_mult_A_width16_B_width10'
+  Allocating blocks in 'DW02_mult_A_width10_B_width16'
+  Building model 'DW02_mult_A_width10_B_width16' (csa)
+  Processing 'DW02_mult_A_width10_B_width16'
+  Building model 'DW01_sub_width22' (rpl)
+  Processing 'DW01_sub_width22'
+  Building model 'DW01_sub_width22' (cla)
+  Processing 'DW01_sub_width22'
+  Building model 'DW01_add_width17' (rpl)
+  Processing 'DW01_add_width17'
+  Building model 'DW01_add_width17' (cla)
+  Processing 'DW01_add_width17'
+  Allocating blocks in 'DW02_mult_A_width13_B_width3'
+  Building model 'DW02_mult_A_width13_B_width3' (csa)
+  Processing 'DW02_mult_A_width13_B_width3'
+  Building model 'DW01_add_width24' (rpl)
+  Processing 'DW01_add_width24'
+  Allocating blocks in 'DW02_mult_A_width9_B_width6'
+  Building model 'DW01_add_width13' (cla)
+  Processing 'DW01_add_width13'
+  Building model 'DW02_mult_A_width9_B_width6' (csa)
+  Processing 'DW02_mult_A_width9_B_width6'
+  Processing 'sensorCondition_FAST_SIM1_DW02_mult_0'
+  Processing 'sensorCondition_FAST_SIM1_DW01_add_1_DW01_add_7'
+  Processing 'desiredDrive_DW02_mult_0_DW02_mult_1'
+  Processing 'desiredDrive_DW01_add_2_DW01_add_8'
+  Processing 'inertial_integrator_DW02_mult_0_DW02_mult_2'
+  Processing 'inertial_integrator_DW01_add_0_DW01_add_9'
+  Processing 'inertial_integrator_DW02_mult_1_DW02_mult_3'
+  Processing 'inertial_integrator_DW01_add_1_DW01_add_10'
+  Processing 'sensorCondition_FAST_SIM1_DW01_add_2_DW01_add_11'
+  Processing 'sensorCondition_FAST_SIM1_DW01_sub_1_DW01_sub_5'
+  Processing 'desiredDrive_DW02_mult_1_DW02_mult_4'
+  Processing 'desiredDrive_DW01_add_3_DW01_add_12'
+  Processing 'inertial_integrator_DW01_add_2_DW01_add_13'
+  Processing 'inertial_integrator_DW01_add_3_DW01_add_14'
+  Processing 'inertial_integrator_DW01_add_4_DW01_add_15'
+  Processing 'inertial_integrator_DW01_add_5_DW01_add_16'
+  Processing 'desiredDrive_DW02_mult_2_DW02_mult_5'
+  Processing 'desiredDrive_DW01_add_4_DW01_add_17'
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:11   15000.6      0.00      -0.0    3370.0                          
+    0:00:11   15000.6      0.00      -0.0    3370.0                          
+    0:00:11   15000.6      0.00      -0.0    3370.0                          
+    0:00:11   15000.6      0.00      -0.0    3370.0                          
+    0:00:11   15000.6      0.00      -0.0    3370.0                          
+    0:00:11   13677.3      0.00      -0.0    3170.3                          
+    0:00:11   13621.1      0.00      -0.0    3170.3                          
+    0:00:12   13620.8      0.00      -0.0    3170.3                          
+    0:00:12   13620.8      0.00      -0.0    3170.3                          
+    0:00:12   13620.8      0.00      -0.0    3170.3                          
+    0:00:12   13620.8      0.00      -0.0    3170.3                          
+    0:00:12   13620.8      0.00      -0.0    3170.3                          
+    0:00:12   13683.1      0.00      -0.0     311.2                          
+    0:00:12   13689.0      0.00      -0.0      67.8                          
+    0:00:12   13692.0      0.00      -0.0      32.7                          
+    0:00:12   13695.1      0.00      -0.0       0.0                          
+    0:00:12   13695.1      0.00      -0.0       0.0                          
+    0:00:12   13695.1      0.00      -0.0       0.0                          
+    0:00:12   13695.1      0.00      -0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:12   13695.1      0.00      -0.0       0.0                          
+    0:00:12   13695.1      0.00      -0.0       0.0                          
+    0:00:12   13662.5      0.00      -0.0    1750.3                          
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:12   13662.5      0.00      -0.0    1750.3                          
+    0:00:12   13701.4      0.00      -0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:12   13701.4      0.00      -0.0       0.0                          
+    0:00:12   13701.4      0.00      -0.0       0.0                          
+    0:00:12   13565.7      0.00      -0.0       0.0                          
+    0:00:12   13532.9      0.00      -0.0       0.0                          
+    0:00:12   13520.2      0.00      -0.0       0.0                          
+    0:00:12   13515.1      0.00      -0.0       0.0                          
+    0:00:12   13511.3      0.00      -0.0       0.0                          
+    0:00:12   13511.3      0.00      -0.0       0.0                          
+    0:00:12   13508.8      0.00      -0.0       0.0                          
+    0:00:12   13496.1      0.00      -0.0       0.0                          
+    0:00:12   13496.1      0.00      -0.0       0.0                          
+    0:00:12   13496.1      0.00      -0.0       0.0                          
+    0:00:12   13496.1      0.00      -0.0       0.0                          
+    0:00:12   13496.1      0.00      -0.0       0.0                          
+    0:00:12   13496.1      0.00      -0.0       0.0                          
+    0:00:12   13496.1      0.00      -0.0       0.0                          
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+##########################################
+# Add clock uncertainty and fix hold
+##########################################
+set_clock_uncertainty 0.15 clk
+1
+set_fix_hold clk
+1
+######################
+# Flatten hierarchy
+######################
+ungroup -all -flatten
+Information: Updating graph... (UID-83)
+1
+###################
+# Compile again
+###################
+compile -map_effort high
+
+Information: There are 98 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Warning: Operating condition tt0p85v25c set on design eBike has different process,
+voltage and temperatures parameters than the parameters at which target library 
+saed32io_wb_tt1p05v25c_2p5v is characterized. Delays may be inaccurate as a result. (OPT-998)
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'eBike'
+Information: The register 'iPID/PID_reg[1]' will be removed. (OPT-1207)
+Information: The register 'iPID/p_plus_i_reg[1]' will be removed. (OPT-1207)
+Information: The register 'iPID/PID_reg[0]' will be removed. (OPT-1207)
+Information: The register 'iPID/p_plus_i_reg[0]' will be removed. (OPT-1207)
+Information: The register 'iPID/decimator_reg[19]' will be removed. (OPT-1207)
+Information: The register 'iPID/decimator_reg[18]' will be removed. (OPT-1207)
+Information: The register 'iPID/decimator_reg[17]' will be removed. (OPT-1207)
+Information: The register 'iPID/decimator_reg[16]' will be removed. (OPT-1207)
+Information: The register 'iPID/decimator_reg[15]' will be removed. (OPT-1207)
+Information: The register 'iSENSE/count_reg[21]' will be removed. (OPT-1207)
+Information: The register 'iSENSE/count_reg[20]' will be removed. (OPT-1207)
+Information: The register 'iSENSE/count_reg[19]' will be removed. (OPT-1207)
+Information: The register 'iSENSE/count_reg[18]' will be removed. (OPT-1207)
+Information: The register 'iSENSE/count_reg[17]' will be removed. (OPT-1207)
+Information: The register 'iSENSE/count_reg[16]' will be removed. (OPT-1207)
+Information: The register 'iSENSE/iCadFilt/stbl_cnt_reg[15]' will be removed. (OPT-1207)
+Information: The register 'iSENSE/iCadFilt/stbl_cnt_reg[14]' will be removed. (OPT-1207)
+Information: The register 'iSENSE/iCadFilt/stbl_cnt_reg[13]' will be removed. (OPT-1207)
+Information: The register 'iSENSE/iCadFilt/stbl_cnt_reg[12]' will be removed. (OPT-1207)
+Information: The register 'iSENSE/iCadFilt/stbl_cnt_reg[11]' will be removed. (OPT-1207)
+Information: The register 'iSENSE/iCadFilt/stbl_cnt_reg[10]' will be removed. (OPT-1207)
+Information: The register 'iSENSE/iCadFilt/stbl_cnt_reg[9]' will be removed. (OPT-1207)
+Information: The register 'iA2D/brake_reg[10]' will be removed. (OPT-1207)
+Information: The register 'iA2D/brake_reg[9]' will be removed. (OPT-1207)
+Information: The register 'iA2D/brake_reg[8]' will be removed. (OPT-1207)
+Information: The register 'iA2D/brake_reg[7]' will be removed. (OPT-1207)
+Information: The register 'iA2D/brake_reg[6]' will be removed. (OPT-1207)
+Information: The register 'iA2D/brake_reg[5]' will be removed. (OPT-1207)
+Information: The register 'iA2D/brake_reg[4]' will be removed. (OPT-1207)
+Information: The register 'iA2D/brake_reg[3]' will be removed. (OPT-1207)
+Information: The register 'iA2D/brake_reg[2]' will be removed. (OPT-1207)
+Information: The register 'iA2D/brake_reg[1]' will be removed. (OPT-1207)
+Information: The register 'iA2D/brake_reg[0]' will be removed. (OPT-1207)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+Information: The register 'iSENSE/iDesDrive/cad_plus_32_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torque_pos_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torque_pos_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torque_pos_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torque_pos_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torque_pos_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torque_pos_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torque_pos_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torque_pos_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torque_pos_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torque_pos_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torque_pos_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torque_pos_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torq_times_scale_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torq_times_scale_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torq_times_scale_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torq_times_scale_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torq_times_scale_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torq_times_scale_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torq_times_scale_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torq_times_scale_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torq_times_scale_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torq_times_scale_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torq_times_scale_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torq_times_scale_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torq_times_scale_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torq_times_scale_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torq_times_scale_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/torq_times_scale_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/cad_old_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/cad_plus_32_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/cad_old_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/cad_plus_32_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/cad_old_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/cad_plus_32_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/cad_plus_32_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/cad_old_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/cadence_factor_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/inc_times_cad_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/cadence_factor_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/cadence_factor_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/cadence_factor_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/cadence_factor_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/cad_plus_32_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/cadence_factor_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/inc_times_cad_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/inc_times_cad_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/inc_times_cad_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/inc_times_cad_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/inc_times_cad_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/inc_times_cad_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/inc_times_cad_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/inc_times_cad_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/inc_times_cad_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/inc_times_cad_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/inc_times_cad_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/inc_times_cad_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/inc_times_cad_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/inc_times_cad_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/assist_prod_check_reg[16]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/assist_prod_check_reg[18]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/assist_prod_check_reg[19]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/assist_prod_check_reg[20]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/assist_prod_check_reg[21]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/assist_prod_check_reg[22]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/assist_prod_check_reg[23]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/assist_prod_check_reg[24]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/assist_prod_check_reg[25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/assist_prod_check_reg[26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/assist_prod_check_reg[27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/assist_prod_check_reg[28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/assist_prod_check_reg[29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/assist_prod_check_reg[17]' is a constant and will be removed. (OPT-1206)
+Information: The register 'iSENSE/iDesDrive/assist_prod_check_reg[15]' is a constant and will be removed. (OPT-1206)
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:01    7298.5      0.00       0.0    2594.7                                0.00  
+    0:00:01    7298.5      0.00       0.0    2594.7                                0.00  
+    0:00:01    7298.5      0.00       0.0    2594.7                                0.00  
+    0:00:01    7298.5      0.00       0.0    2594.7                                0.00  
+    0:00:01    7298.5      0.00       0.0    2594.7                                0.00  
+    0:00:01    6597.1      0.00       0.0    2503.5                                0.00  
+    0:00:01    6593.3      0.00       0.0    2503.5                                0.00  
+    0:00:02    6593.3      0.00       0.0    2503.5                                0.00  
+    0:00:02    6593.3      0.00       0.0    2503.5                                0.00  
+    0:00:02    6593.3      0.00       0.0    2503.5                                0.00  
+    0:00:02    6593.3      0.00       0.0    2503.5                                0.00  
+    0:00:02    6636.0      0.00       0.0       0.0                                0.00  
+    0:00:02    6636.0      0.00       0.0       0.0                                0.00  
+    0:00:02    6636.0      0.00       0.0       0.0                                0.00  
+    0:00:02    6636.0      0.00       0.0       0.0                                0.00  
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:02    6636.0      0.00       0.0       0.0                                0.00  
+    0:00:02    6636.0      0.00       0.0       0.0                                0.00  
+    0:00:02    6441.3      0.00       0.0    2503.0                                0.00  
+
+
+  Beginning Design Rule Fixing  (min_path)  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:02    6441.3      0.00       0.0    2503.0                               -3.19  
+    0:00:02    6498.7      0.00       0.0       0.0                               -3.19  
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:02    6498.7      0.00       0.0       0.0                               -3.19  
+    0:00:02    6498.7      0.00       0.0       0.0                               -3.19  
+    0:00:02    6445.6      0.00       0.0       0.0                               -3.23  
+    0:00:02    6429.3      0.00       0.0       0.0                               -3.23  
+    0:00:02    6425.5      0.00       0.0       0.0                               -3.23  
+    0:00:02    6424.3      0.00       0.0       0.0                               -3.23  
+    0:00:02    6423.0      0.00       0.0       0.0                               -3.23  
+    0:00:02    6423.0      0.00       0.0       0.0                               -3.23  
+    0:00:02    6423.0      0.00       0.0       0.0                               -3.23  
+    0:00:02    6418.7      0.00       0.0       0.0                               -3.23  
+    0:00:02    6418.7      0.00       0.0       0.0                               -3.23  
+    0:00:02    6418.7      0.00       0.0       0.0                               -3.23  
+    0:00:02    6418.7      0.00       0.0       0.0                               -3.23  
+    0:00:02    6418.7      0.00       0.0       0.0                               -3.23  
+    0:00:02    6418.7      0.00       0.0       0.0                               -3.23  
+    0:00:02    6516.8      0.00       0.0       0.0 iSENSE/iTele/uart/n005_reg[8]/D     -2.35  
+    0:00:02    6605.5      0.00       0.0       0.0 iPID/prev_err_reg[3]/D        -1.47  
+    0:00:03    6683.2      0.00       0.0       0.0 iMTR/nonoverlap1/cnt_reg[0]/D     -0.64  
+    0:00:03    6709.7      0.00       0.0       0.0                                0.00  
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+#############
+# Reports
+#############
+report_timing -delay max > delay_max.txt
+report_timing -delay min
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : eBike
+Version: S-2021.06
+Date   : Sat May  7 01:38:17 2022
+****************************************
+
+Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: iSENSE/iCadMeas/cadence_per_reg[4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: iSENSE/iCadMeas/cadence_per_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  eBike              16000                 saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  iSENSE/iCadMeas/cadence_per_reg[4]/CLK (DFFX1_LVT)      0.00       0.00 r
+  iSENSE/iCadMeas/cadence_per_reg[4]/Q (DFFX1_LVT)        0.08       0.08 f
+  U2160/Y (AO22X2_LVT)                                    0.05       0.13 f
+  iSENSE/iCadMeas/cadence_per_reg[4]/D (DFFX1_LVT)        0.01       0.14 f
+  data arrival time                                                  0.14
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  iSENSE/iCadMeas/cadence_per_reg[4]/CLK (DFFX1_LVT)      0.00       0.15 r
+  library hold time                                      -0.01       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.14
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
+report_area > eBike.txt
+##################################################
+# Write out resulting sythesized netlist
+##################################################
+write -format verilog eBike -output eBike.vg
+Writing verilog file '/filespace/x/xxia48/ece551/ebike/eBike.vg'.
+1
+1
+Warning: Cannot use command line editor for terminal type 'xterm'.  (UI-74)
+dc_shell> source eBike.dc
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /filespace/x/xxia48/ece551/ebike/rst_synch.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/A2D_intf.sv
+Warning:  /filespace/x/xxia48/ece551/ebike/A2D_intf.sv:22: The value 00000 is too large for the numeric data type being used (VER-1)
+Compiling source file /filespace/x/xxia48/ece551/ebike/SPI_mnrch.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/sensorCondition.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/cadence_filt.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/cadence_meas.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/cadence_LU.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/desiredDrive.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/incline_sat.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/telemetry.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/UART_tx.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/PID.sv
+Warning:  /filespace/x/xxia48/ece551/ebike/PID.sv:40: the undeclared symbol 'pos_ov' assumed to have the default net type, which is 'wire'. (VER-936)
+Compiling source file /filespace/x/xxia48/ece551/ebike/brushless.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/mtr_drv.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/PWM.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/nonoverlap.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/inert_intf.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/inertial_integrator.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/PB_intf.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/PB_rise.sv
+Compiling source file /filespace/x/xxia48/ece551/ebike/eBike.sv
+
+Inferred memory devices in process
+        in routine rst_synch line 8 in file
+                '/filespace/x/xxia48/ece551/ebike/rst_synch.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      rst_n_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      intr_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 50 in file
+        '/filespace/x/xxia48/ece551/ebike/A2D_intf.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            54            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine A2D_intf line 20 in file
+                '/filespace/x/xxia48/ece551/ebike/A2D_intf.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     cnt_14_reg      | Flip-flop |  14   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine A2D_intf line 28 in file
+                '/filespace/x/xxia48/ece551/ebike/A2D_intf.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      cnt_2_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine A2D_intf line 42 in file
+                '/filespace/x/xxia48/ece551/ebike/A2D_intf.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine A2D_intf line 80 in file
+                '/filespace/x/xxia48/ece551/ebike/A2D_intf.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     torque_reg      | Flip-flop |  12   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      batt_reg       | Flip-flop |  12   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      curr_reg       | Flip-flop |  12   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      brake_reg      | Flip-flop |  12   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 56 in file
+        '/filespace/x/xxia48/ece551/ebike/SPI_mnrch.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            61            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine SPI_mnrch line 16 in file
+                '/filespace/x/xxia48/ece551/ebike/SPI_mnrch.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    SCLK_div_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine SPI_mnrch line 30 in file
+                '/filespace/x/xxia48/ece551/ebike/SPI_mnrch.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    bit_cntr_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine SPI_mnrch line 37 in file
+                '/filespace/x/xxia48/ece551/ebike/SPI_mnrch.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    shft_reg_reg     | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine SPI_mnrch line 48 in file
+                '/filespace/x/xxia48/ece551/ebike/SPI_mnrch.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine SPI_mnrch line 84 in file
+                '/filespace/x/xxia48/ece551/ebike/SPI_mnrch.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      SS_n_reg       | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine SPI_mnrch line 94 in file
+                '/filespace/x/xxia48/ece551/ebike/SPI_mnrch.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      done_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine sensorCondition line 39 in file
+                '/filespace/x/xxia48/ece551/ebike/sensorCondition.sv'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+|       prev_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| pedaling_resumes_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+================================================================================
+
+Inferred memory devices in process
+        in routine sensorCondition line 45 in file
+                '/filespace/x/xxia48/ece551/ebike/sensorCondition.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      count_reg      | Flip-flop |  22   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine sensorCondition line 59 in file
+                '/filespace/x/xxia48/ece551/ebike/sensorCondition.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   accum_curr_reg    | Flip-flop |  14   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine sensorCondition line 72 in file
+                '/filespace/x/xxia48/ece551/ebike/sensorCondition.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  accum_torque_reg   | Flip-flop |  17   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cadence_filt line 12 in file
+                '/filespace/x/xxia48/ece551/ebike/cadence_filt.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   cadence_ff3_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   cadence_ff1_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   cadence_ff2_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cadence_filt line 27 in file
+                '/filespace/x/xxia48/ece551/ebike/cadence_filt.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    stbl_cnt_reg     | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cadence_filt line 34 in file
+                '/filespace/x/xxia48/ece551/ebike/cadence_filt.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  cadence_filt_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Warning:  /filespace/x/xxia48/ece551/ebike/cadence_meas.sv:55: Statement unreachable (Prior branch conditions are always met).  (VER-61)
+
+Inferred memory devices in process
+        in routine cadence_meas line 26 in file
+                '/filespace/x/xxia48/ece551/ebike/cadence_meas.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      prev_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  cadence_rise_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cadence_meas line 40 in file
+                '/filespace/x/xxia48/ece551/ebike/cadence_meas.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      count_reg      | Flip-flop |  24   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine cadence_meas line 51 in file
+                '/filespace/x/xxia48/ece551/ebike/cadence_meas.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   cadence_per_reg   | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 11 in file
+        '/filespace/x/xxia48/ece551/ebike/cadence_LU.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            12            |    auto/auto     |
+===============================================
+Warning:  /filespace/x/xxia48/ece551/ebike/desiredDrive.sv:17: signed to unsigned part selection occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/desiredDrive.sv:23: signed to unsigned part selection occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/desiredDrive.sv:27: signed to unsigned part selection occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/desiredDrive.sv:34: unsigned to signed assignment occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/desiredDrive.sv:44: signed to unsigned part selection occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/desiredDrive.sv:50: signed to unsigned conversion occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/desiredDrive.sv:51: unsigned to signed assignment occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/desiredDrive.sv:58: signed to unsigned conversion occurs. (VER-318)
+Warning:  /filespace/x/xxia48/ece551/ebike/desiredDrive.sv:61: signed to unsigned part selection occurs. (VER-318)
+Error:  /filespace/x/xxia48/ece551/ebike/desiredDrive.sv:49: The statements in this 'always' block are outside the scope of the synthesis policy. Only an 'if' statement is allowed at the top level in this always block. (ELAB-302)
+*** Presto compilation terminated with 1 errors. ***
+Error: Can't read 'sverilog' files '/filespace/x/xxia48/ece551/ebike/rst_synch.sv', '/filespace/x/xxia48/ece551/ebike/A2D_intf.sv', '/filespace/x/xxia48/ece551/ebike/SPI_mnrch.sv', '/filespace/x/xxia48/ece551/ebike/sensorCondition.sv', '/filespace/x/xxia48/ece551/ebike/cadence_filt.sv', '/filespace/x/xxia48/ece551/ebike/cadence_meas.sv', '/filespace/x/xxia48/ece551/ebike/cadence_LU.sv', '/filespace/x/xxia48/ece551/ebike/desiredDrive.sv', '/filespace/x/xxia48/ece551/ebike/incline_sat.sv', '/filespace/x/xxia48/ece551/ebike/telemetry.sv', '/filespace/x/xxia48/ece551/ebike/UART_tx.sv', '/filespace/x/xxia48/ece551/ebike/PID.sv', '/filespace/x/xxia48/ece551/ebike/brushless.sv', '/filespace/x/xxia48/ece551/ebike/mtr_drv.sv', '/filespace/x/xxia48/ece551/ebike/PWM.sv', '/filespace/x/xxia48/ece551/ebike/nonoverlap.sv', '/filespace/x/xxia48/ece551/ebike/inert_intf.sv', '/filespace/x/xxia48/ece551/ebike/inertial_integrator.sv', '/filespace/x/xxia48/ece551/ebike/PB_intf.sv', '/filespace/x/xxia48/ece551/ebike/PB_rise.sv', '/filespace/x/xxia48/ece551/ebike/eBike.sv'. (UID-9)
+Warning: overriding result from previous dont_touch_network command on object clk. (UID-1329)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+        set on the port. (UID-401)
+
+Warning: Operating condition tt0p85v25c set on design eBike has different process,
+voltage and temperatures parameters than the parameters at which target library 
+saed32io_wb_tt1p05v25c_2p5v is characterized. Delays may be inaccurate as a result. (OPT-998)
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'eBike'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:01    6657.3      0.00       0.0    2943.1                                0.00  
+    0:00:01    6657.3      0.00       0.0    2943.1                                0.00  
+    0:00:01    6657.3      0.00       0.0    2943.1                                0.00  
+    0:00:01    6657.3      0.00       0.0    2943.1                                0.00  
+    0:00:01    6657.3      0.00       0.0    2943.1                                0.00  
+    0:00:01    6442.6      0.00       0.0    2855.2                                0.00  
+    0:00:01    6438.7      0.00       0.0    2855.2                                0.00  
+    0:00:01    6438.7      0.00       0.0    2855.2                                0.00  
+    0:00:01    6438.7      0.00       0.0    2855.2                                0.00  
+    0:00:01    6438.7      0.00       0.0    2855.2                                0.00  
+    0:00:01    6438.7      0.00       0.0    2855.2                                0.00  
+    0:00:01    6487.3      0.00       0.0       0.0                                0.00  
+    0:00:01    6487.3      0.00       0.0       0.0                                0.00  
+    0:00:01    6487.3      0.00       0.0       0.0                                0.00  
+    0:00:01    6487.3      0.00       0.0       0.0                                0.00  
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:01    6487.3      0.00       0.0       0.0                                0.00  
+    0:00:01    6487.3      0.00       0.0       0.0                                0.00  
+    0:00:01    6401.1      0.00       0.0    2712.0                                0.00  
+
+
+  Beginning Design Rule Fixing  (min_path)  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:01    6401.1      0.00       0.0    2712.0                               -2.34  
+    0:00:01    6461.9      0.00       0.0       0.0                               -2.34  
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:01    6461.9      0.00       0.0       0.0                               -2.34  
+    0:00:01    6461.9      0.00       0.0       0.0                               -2.34  
+    0:00:01    6391.2      0.00       0.0       0.0                               -2.34  
+    0:00:01    6360.7      0.00       0.0       0.0                               -2.33  
+    0:00:01    6355.6      0.00       0.0       0.0                               -2.34  
+    0:00:01    6351.8      0.00       0.0       0.0                               -2.34  
+    0:00:01    6349.3      0.00       0.0       0.0                               -2.34  
+    0:00:01    6349.3      0.00       0.0       0.0                               -2.34  
+    0:00:01    6349.3      0.00       0.0       0.0                               -2.34  
+    0:00:01    6346.2      0.00       0.0       0.0                               -2.34  
+    0:00:01    6346.2      0.00       0.0       0.0                               -2.34  
+    0:00:01    6346.2      0.00       0.0       0.0                               -2.34  
+    0:00:01    6346.2      0.00       0.0       0.0                               -2.34  
+    0:00:01    6346.2      0.00       0.0       0.0                               -2.34  
+    0:00:01    6346.2      0.00       0.0       0.0                               -2.34  
+    0:00:02    6461.9      0.00       0.0       0.0 iPID/D_diff_sat_reg[4]/D      -1.20  
+
+Interrupting optimization...
+Trials elapsed time is 4 seconds, cycles = 565.

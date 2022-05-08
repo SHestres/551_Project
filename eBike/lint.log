@@ -1,0 +1,127 @@
+ 
+****************************************
+check_design summary:
+Version:     S-2021.06
+Date:        Sat May  7 01:11:20 2022
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     11
+    Unconnected ports (LINT-28)                                    10
+    Shorted outputs (LINT-31)                                       1
+
+Cells                                                              53
+    Cells do not drive (LINT-1)                                    22
+    Connected to power or ground (LINT-32)                         14
+    Nets connected to multiple pins on same cell (LINT-33)          1
+    Leaf pins connected to undriven nets (LINT-58)                 15
+    Cells have undriven hier pins (LINT-59)                         1
+
+Nets                                                               23
+    Unloaded nets (LINT-2)                                         23
+--------------------------------------------------------------------------------
+
+Warning: In design 'A2D_intf', cell 'B_12' does not drive any nets. (LINT-1)
+Warning: In design 'A2D_intf', cell 'C412' does not drive any nets. (LINT-1)
+Warning: In design 'sensorCondition_FAST_SIM1', cell 'C289' does not drive any nets. (LINT-1)
+Warning: In design 'sensorCondition_FAST_SIM1', cell 'C294' does not drive any nets. (LINT-1)
+Warning: In design 'sensorCondition_FAST_SIM1', cell 'C305' does not drive any nets. (LINT-1)
+Warning: In design 'sensorCondition_FAST_SIM1', cell 'B_11' does not drive any nets. (LINT-1)
+Warning: In design 'PID_FAST_SIM1', cell 'B_4' does not drive any nets. (LINT-1)
+Warning: In design 'inert_intf', cell 'B_7' does not drive any nets. (LINT-1)
+Warning: In design 'PB_intf', cell 'C50' does not drive any nets. (LINT-1)
+Warning: In design 'SPI_mnrch', cell 'B_10' does not drive any nets. (LINT-1)
+Warning: In design 'SPI_mnrch', cell 'B_13' does not drive any nets. (LINT-1)
+Warning: In design 'cadence_filt_FAST_SIM1', cell 'C92' does not drive any nets. (LINT-1)
+Warning: In design 'cadence_meas_FAST_SIM1', cell 'C246' does not drive any nets. (LINT-1)
+Warning: In design 'desiredDrive', cell 'B_8' does not drive any nets. (LINT-1)
+Warning: In design 'telemetry', cell 'C379' does not drive any nets. (LINT-1)
+Warning: In design 'PWM', cell 'B_2' does not drive any nets. (LINT-1)
+Warning: In design 'nonoverlap', cell 'C92' does not drive any nets. (LINT-1)
+Warning: In design 'inertial_integrator', cell 'C331' does not drive any nets. (LINT-1)
+Warning: In design 'inertial_integrator', cell 'C333' does not drive any nets. (LINT-1)
+Warning: In design 'inertial_integrator', cell 'B_3' does not drive any nets. (LINT-1)
+Warning: In design 'UART_tx', cell 'C230' does not drive any nets. (LINT-1)
+Warning: In design 'UART_tx', cell 'C239' does not drive any nets. (LINT-1)
+Warning: In design 'eBike', net 'brake[0]' driven by pin 'iA2D/brake[0]' has no loads. (LINT-2)
+Warning: In design 'eBike', net 'brake[1]' driven by pin 'iA2D/brake[1]' has no loads. (LINT-2)
+Warning: In design 'eBike', net 'brake[2]' driven by pin 'iA2D/brake[2]' has no loads. (LINT-2)
+Warning: In design 'eBike', net 'brake[3]' driven by pin 'iA2D/brake[3]' has no loads. (LINT-2)
+Warning: In design 'eBike', net 'brake[4]' driven by pin 'iA2D/brake[4]' has no loads. (LINT-2)
+Warning: In design 'eBike', net 'brake[5]' driven by pin 'iA2D/brake[5]' has no loads. (LINT-2)
+Warning: In design 'eBike', net 'brake[6]' driven by pin 'iA2D/brake[6]' has no loads. (LINT-2)
+Warning: In design 'eBike', net 'brake[7]' driven by pin 'iA2D/brake[7]' has no loads. (LINT-2)
+Warning: In design 'eBike', net 'brake[8]' driven by pin 'iA2D/brake[8]' has no loads. (LINT-2)
+Warning: In design 'eBike', net 'brake[9]' driven by pin 'iA2D/brake[9]' has no loads. (LINT-2)
+Warning: In design 'eBike', net 'brake[10]' driven by pin 'iA2D/brake[10]' has no loads. (LINT-2)
+Warning: In design 'eBike', net 'iINERT/resp[15]' driven by pin 'iINERT/SPI/resp[15]' has no loads. (LINT-2)
+Warning: In design 'eBike', net 'iA2D/resp[15]' driven by pin 'iA2D/SPI/resp[15]' has no loads. (LINT-2)
+Warning: In design 'eBike', net 'iA2D/resp[12]' driven by pin 'iA2D/SPI/resp[12]' has no loads. (LINT-2)
+Warning: In design 'eBike', net 'iA2D/resp[13]' driven by pin 'iA2D/SPI/resp[13]' has no loads. (LINT-2)
+Warning: In design 'eBike', net 'iA2D/resp[14]' driven by pin 'iA2D/SPI/resp[14]' has no loads. (LINT-2)
+Warning: In design 'eBike', net 'iINERT/resp[8]' driven by pin 'iINERT/SPI/resp[8]' has no loads. (LINT-2)
+Warning: In design 'eBike', net 'iINERT/resp[9]' driven by pin 'iINERT/SPI/resp[9]' has no loads. (LINT-2)
+Warning: In design 'eBike', net 'iINERT/resp[10]' driven by pin 'iINERT/SPI/resp[10]' has no loads. (LINT-2)
+Warning: In design 'eBike', net 'iINERT/resp[11]' driven by pin 'iINERT/SPI/resp[11]' has no loads. (LINT-2)
+Warning: In design 'eBike', net 'iINERT/resp[12]' driven by pin 'iINERT/SPI/resp[12]' has no loads. (LINT-2)
+Warning: In design 'eBike', net 'iINERT/resp[13]' driven by pin 'iINERT/SPI/resp[13]' has no loads. (LINT-2)
+Warning: In design 'eBike', net 'iINERT/resp[14]' driven by pin 'iINERT/SPI/resp[14]' has no loads. (LINT-2)
+Warning: In design 'brushless', port 'drv_mag[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'brushless', port 'drv_mag[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'inertial_integrator', port 'LED[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'inertial_integrator', port 'LED[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'inertial_integrator', port 'LED[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'inertial_integrator', port 'LED[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'inertial_integrator', port 'LED[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'inertial_integrator', port 'LED[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'inertial_integrator', port 'LED[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'inertial_integrator', port 'LED[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'SPI_mnrch', output port 'MOSI' is connected directly to output port 'resp[15]'. (LINT-31)
+Warning: In design 'A2D_intf', a pin on submodule 'SPI' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cmd[15]' is connected to logic 0. 
+Warning: In design 'A2D_intf', a pin on submodule 'SPI' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cmd[14]' is connected to logic 0. 
+Warning: In design 'A2D_intf', a pin on submodule 'SPI' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cmd[10]' is connected to logic 0. 
+Warning: In design 'A2D_intf', a pin on submodule 'SPI' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cmd[9]' is connected to logic 0. 
+Warning: In design 'A2D_intf', a pin on submodule 'SPI' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cmd[8]' is connected to logic 0. 
+Warning: In design 'A2D_intf', a pin on submodule 'SPI' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cmd[7]' is connected to logic 0. 
+Warning: In design 'A2D_intf', a pin on submodule 'SPI' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cmd[6]' is connected to logic 0. 
+Warning: In design 'A2D_intf', a pin on submodule 'SPI' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cmd[5]' is connected to logic 0. 
+Warning: In design 'A2D_intf', a pin on submodule 'SPI' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cmd[4]' is connected to logic 0. 
+Warning: In design 'A2D_intf', a pin on submodule 'SPI' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cmd[3]' is connected to logic 0. 
+Warning: In design 'A2D_intf', a pin on submodule 'SPI' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cmd[2]' is connected to logic 0. 
+Warning: In design 'A2D_intf', a pin on submodule 'SPI' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cmd[1]' is connected to logic 0. 
+Warning: In design 'A2D_intf', a pin on submodule 'SPI' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cmd[0]' is connected to logic 0. 
+Warning: In design 'inert_intf', a pin on submodule 'SPI' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cmd[14]' is connected to logic 0. 
+Warning: In design 'A2D_intf', the same net is connected to more than one pin on submodule 'SPI'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'cmd[15]', 'cmd[14]'', 'cmd[10]', 'cmd[9]', 'cmd[8]', 'cmd[7]', 'cmd[6]', 'cmd[5]', 'cmd[4]', 'cmd[3]', 'cmd[2]', 'cmd[1]', 'cmd[0]'.
+Warning: In design 'desiredDrive', input pin 'synch_enable' of leaf cell 'torque_pos_reg[12]' is connected to undriven net 'rst_n'.  (LINT-58)
+Warning: In design 'desiredDrive', input pin 'synch_enable' of leaf cell 'torque_pos_reg[11]' is connected to undriven net 'rst_n'.  (LINT-58)
+Warning: In design 'desiredDrive', input pin 'synch_enable' of leaf cell 'torque_pos_reg[10]' is connected to undriven net 'rst_n'.  (LINT-58)
+Warning: In design 'desiredDrive', input pin 'synch_enable' of leaf cell 'torque_pos_reg[9]' is connected to undriven net 'rst_n'.  (LINT-58)
+Warning: In design 'desiredDrive', input pin 'synch_enable' of leaf cell 'torque_pos_reg[8]' is connected to undriven net 'rst_n'.  (LINT-58)
+Warning: In design 'desiredDrive', input pin 'synch_enable' of leaf cell 'torque_pos_reg[7]' is connected to undriven net 'rst_n'.  (LINT-58)
+Warning: In design 'desiredDrive', input pin 'synch_enable' of leaf cell 'torque_pos_reg[6]' is connected to undriven net 'rst_n'.  (LINT-58)
+Warning: In design 'desiredDrive', input pin 'synch_enable' of leaf cell 'torque_pos_reg[5]' is connected to undriven net 'rst_n'.  (LINT-58)
+Warning: In design 'desiredDrive', input pin 'synch_enable' of leaf cell 'torque_pos_reg[4]' is connected to undriven net 'rst_n'.  (LINT-58)
+Warning: In design 'desiredDrive', input pin 'synch_enable' of leaf cell 'torque_pos_reg[3]' is connected to undriven net 'rst_n'.  (LINT-58)
+Warning: In design 'desiredDrive', input pin 'synch_enable' of leaf cell 'torque_pos_reg[2]' is connected to undriven net 'rst_n'.  (LINT-58)
+Warning: In design 'desiredDrive', input pin 'synch_enable' of leaf cell 'torque_pos_reg[1]' is connected to undriven net 'rst_n'.  (LINT-58)
+Warning: In design 'desiredDrive', input pin 'synch_enable' of leaf cell 'torque_pos_reg[0]' is connected to undriven net 'rst_n'.  (LINT-58)
+Warning: In design 'desiredDrive', input pin 'A' of leaf cell 'I_7' is connected to undriven net 'rst_n'.  (LINT-58)
+Warning: In design 'desiredDrive', input pin 'A' of leaf cell 'B_8' is connected to undriven net 'rst_n'.  (LINT-58)
+Warning: In design 'sensorCondition_FAST_SIM1', input pin 'rst_n' of hierarchical cell 'iDesDrive' has one or more internal loads, but is not connected to any nets. 'Logic 0' is assumed. (LINT-59)
+1

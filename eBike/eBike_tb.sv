@@ -1,4 +1,4 @@
-module eBike_tb();
+module eBike_tb_shell();
  
   // include or import tasks?
   localparam FAST_SIM = 1;		// accelerate simulation by default
@@ -65,8 +65,8 @@ module eBike_tb();
   //////////////////////////////////////////////////////////
   UART_rcv iUART(.clk(clk), .rst_n(rst_n), .RX(TX_RX), .rdy(rdy), .rx_data(rx_data), .clr_rdy(rdy));
 
-  localparam test_duration = 1500000;
-  int cadence_period = 100000;
+  localparam test_duration = 15000;
+  int cadence_period = 10000;
 
   //TODO: self checks
   initial begin
@@ -166,7 +166,7 @@ module eBike_tb();
 	BRAKE = 12'hFFF;
 	BATT = 12'hFFF;
 	
-	repeat(100000) @(posedge clk);
+	repeat(10000) @(posedge clk);
 	
 	//////////////////////////////////////
 	// Waves from video
@@ -192,13 +192,13 @@ module eBike_tb();
 	cadence_period = 75000;
 	TORQUE = 12'h0FF;
 	YAW_RT = 16'h0000;
-	repeat(100000) @(posedge clk);
+	repeat(10000) @(posedge clk);
 	YAW_RT = 16'h0800;
-	repeat(100000) @(posedge clk);
+	repeat(10000) @(posedge clk);
 	YAW_RT = 16'h1000;
-	repeat(100000) @(posedge clk);
+	repeat(10000) @(posedge clk);
 	YAW_RT = 16'h2000;
-	repeat(100000) @(posedge clk);
+	repeat(10000) @(posedge clk);
 	
 	//Pedaling fast, uphill
 	cadence_period = 25000;
