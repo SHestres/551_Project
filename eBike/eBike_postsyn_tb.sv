@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
-module eBike_tb();
- import eBike_tasks_tb::*;
+module eBike_postsyn_tb();
+ import eBike_tasks_postsyn_tb::*;
   // include or import tasks?
   //localparam FAST_SIM = 1;		// accelerate simulation by default
 
@@ -29,7 +29,6 @@ module eBike_tb();
   wire [11:0] BATT_TX, TORQUE_TX, CURR_TX;
   logic vld_TX, rdy;
   logic [7:0] rx_data;
-  logic [11:0] avg_curr_prev;
   logic [19:0] omega_prev;
  
   
@@ -72,7 +71,7 @@ module eBike_tb();
 
   localparam test_duration = 1500000;
   int cadence_period = 100000;
-
+	logic signed [19:0] temp;
   //TODO: self checks
   initial begin
 	
@@ -89,41 +88,43 @@ module eBike_tb();
 	
 	reset_DUT(clk,RST_n);
 	// test BATT
-	check_batt_task(12'h000, iDUT.iSENSE.error);
-	check_batt_task(12'hF00, iDUT.iSENSE.error);
+
 	
 	@(posedge clk);
 	TORQUE = 12'h000;
 	repeat(1000) @(posedge clk);
-	avg_curr_prev = iDUT.iSENSE.avg_curr;
+
+  assign temp = (iPHYS.omega === 'bx) ? 20'b0 : iPHYS.omega;
 	omega_prev = iPHYS.omega;
-	TORQUE_task(iDUT.iSENSE.avg_curr, iPHYS.omega, 12'h700, clk, avg_curr_prev,omega_prev);
+	TORQUE_task(iPHYS.omega, 12'h700, clk,omega_prev);
 	
 	@(posedge clk);
 	TORQUE = 12'h721;
 	repeat(1000) @(posedge clk);
-	avg_curr_prev = iDUT.iSENSE.avg_curr;
+	
 	omega_prev = iPHYS.omega;
-	DETORQUE_task(iDUT.iSENSE.avg_curr, iPHYS.omega,12'h000,clk, avg_curr_prev,omega_prev);
+	DETORQUE_task(iPHYS.omega,12'h000,clk,omega_prev);
 	
 	
 	@(posedge clk)
 	BRAKE = 12'hFFF;
 	repeat(1000) @(posedge clk);
-	avg_curr_prev = iDUT.iSENSE.avg_curr;
+	
 	omega_prev = iPHYS.omega;
-	BRAKE_task(iDUT.iSENSE.avg_curr, iPHYS.omega,12'h000,clk,avg_curr_prev,omega_prev);
+	BRAKE_task(iPHYS.omega,12'h000,clk,omega_prev);
 	
 	@(posedge clk)
 	BRAKE = 12'h000;
 	repeat(1000) @(posedge clk);
 	
-	avg_curr_prev = iDUT.iSENSE.avg_curr;
+	
 	omega_prev = iPHYS.omega;
-	BRAKE_release_task(iDUT.iSENSE.avg_curr, iPHYS.omega,12'hFFF,clk,avg_curr_prev,omega_prev);
+	BRAKE_release_task(iPHYS.omega,12'hFFF,clk,omega_prev);
 	
 	
-	
+	repeat(10) @(posedge clk);
+  $display("Test Passed!");
+  $stop;
 	end
   
   ///////////////////
